@@ -1,0 +1,818 @@
+extend ./layout/layout.pug
+block content
+	main.page-shop
+		//- Breadcrumbs
+		.breadcrumbs
+			ul.breadcrumbs-list.grid.wide
+				li.breadcrumbs-item
+					a.breadcrumbs-link(href='/') Home
+				li.breadcrumbs-item
+					a.breadcrumbs-link(href='') Shop
+		.grid.wide.container.mg-bot-30
+			.main-content
+				.row
+					.not-pc
+					//- Sidebar
+					.col.l-3.m-0.c-0.sidebar
+						.sidebar-main
+							.block.filter
+								.block-title.filter-title
+								.block-content.filter-content
+									.block-subtitle.filter-subtitle Shopping Options
+									.block-subtitle.filter-subtitle.not-pc Shop By
+									i.ti-close.close-btn.not-pc
+									.filter-options
+										.filter-options-item
+											.filter-options-title Price
+											.filter-options-content
+												ul.filter-options-content__list
+													li.filter-options-content__item
+														a.filter-options-content__link(href='')
+															span.price $0.00
+															|                                                                 -
+															span.price $99.99
+															span.count
+																| 3
+													li.filter-options-content__item
+														a.filter-options-content__link(href='')
+															span.price $200.00
+															|                                                                 -
+															span.price $299.99
+															span.count
+																| 3
+													li.filter-options-content__item
+														a.filter-options-content__link(href='')
+															span.price $300.00
+															|                                                                 -
+															span.price $399.99
+															span.count
+																| 6
+													li.filter-options-content__item
+														a.filter-options-content__link(href='')
+															span.price $400.00
+															|                                                                 and above 
+															span.count
+																| 6
+						.sidebar-addition
+							.block.block-compare
+								.block-title Compare Products
+								.empty You have no items to compare.
+							.block.block-wishlist
+								.block-title My Wish List
+								.empty You have no items in your wish list.
+					.col.l-9.m-12.c-12.col-main
+						//- Filter
+						.toolbar.toolbar-products
+							.modes
+								a.modes-mode.layout-mode.active(href='#col-4')
+									i.fas.fa-th
+								a.modes-mode.mode-list.layout-mode(href='#col-1')
+									i.fas.fa-th-large
+							p.toolbar-amount
+								| Items
+								span.toolbar-number 1
+								| -
+								span.toolbar-number 12
+								| of
+								span.toolbar-number 18
+							.toolbar-sorter.sorter
+								label.sorter-label(for='') Sort By
+								select.sorter-options(name='', id='')
+									option(value='position', selected='selected') Position
+									option(value='name') Name
+									option(value='price') Price
+								a.action.sorter-action.sort-asc(href='')
+									i.fas.fa-long-arrow-alt-up
+						//- 4 col
+						#col-4.product-grid.active
+							.grid
+								ul.row.product-list
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances6.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Kitchen Dining Table
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 1
+										.product-price
+											.price-final $388.66
+											.price-old $569.99
+										span.onsale
+											span -20%
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances4.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Stainless Steel FS3 Fre
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 3
+										.product-price
+											.price-final $68.99
+											.price-old $268.99
+										span.onsale
+											span -74%
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances2_1.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Electric Kettlet 1.5L
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 1
+										.product-price
+											.price-final $278.99
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances8_1.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Luby Slice Convection 9
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 1
+										.product-price
+											.price-final $290.00
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances7_1.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Senbeam Classic 1200
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 3
+										.product-price
+											.price-final $295.55
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances5_2.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Mi Washer Dryer Gold
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 2
+										.product-price
+											.price-final $321.05
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances3.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Roku Smart LED TV
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 1
+										.product-price
+											.price-final $278.99
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/i/p/iphone_03_1.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Xanna Note 4GB RAM
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 1
+										.product-price
+											.price-final $$68.66
+											.price-old $368.68
+										span.onsale
+											span -81%
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/p/h/phone-01.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Galuxy 4 7 9 Wi-Fi 4G
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.far.fa-star
+												i.rating-icon.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 5
+										.product-price
+											.price-final $357.26
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/i/p/iphone_02_2.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 10
+										.product-price
+											.price-final $388.66
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/t/a/tablet_samll_04.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Tempered Glass Film
+										.product-review-summary
+											.rating-result
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+												i.rating-icon.active.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 1
+										.product-price
+											.price-final $278.99
+									li.col.l-3.m-4.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/h/e/headphone.jpg', alt='')
+										.product-action
+											a(href='')
+												i.add-to-cart.fas.fa-cart-plus
+											a(href='')
+												i.quick-view.far.fa-eye
+											a(href='')
+												i.to-compare.fas.fa-exchange-alt
+											a(href='')
+												i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Computer Wireless
+										.product-review-summary
+											.rating-result
+												i.rating-icon.far.fa-star
+												i.rating-icon.far.fa-star
+												i.rating-icon.far.fa-star
+												i.rating-icon.far.fa-star
+												i.rating-icon.far.fa-star
+											.rating-action
+												a.action-view(href='')
+													| 0
+										.product-price
+											.price-final $402.58
+						//- 1 col
+						#col-1.product-grid.full-row
+							.grid
+								ul.row.product-list
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances6.jpg', alt='')
+										span.onsale
+											span -12%
+										.product-info
+											a.product-name(href='') Kitchen Dining Table
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $68.99
+												.price-old $78.00
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances4.jpg', alt='')
+										span.onsale
+											span -74%
+										.product-info
+											a.product-name(href='') Stainless Steel FS3 Fre
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $68.99
+												.price-old $78.00
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances2_1.jpg', alt='')
+										.product-info
+											a.product-name(href='') Kitchen Dining Table
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $278.99
+											.product-description
+												ul
+													li Small screen 7.9&quot; Retina
+													li Compatible with Apple Pencil
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances8_1.jpg', alt='')
+										.product-info
+											a.product-name(href='') Luby Slice Convection 9
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 2
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $290.00
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances7_1.jpg', alt='')
+										.product-info
+											a.product-name(href='') Senbeam Classic 1200
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $295.55
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances5_2.jpg', alt='')
+										span.onsale
+											span -12%
+										.product-info
+											a.product-name(href='') Mi Washer Dryer Gold
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $68.99
+												.price-old $78.00
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances3.jpg', alt='')
+										.product-info
+											a.product-name(href='') Roku Smart LED TV
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 12
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $328.88
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/i/p/iphone_03_1.jpg', alt='')
+										span.onsale
+											span -80%
+										.product-info
+											a.product-name(href='') Xanna Note 4GB RAM
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $68.99
+												.price-old $368.68
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/p/h/phone-01.jpg', alt='')
+										.product-info
+											a.product-name(href='') Kitchen Dining Table
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $68.99
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+									li.col.l-12.m-12.c-12.product-wrapper.item-horizontal
+										a.product-img(href='')
+											img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/i/p/iphone_02_2.jpg', alt='')
+										span.onsale
+											span -12%
+										.product-info
+											a.product-name(href='') Bosch WAT286H0GB
+											.product-review-summary
+												.rating-result
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.active.far.fa-star
+													i.rating-icon.far.fa-star
+													i.rating-icon.far.fa-star
+												.reviews-actions
+													a.action.view(href='')
+														span 1
+														span review
+													a.action.add(href='')
+														span Add Your Review
+											.product-price
+												.price-final $68.99
+												.price-old $78.00
+											.product-description
+												table
+													tbody
+														tr
+															th.col-label Item model number:
+															td.col-data  PC-08361922
+														tr
+															th.col-label Item Weight:
+															td.col-data  5 ounces
+														tr
+															th.col-label Product Dimensions:
+															td.col-data 9.8 x 6.8 x 0.3 inches Item
+											.product-action-static
+												button.btn.btn-add-to-cart Add to card
+												.action-secondary
+													a.add-to-wish-list(href='')
+														i.far.fa-heart
+													a.to-compare(href='', title='Add to Compare')
+														i.fas.fa-exchange-alt
+						//- Pagination
+						.toolbar.toolbar-products.bg-white
+							.pages
+								ul.pages-list
+									li.page-item.current
+										span.page 1
+									li.page-item
+										a.page(href='') 2
+									li.page-item.page-next
+										a.action.next(href='')
+											span.page
+												i.ti-angle-right
+							.field.limiter
+								label.label(for='') Show
+								select.limiter-options(name='', id='')
+									option(value='12', selected='selected') 12
+									option(value='24') 24
+									option(value='36') 36
+								span.limiter-text per page

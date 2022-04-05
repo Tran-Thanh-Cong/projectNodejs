@@ -1,0 +1,49 @@
+
+.page-login {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.block-customer-login {
+    padding-right: 90px;
+}
+
+.block.block-customer-login::before {
+    position: absolute;
+    content: 'or';
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    width: 51px;
+    height: 51px;
+    font-size: 14px;
+    line-height: 51px;
+    font-style: italic;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: auto;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    z-index: 1;
+}
+
+.block.block-customer-login::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: 50%;
+    bottom: 60px;
+    border-right: 1px solid #e6e6e6;
+    z-index: 0;
+}
+
+.block-new-customer {
+    padding-left: 90px;
+}
+
+.page-login .block .btn-primary:hover {
+    background-color: #e3a500;
+}

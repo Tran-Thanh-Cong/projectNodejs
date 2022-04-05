@@ -1,0 +1,43 @@
+extend ./layout/layout.pug
+block content
+	main.page-content.container
+		.grid.wide.page-login
+			.page-title-wrapper
+				h1.page-title
+					span Customer Login
+			.row.container
+				.col.l-6.m-12.c-12.block.block-customer-login
+					.block-title
+						span Registered Customers
+					.block-content
+						form.form.form-login(action='')
+							.fieldset.login
+								.field.note If you have an account, sign in with your email address.
+								.field.email.required
+									label.label(for='')
+										span Email
+									.control
+										input.input-text(type='text', name='email', id='')
+								.field.password.required
+									label.label(for='')
+										span Password
+									.control
+										input.input-text(type='password', name='', id='')
+								.actions-toolbar
+									.primary
+										a.action.remind(href="")
+											span Forgot Your Password?
+									.secondary
+										button.btn-primary(type='submit')
+											span Sign In
+				.col.l-6.m-12.c-12.block.block-new-customer
+					.block-title
+						span New Customers
+					.block-content
+						p
+							| Creating an account has many benefits: check out faster, keep more than one address, track orders and more.
+						.actions-toolbar
+							.secondary
+								button.btn-primary(type='submit')
+									a(href='')
+										span Create an Account
