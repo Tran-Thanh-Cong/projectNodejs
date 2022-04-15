@@ -6,15 +6,25 @@ const register = require('../../controllers/frontends/register.controller');
 const shop = require('../../controllers/frontends/shop.controller');
 const blog = require('../../controllers/frontends/blog.controller');
 const contact = require('../../controllers/frontends/contact.controller');
+const logout = require('../../controllers/frontends/logout.controller');
+const verifyEmail = require('../../controllers/frontends/verifyEmail.controller');
 
 // home router
 router.get('/', home.index);
 
 // login router
-router.get('/login', login.index);
+router.get('/login', login.login_get);
+router.post('/login', login.login_post);
 
-//register routes
-router.get('/register', register.index);
+//register router
+router.get('/register', register.register_get);
+router.post('/register', register.register_post);
+
+//verify-email routes
+router.get('/verify-email', verifyEmail.verifyEmail)
+
+// logout router
+router.get('/logout', logout.logout);
 
 // shop router
 router.get('/shop', shop.index);

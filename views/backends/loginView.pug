@@ -1,0 +1,33 @@
+doctype html
+html 
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", type="text/css", href="/vendors/bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet", type="text/css", href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", type="text/css", href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css")
+    link(rel="stylesheet", type="text/css", href="/css/utilLogin.css")
+    link(rel="stylesheet", type="text/css", href="/css/mainLogin.css")
+  body.limiter
+    .container-login100(style="background-image: url('/img/backgrounds/bg-18.jpg');")
+      .wrap-login100.p-t-30.p-b-50
+        span.login100-form-title.p-b-41
+          | Admin Login
+        form.login100-form.validate-form.p-b-33.p-t-5(action="" method="POST")
+          .wrap-input100.validate-input(data-validate='Enter username')
+            input.input100(type='text', name='email', placeholder='Email' value=email ? email : '')
+            span.focus-input100(data-placeholder='')
+            if errEmail
+              p.err=errEmail
+          .wrap-input100.validate-input(data-validate='Enter password')
+            input.input100(type='password', name='password', placeholder='Password')
+            span.focus-input100(data-placeholder='')
+            if errPassword
+              p.err=errPassword
+          .container-login100-form-btn.m-t-32
+            button.login100-form-btn
+              | Login
+

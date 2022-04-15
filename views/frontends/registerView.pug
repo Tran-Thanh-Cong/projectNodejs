@@ -1,33 +1,37 @@
 extend ./layout/layout.pug
 block content
-	main.page-content
-		.page-create-acc
-			.page-title-wrapper
-				h1.page-title.container
-					span Create New Customer Account
-			.container
-				.block
-					.block-content
-						form.form(action='')
-							.fieldset
-								.field.required
-									label.label(for='')
-										span Name
-									.control
-										input.input-text(type='text', name='', id='')
-								.field.required
-									label.label(for='')
-										span Email
-									.control
-										input.input-text(type='text', name='', id='')
-								.field.required
-									label.label(for='')
-										span Password
-									.control
-										input.input-text(type='password', name='', id='')
-								.field.required
-									label.label(for='')
-										span Confirm Password
-									.control
-										input.input-text(type='password', name='', id='')
-							button.btn.btn-primary(style='margin-top: 2%, margin-left: 50%') CREATE AN ACCOUNT
+  main.page-content
+    .page-create-acc
+      .page-title-wrapper
+        h1.page-title.container
+          span Create New Customer Account
+      .container
+        .block
+          .block-content
+            form.form(action='', method='POST')
+              .fieldset
+                .field.required
+                  label.label(for='')
+                    span Name
+                  .control
+                    input.input-text(type='text', name='username', id='', value=username ? username : '')
+                .field.required
+                  label.label(for='')
+                    span Email
+                  .control
+                    input.input-text(type='text', name='email', id='', value=email ? email : '')
+                  if errEmail
+                    p.errMessage=errEmail
+                .field.required
+                  label.label(for='')
+                    span Password
+                  .control
+                    input.input-text(type='password', name='password', id='')
+                .field.required
+                  label.label(for='')
+                    span Confirm Password
+                  .control
+                    input.input-text(type='password', name='confirm_password', id='')
+                  if errPassword
+                    p.errMessage=errPassword
+              button.btn.btn-primary(style='margin-top: 2%, margin-left: 50%') CREATE AN ACCOUNT

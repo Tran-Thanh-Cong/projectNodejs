@@ -217,10 +217,15 @@ header.page-header
             .header-action__account-icon
               i.far.fa-user-circle
             .header-action__account-wrap
-              a.account__link(href='/login')
-                | Sign In
-              a.account__link(href='/register')
-                | Create an Account
+              if !user || user === null
+                a.account__link(href='/login')
+                  | Sign In
+                a.account__link(href='/register')
+                  | Create an Account
+              else
+                h2.account__link=user.username
+                a.account__link(href='/logout')
+                  | Logout
     //- Header content
     .grid.wide.header-content
       .row.container.header-content__container

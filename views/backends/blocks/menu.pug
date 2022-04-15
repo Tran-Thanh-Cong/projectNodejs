@@ -1,0 +1,48 @@
+.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active="true" data-img="/img/backgrounds/02.jpg")
+  .navbar-header
+    ul.nav.navbar-nav.flex-row
+      li.nav-item.mr-auto
+        a.navbar-brand(href="index.html")
+          img.brand-logo(alt="Chameleon admin logo" src="/img/logo/logo.png")
+          h3.brand-text Chameleon
+      li.nav-item.d-md-none
+        a.nav-link.close-navbar
+          i.ft-x
+  .main-menu-content
+    ul.navigation.navigation-main#main-menu-navigation(data-menu="menu-navigation")
+      li.nav-item
+        a(href="")
+          i.ft-home
+          span.menu-title(data-i18n) Dashboard
+      li.active
+        a(href="")
+          i.ft-pie-chart
+          span.menu-title(data-i18n) Charts
+      li.nav-item
+        a(href="")
+          i.ft-droplet
+          span.menu-title(data-i18n) Icons
+      li.nav-item
+        a(href="")
+          i.ft-layers
+          span.menu-title(data-i18n) Cards
+      li.nav-item
+        a(href="")
+          i.ft-box
+          span.menu-title(data-i18n) Buttons
+      li.nav-item
+        a(href="/admin/category")
+          i.ft-bold
+          span.menu-title(data-i18n) Category
+      li.nav-item
+        a(href="/admin/employees")
+          i.ft-user
+          span.menu-title(data-i18n) Admin
+      li.nav-item
+        a(href="/admin/products")
+          i.ft-layout
+          span.menu-title(data-i18n) Products
+      li.nav-item
+        a(href="/admin/users")
+          i.ft-users
+          span.menu-title(data-i18n) Users
