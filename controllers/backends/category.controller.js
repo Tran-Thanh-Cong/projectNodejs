@@ -1,5 +1,4 @@
 const Category_Model = require('../../models/category.model');
-const DetailCategory_Model = require('../../models/detailCategory.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const { escapeRegex } = require('../../helpers/escapeRegex');
 
@@ -60,6 +59,43 @@ class CategoryController {
         await Category_Model.insertMany({ name: req.body.name });
         return res.redirect('/admin/category')
       }
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async edit(req, res) {
+    try {
+      const category = await Category_Model.findById(req.params.id);
+      return res.render('./backends/categories/updateCategoryView', {
+        datas: mongooseToObject(category)
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async update(req, res) {
+    try {
+      const category = await Category_Model.findOne({ name: req.body.name });
+      if (category) {
+        return res.render('./backends/categories/updateCategoryView', {
+          errCategory: 'Category already exists',
+          datas: mongooseToObject(category)
+        })
+      } else {
+        await Category_Model.updateOne({ _id: req.params.id }, { name: req.body.name })
+        return res.redirect('/admin/category')
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async delete(req, res) {
+    try {
+      await Category_Model.deleteOne({ _id: req.params.id });
+      return res.redirect('/admin/category');
     } catch (error) {
       console.log(error.message);
     }

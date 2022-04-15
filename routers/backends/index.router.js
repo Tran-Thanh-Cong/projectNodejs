@@ -9,6 +9,7 @@ const logout = require('../../controllers/backends/logout.controller');
 const product = require('../../controllers/backends/product.controller');
 const admin = require('../../controllers/backends/admin.controller');
 const category = require('../../controllers/backends/category.controller');
+const detailCategory = require('../../controllers/backends/detalCategory.controller');
 
 // home router
 router.get('/', authMiddleware.authAdmin, home.index);
@@ -33,7 +34,12 @@ router.delete('/products/delete/:id', authMiddleware.authAdmin, product.delete);
 router.get('/category', authMiddleware.authAdmin, category.index);
 router.get('/category/create', authMiddleware.authAdmin, category.create);
 router.post('/category/create', authMiddleware.authAdmin, category.store);
+router.get('/category/edit/:id', authMiddleware.authAdmin, category.edit);
+router.put('/category/edit/:id', authMiddleware.authAdmin, category.update);
+router.delete('/category/delete/:id', authMiddleware.authAdmin, category.delete);
 
+//detailCategory router
+router.get('/detailCategory', authMiddleware.authAdmin, detailCategory.index)
 
 //users router
 router.get('/users', authMiddleware.authAdmin, user.index);
