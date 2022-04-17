@@ -1,154 +1,3486 @@
 extend ./layout/layout.pug
-block header
-	nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-light
-		.navbar-wrapper
-			.navbar-container.content
-				.collapse.navbar-collapse.show#navbar-mobile
-					ul.nav.navbar-nav.mr-auto.float-left
-						li.nav-item.d-block.d-md-none
-							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href="#")
-								i.ft-menu
-						li.nav-item.d-none.d-md-block
-							a.nav-link.nav-link-expand(href="#")
-								i.ficon.ft-maximize
-						li.nav-item.dropdown.navbar-search
-							a.nav-link.dropdown-toggle.hide(data-toggle="dropdown" href="#")
-								i.ficon.ft-search
-							ul.dropdown-menu
-								li.arrow_box
-									form
-										.input-group.search-box
-											.position-relative.has-icon-right.full-width
-												input.form-control#search(type="text" placeholder="Search here...")
-												.form-control-position.navbar-search-close
-													i.ft-x
-					ul.nav.navbar-nav.float-right
-						li.dropdown.dropdown-language.nav-item
-							a.dropdown-toggle.nav-link#dropdown-flag(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-								i.flag-icon.flag-icon-us
-								span.selected-language
-							.dropdown-menu(aria-labelledby="dropdown-flag")
-								.arrow_box
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-us
-										|  English
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-cn
-										|  Chinese
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-ru
-										|  Russian
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-fr
-										|  French
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-es
-										|  Spanish
-					ul.nav.navbar-nav.float-right
-						li.dropdown.dropdown-notification.nav-item
-							a.nav-link.nav-link-label(href="#" data-toggle="dropdown")
-								i.ficon.ft-mail
-							.dropdown-menu.dropdown-menu-right
-								.arrow_box_right
-									a.dropdown-item(href="#")
-										i.ft-book
-										|  Read Mail
-									a.dropdown-item(href="#")
-										i.ft-bookmark
-										|  Read Later
-									a.dropdown-item(href="#")
-										i.ft-check-square
-										|  Mark all Read
-						li.dropdown.dropdown-user.nav-item
-							a.dropdown-toggle.nav-link.dropdown-user-link(href="#" data-toggle="dropdown")
-								span.avatar.avatar-online
-									img(src="/img/portrait/small/avatar-s-19.png" alt="avatar")
-									i
-							.dropdown-menu.dropdown-menu-right
-								.arrow_box_right
-									a.dropdown-item(href="#")
-										span.avatar.avatar-online
-											img(src="/img/portrait/small/avatar-s-19.png" alt="avatar")
-											span.text-bold-700.ml-1(style="font-size: 10px; font-weight: bold")
-									a.dropdown-item(href="#")
-										i.ft-user
-										|  Edit Profile
-									a.dropdown-item(href="#")
-										i.ft-mail
-										|  My Inbox
-									a.dropdown-item(href="#")
-										i.ft-check-square
-										|  Task
-									a.dropdown-item(href="#")
-										i.ft-message-square
-										|  Chats
-									a.dropdown-item(href="logout")
-										i.ft-power
-										|  Logout	
 block content
-	.app-content.content
-		.content-wrapper
-			.content-wrapper-before
-			.content-header.row
-				.content-header-left.col-md-4.col-12.mb-2
-					h3.content-header-title Charts
-				.content-header-right.col-md-8.col-12
-					.breadcrumbs-top.float-md-right
-						.breadcrumb-wrapper.mr-1
-							ol.breadcrumb
-								li.breadcrumb-item
-									a(href="index.html") Home
-								li.breadcrumb-item.active.
-									Charts
-			.content-body
-				section#chartjs-bar-charts
-					.row
-						.col-12
-							.card
-								.card-header
-									h4.card-title Column Chart
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(data-action="collapse")
-													i.ft-minus
-											li
-												a(data-action="reload")
-													i.ft-rotate-cw
-											li
-												a(data-action="expand")
-													i.ft-maximize
-											li
-												a(data-action="close")
-													i.ft-x
-								.card-content.collapse.show
-									.card-body
-										.height-400
-											canvas#column-chart
-					.row
-						.col-12
-							.card
-								.card-header
-									h4.card-title Bar Chart
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(data-action="collapse")
-													i.ft-minus
-											li
-												a(data-action="reload")
-													i.ft-rotate-cw
-											li
-												a(data-action="expand")
-													i.ft-maximize
-											li
-												a(data-action="close")
-													i.ft-x
-								.card-content.collapse.show
-									.card-body
-										.height-400
-											canvas#bar-chart
+	main.page-main
+		.grid.wide.content-container
+			//- Box on top
+			.row.container.content-box-on-top
+				.col.l-9.m-12.c-12.box-on-top__slider
+					//- Slider banner
+					.slider__banner
+						.slider__banner-wrapper.fade
+							img.slider__banner-img(src='./img/slider/armania_market1_03-1_slider.jpg', alt='')
+							.slider__banner-text
+								h3.slider__banner-text__title.text-1 Solutions For
+								h3.slider__banner-text__title.text-2 Every Industry
+								.slider__banner-text__msg LAUNDRY AND DISHWASHING
+								.slider__banner-text__price.text-4 $299.9
+								button.btn-primary.slider__banner-text__buy-btn.not-mobile SHOP NOW
+						.slider__banner-wrapper.fade
+							img.slider__banner-img(src='https://mageblueskytech.com/armania/media/slidebanner/a/r/armania_market1_03.jpg', alt='')
+							.slider__banner-text
+								h3.slider__banner-text__title.text-1 Long Coats
+								h3.slider__banner-text__title.text-2 Keep You Warm
+								.slider__banner-text__msg OPHELIE OPHELIE READY FOR THE CATWALK
+								.slider__banner-text__price.text-4 $99.9
+								button.btn-primary.slider__banner-text__buy-btn.not-mobile SHOP NOW
+					.grid.slider__product-tab
+						ul.row.slider__product-tab__list
+							li.col.l-3.m-6.c-12.slider__product-tab__item.product-wrapper
+								.product-tab__info
+									a.product-tab__info-img.product-img(href='product-detail.php')
+										img(src='./img/slider/product_slider_small_01.jpg', alt='')
+									.product-tab__info-detail
+										a.product-tab__info-detail__name.product-name(href='product-detail.php') iPad Mini wifi 4G 
+										.product-tab__info-detail__price
+											.price-final
+												span $368.99
+											.price-old
+												span $569.99
+							li.col.l-3.m-6.c-12.slider__product-tab__item.product-wrapper
+								.product-tab__info
+									a.product-tab__info-img.product-img(href='product-detail.php')
+										img(src='./img/slider/product_slider_small_02.jpg', alt='')
+									.product-tab__info-detail
+										a.product-tab__info-detail__name.product-name(href='product-detail.php') iPad Mini wifi 4G
+										.product-tab__info-detail__price
+											.price-final
+												span $368.99
+											.price-old
+												span $569.99
+							li.col.l-3.m-6.c-12.slider__product-tab__item.product-wrapper
+								.product-tab__info
+									a.product-tab__info-img.product-img(href='product-detail.php')
+										img(src='./img/slider/product_slider_small_03.jpg', alt='')
+									.product-tab__info-detail
+										a.product-tab__info-detail__name.product-name(href='product-detail.php') Smart Watch Apllo 68GB Lorem ipsum dolor sit
+										.product-tab__info-detail__price
+											.price-final
+												span $368.99
+											.price-old
+												span $569.99
+							li.col.l-3.m-6.c-12.slider__product-tab__item.product-wrapper
+								.product-tab__info
+									a.product-tab__info-img.product-img(href='product-detail.php')
+										img(src='./img/slider/product_slider_small_04.jpg', alt='')
+									.product-tab__info-detail
+										a.product-tab__info-detail__name.product-name(href='product-detail.php') Kitchen Dining Table
+										.product-tab__info-detail__price
+											.price-final
+												span $368.99
+											.price-old
+												span $569.99
+				.col.l-3.m-12.c-12.box-on-top__product-on-left
+					.product-on-left__wrapper
+						.product-on-left__bestseller
+							| Bestseller Products
+						.row.product-on-left__info-row.product-wrapper
+							.col.l-12.m-4.c-6.product-on-left__info
+								a.product-on-left__info-img.product-img(href='')
+									img(src='./img/slider/product_slider_m_01.jpg', alt='')
+								.product-on-left__info-detail.product-name
+									a.product-on-left__name.product-name(href='')
+										span iPad Mini wifi 4G
+									.product-on-left__price
+										.price-final
+											span $368.99
+										.price-old
+											span $569.99
+							.col.l-12.m-4.c-6.product-on-left__info
+								a.product-on-left__info-img.product-img(href='')
+									img(src='./img/slider/product_slider_m_02.jpg', alt='')
+								.product-on-left__info-detail.product-name
+									a.product-on-left__name.product-name(href='')
+										span iPad Mini wifi 4G
+									.product-on-left__price
+										.price-final
+											span $368.99
+										.price-old
+											span $569.99
+							.col.l-12.m-4.c-6.product-on-left__info
+								a.product-on-left__info-img.product-img(href='')
+									img(src='./img/slider/product_slider_m_03.jpg', alt='')
+								.product-on-left__info-detail.product-name
+									a.product-on-left__name.product-name(href='')
+										span iPad Mini wifi 4G
+									.product-on-left__price
+										.price-final
+											span $368.99
+										.price-old
+											span $569.99
+							.product-on-left-action.pre-and-next
+								.product-on-left-action__pre.product-action--pre
+									i.previous-btn.product-on-left-action__pre-btn.ti-angle-left
+								.product-on-left-action__next.show.product-action--next
+									i.next-btn.product-on-left-action__next-btn.ti-angle-right
+							div(style='text-align:center; width: 100%; height: 0;')
+								span.dot
+								span.dot
+								span.dot
+						.product-on-left__images
+							.row.product-on-left__images-row
+								a.col.l-4.m-4.c-4.product-on-left__images-link(href='')
+									img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/90bca38a69e1b67b5a1cb7cf30dee429/t/a/tablet_samll_02_1.jpg', alt='')
+								a.col.l-4.m-4.c-4.product-on-left__images-link(href='')
+									img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/90bca38a69e1b67b5a1cb7cf30dee429/t/a/tablet_samll_03_1.jpg', alt='')
+								a.col.l-4.m-4.c-4.product-on-left__images-link(href='')
+									img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/90bca38a69e1b67b5a1cb7cf30dee429/t/a/tablet_samll_04_1.jpg', alt='')
+			//- Hot deal
+			.content-hot-deal.container
+				.hot-deal__heading
+					h2.hot-deal__heading__title Daily Deals
+					.hot-deal__heading__countdown
+						.countdown-days.countdown
+							span.countdown-days__number.countdown-number
+							span.countdown-days__text.countdown-text Days
+						.countdown-hours.countdown
+							span.countdown-hours__number.countdown-number 01
+							span.countdown-hours__text.countdown-text Hours
+						.countdown-mins.countdown
+							span.countdown-mins__number.countdown-number 22
+							span.countdown-mins__text.countdown-text Mins
+						.countdown-secs.countdown
+							span.countdown-secs__number.countdown-number 00
+							span.countdown-secs__text.countdown-text Secs
+					p.hot-deal__heading__des
+						| Get Upto
+						span 50%
+						|                             Back On Purchase
+					a.hot-deal__heading__view-btn Shop Now
+				.row.hot-deal__product
+					.col.l-4.m-6.c-12.hot-deal__product-wrapper
+						a.hot-deal__product-img(href='')
+							img(src='./img/hot-deal/hot-deal_01.jpg', alt='')
+						.hot-deal__product-detail
+							a.hot-deal__product-detail__name.product-name(href='') Smart Watch Apllo 68GB 
+							.hot-deal__product-detail__price
+								.price-final $369.99
+								.price-old $579.99
+							.hot-deal__product-detail__des
+								ul
+									li Small screen 7.9&quot; Retina
+									li Compatible with Apple Pencil
+							span.hot-deal__product-detail__sale
+								span.hot-deal__sale-title SALES
+								span.hot-deal__sale-title-text 36% OFF
+							.hot-deal__product-detail__action
+								.hot-deal__product-detail__btn.btn ADD TO CART
+								.hot-deal__product-detail__link.product-action
+									a.quick-view
+										i.far.fa-eye
+									a.add-to-wish-list
+										i.far.fa-heart
+									a.to-compare(href='', title='Add to Compare')
+										i.fas.fa-exchange-alt
+					.col.l-4.m-6.c-12.hot-deal__product-wrapper
+						a.hot-deal__product-img(href='')
+							img(src='./img/hot-deal/hot-deal_02.jpg', alt='')
+						.hot-deal__product-detail
+							a.hot-deal__product-detail__name.product-name(href='') Smart Watch Apllo 68GB 
+							.hot-deal__product-detail__price
+								.price-final $369.99
+								.price-old $579.99
+							.hot-deal__product-detail__des
+								ul
+									li Small screen 7.9&quot; Retina
+									li Compatible with Apple Pencil
+							span.hot-deal__product-detail__sale
+								span.hot-deal__sale-title SALES
+								span.hot-deal__sale-title-text 36% OFF
+							.hot-deal__product-detail__action
+								.hot-deal__product-detail__btn.btn ADD TO CART
+								.hot-deal__product-detail__link.product-action
+									a.quick-view
+										i.far.fa-eye
+									a.add-to-wish-list
+										i.far.fa-heart
+									a.to-compare(href='', title='Add to Compare')
+										i.fas.fa-exchange-alt
+					.col.l-4.m-6.c-12.hot-deal__product-wrapper
+						a.hot-deal__product-img(href='')
+							img(src='./img/hot-deal/hot-deal_03.jpg', alt='')
+						.hot-deal__product-detail
+							a.hot-deal__product-detail__name.product-name(href='') Smart Watch Apllo 68GB 
+							.hot-deal__product-detail__price
+								.price-final $369.99
+								.price-old $579.99
+							.hot-deal__product-detail__des
+								ul
+									li Small screen 7.9&quot; Retina
+									li Compatible with Apple Pencil
+							span.hot-deal__product-detail__sale
+								span.hot-deal__sale-title SALES
+								span.hot-deal__sale-title-text 36% OFF
+							.hot-deal__product-detail__action
+								.hot-deal__product-detail__btn.btn ADD TO CART
+								.hot-deal__product-detail__link.product-action
+									a.quick-view
+										i.far.fa-eye
+									a.add-to-wish-list
+										i.far.fa-heart
+									a.to-compare(href='', title='Add to Compare')
+										i.fas.fa-exchange-alt
+			//- Hot categories
+			.content-hot-categories.container.tabs-container
+				.hot-categories__heading
+					.hot-categories__heading-wrapper
+						ul.hot-categories__list.tabs-nav
+							.hot-categories__titile.tag-title
+								h3 Hot Categories
+							li.hot-categories__item.tab--active
+								a.hot-categories__link(href='#tab-1')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_01_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Smart Phones
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-2')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_02_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Shoes &amp; Hats
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-3')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_03_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Watch &amp; Eyewear
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-4')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_04_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Beauty &amp; Personal
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-5')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_05_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Digital &amp; Electronics
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-6')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_06_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Handbags &amp; Cases
+				.grid.wide.hot-categories__product.tab-content
+					#tab-1.hot-categories__product-wrapper.tab-pane.active
+						ul.row.hot-categories__product-list
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 20%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-02.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 50%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Stainless Steel FS3 Fre 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-03.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Electric Kettlet 1.5L 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-04.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Luby Slice Convection 9 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-05.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Senbeam Classic 1200
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-06.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Mi Washer Dryer Gold
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-07.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Roku Smart LED TV
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-2.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-02.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 50%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Stainless Steel FS3 Fre 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 20%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-07.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Roku Smart LED TV
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-03.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Electric Kettlet 1.5L 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-04.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Luby Slice Convection 9 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-05.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Senbeam Classic 1200
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-06.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Mi Washer Dryer Gold
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-3.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-03.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Electric Kettlet 1.5L 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-02.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 50%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Stainless Steel FS3 Fre 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 20%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-07.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Roku Smart LED TV
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-04.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Luby Slice Convection 9 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-05.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Senbeam Classic 1200
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-06.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Mi Washer Dryer Gold
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-4.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-05.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Senbeam Classic 1200
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-03.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Electric Kettlet 1.5L 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-02.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 50%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Stainless Steel FS3 Fre 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 20%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-07.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Roku Smart LED TV
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-04.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Luby Slice Convection 9 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-06.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Mi Washer Dryer Gold
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-5.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 20%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-02.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 50%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Stainless Steel FS3 Fre 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-03.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Electric Kettlet 1.5L 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-04.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Luby Slice Convection 9 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-05.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Senbeam Classic 1200
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-06.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Mi Washer Dryer Gold
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-07.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Roku Smart LED TV
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-6.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-02.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 50%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Stainless Steel FS3 Fre 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								span.hot-categories__product-sale.onsale
+									span 20%
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-07.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Roku Smart LED TV
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-03.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Electric Kettlet 1.5L 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-04.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Luby Slice Convection 9 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-05.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Senbeam Classic 1200
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-06.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') Mi Washer Dryer Gold
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+										i.rating-icon.rating-icon--active.far.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+								a.hot-categories__product-img.product-img(href='')
+									img(src='./img/hot-categories/product_s-01.jpg', alt='')
+								.hot-categories__product-action.product-action
+									i.add-to-cart.fas.fa-cart-plus
+									i.quick-view.far.fa-eye
+									i.to-compare.fas.fa-exchange-alt
+									i.add-to-wish-list.far.fa-heart
+								.hot-categories__product-detail
+									a.hot-categories__product__name.product-name(href='') iPad Mini 4 7 9 wifi 4G 
+								.product-review-summary
+									.rating-result
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.rating-icon--active.far.fa-star
+										i.rating-icon.far.fa-star
+										i.rating-icon.far.fa-star
+									.rating-action
+										a.action-view(href='')
+											| 1
+								.hot-categories__product__price
+									.price-final $369.99
+									.price-old $579.99
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+			//- Group product
+			.content-group-product.mg-bot-60
+				.row
+					.col.l-6.m-0.c-0
+						.grid.wide
+							.row
+								.col.l-6.m-0.c-0.group-product__banner
+									.group-product__banner-col.container
+										.group-product__banner-col__img.banner-wrapper
+											.img-hover-light-effect
+												a(href='')
+													img(src='./img/banners/1-banner-market_s-01.jpg', alt='')
+										.group-product__banner-col__img.banner-wrapper
+											.img-hover-light-effect
+												a(href='')
+													img(src='./img/banners/1-banner-market_s-02.jpg', alt='')
+										.group-product__banner-col__img.banner-wrapper
+											.img-hover-light-effect
+												a(href='')
+													img(src='./img/banners/1-banner-market_s-03.jpg', alt='')
+								.col.l-6.m-0.c-0.group-product__banner-col.banner-hori.container
+									a.group-product__banner-col__img
+										img(src='./img/banners/1-banner-market_m-01.jpg', alt='')
+					.col.l-6.m-12.c-12.container.col-left
+						.group-product-container.mg-bot-35
+							.group-product__heading.tag-title__wrapper
+								.tag-title
+									h2 New Arrivals
+							.grid.wide
+								ul.row.group-product__list.overflow-x-auto
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-01.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-02.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Galaxy Wi-Fi 4G
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-03.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Roku Smart LED TV
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-01.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-price
+											.price-final $388.66
+						.group-product-container
+							.group-product__heading.tag-title__wrapper
+								.tag-title
+									h2 Today&rsquo;s Popular Pick
+							.grid.wide
+								ul.row.group-product__list.overflow-x-auto
+									li.col.l-6.m-6.c-12.product-wrapper.group-product__item
+										.item-horizontal
+											a.product-img(href='')
+												img(src='./img/products/1-product_s-01.jpg', alt='')
+											.group-product__detail
+												a.product-name(href='') Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
+												.product-price.group-product__price
+													.price-final $388.66
+													.price-old $569.99
+											span.group-product__sale.onsale
+												span 20%
+									li.col.l-6.m-6.c-12.product-wrapper.group-product__item
+										.item-horizontal
+											a.product-img(href='')
+												img(src='./img/products/1-product_s-02.jpg', alt='')
+											.group-product__detail
+												a.product-name(href='') iPad Mini wifi 4G
+												.product-price.group-product__price
+													.price-final $388.66
+													.price-old $569.99
+											span.group-product__sale.onsale
+												span 20%
+									li.col.l-6.m-6.c-12.product-wrapper.group-product__item
+										.item-horizontal
+											a.product-img(href='')
+												img(src='./img/products/1-product_s-01.jpg', alt='')
+											.group-product__detail
+												a.product-name(href='') iPad Mini wifi 4G
+												.product-price.group-product__price
+													.price-final $388.66
+													.price-old $569.99
+											span.group-product__sale.onsale
+												span 20%
+			//- Catagories tabs full screen
+			.content-product-category.container.mg-bot-60.tabs-container
+				div
+					.product-category__wrapper.wrapper
+						ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+							.tag-title
+								h2 Electric Kitchens
+							li.tab-item.tab--active
+								a.tab-link(href='#tab-7')
+									span.cat-name Kettlets 
+							li.tab-item
+								a.tab-link(href='#tab-8')
+									span.cat-name Microwave 
+							li.tab-item
+								a.tab-link(href='#tab-9')
+									span.cat-name Accessories 
+							li.tab-item
+								a.tab-link(href='#tab-10')
+									span.cat-name Washing Machines 
+						.grid.wide
+							.row
+								.col.l-2.m-3.c-0.product-category__banner.tab-banner
+									img(src='./img/banners/2-banner-market_m-01.jpg', alt='')
+								.col.l-10.m-9.c-12.product-category__content.tab-content
+									#tab-7.grid.wide.product-category__content-wrapper.tab-pane.active
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-01.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Kitchen Dining Table
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-02.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Electric Kettlet 1.5L
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-03.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Senbeam Classic 1200
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-05.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Galuxy 4 7 9 Wi-Fi 4G
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-04.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Roku Smart LED TV
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 10%
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-06.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Stainless Steel FS3 Fre
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 22%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-07.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Luby Slice Convection 9
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-08.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Mi Washer Dryer Gold
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 18%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-09.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Xanna Note 4GB RAM
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-10.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Bosch WAT286H0GB
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 50%
+									#tab-8.grid.wide.product-category__content-wrapper.tab-pane
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-06.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Stainless Steel FS3 Fre
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 22%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-07.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Luby Slice Convection 9
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-08.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Mi Washer Dryer Gold
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 18%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-09.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Xanna Note 4GB RAM
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-10.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Bosch WAT286H0GB
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 50%
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-01.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Kitchen Dining Table
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-02.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Electric Kettlet 1.5L
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-03.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Senbeam Classic 1200
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-05.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Galuxy 4 7 9 Wi-Fi 4G
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-04.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Roku Smart LED TV
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 10%
+									#tab-9.grid.wide.product-category__content-wrapper.tab-pane
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-01.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Kitchen Dining Table
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-02.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Electric Kettlet 1.5L
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-03.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Senbeam Classic 1200
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-05.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Galuxy 4 7 9 Wi-Fi 4G
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-04.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Roku Smart LED TV
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 10%
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-06.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Stainless Steel FS3 Fre
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 22%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-07.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Luby Slice Convection 9
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-08.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Mi Washer Dryer Gold
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 18%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-09.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Xanna Note 4GB RAM
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-10.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Bosch WAT286H0GB
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 50%
+									#tab-10.grid.wide.product-category__content-wrapper.tab-pane
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-06.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Stainless Steel FS3 Fre
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 22%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-07.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Luby Slice Convection 9
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-08.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Mi Washer Dryer Gold
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 18%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-09.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Xanna Note 4GB RAM
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-10.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Bosch WAT286H0GB
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 50%
+										ul.row.product-category__row.overflow-x-auto
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-01.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Kitchen Dining Table
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-02.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Electric Kettlet 1.5L
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 20%
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-03.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Senbeam Classic 1200
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-05.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Galuxy 4 7 9 Wi-Fi 4G
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+											li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+												a.product-img(href='')
+													img(src='./img/products/2-product_m-04.jpg', alt='')
+												.product-action
+													i.add-to-cart.fas.fa-cart-plus
+													i.quick-view.far.fa-eye
+													i.to-compare.fas.fa-exchange-alt
+													i.add-to-wish-list.far.fa-heart
+												.product__detail
+													a.product-name(href='') Roku Smart LED TV
+													.product-price.group-product__price
+														.price-final $388.66
+														.price-old $569.99
+												span.onsale.onsale--right
+													span 10%
+						.grid.wide
+							.row.content-product-category__brand.brand-list
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/brand-01.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/brand-02.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/brand-03.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/brand-04.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/brand-05.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/brand-06.png', alt='')
+			//- Banners images
+			.grid.wide.content-banner-images.container.mg-bot-60
+				.row
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img.img-hover-light-effect
+							a(href='')
+								img(src='./img/banners/3-banner-market_hor-m-01.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img.img-hover-light-effect
+							a(href='')
+								img(src='./img/banners/3-banner-market_hor-m-02.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img.img-hover-light-effect
+							a(href='')
+								img(src='./img/banners/3-banner-market_hor-m-03.jpg', alt='')
+			//- Categories tabs double
+			.grid.wide.content-product-category
+				.row.product-category__wrapper.wrapper
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									.tag-title
+										h2 Smartphone &amp; Accessories
+									li.tab-item.tab--active
+										a.tab-link(href='#tab-11')
+											span.cat-name Smartphone
+									li.tab-item
+										a.tab-link(href='#tab-12')
+											span.cat-name Cell Phones 
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/3-banner-market_m-01.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-11.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Galaxy 4 7 9 Wi-Fi 4G L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Galaxy 4 7 9 Wi-Fi 4G L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-09.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Xanna Note 4GB RAM 
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-09.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Xanna Note 4GB RAM 
+															.product-price.group-product__price
+																.price-final $388.66
+											#tab-12.grid.wide.product-category__content-wrapper.tab-pane
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-09.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Xanna Note 4GB RAM 
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-09.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Xanna Note 4GB RAM 
+															.product-price.group-product__price
+																.price-final $388.66
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Galaxy 4 7 9 Wi-Fi 4G L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/1-product_m-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Galaxy 4 7 9 Wi-Fi 4G L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-01.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-02.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-03.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-04.png', alt='')
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									li.tag-title
+										h2 Tablets &amp; Accessories
+									li.tab-item.tab--active
+										a.tab-link(href='#tab-13')
+											span.cat-name Smartphone
+									li.tab-item
+										a.tab-link(href='#tab-14')
+											span.cat-name Cell Phones 
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/3-banner-market_m-02.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-13.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/3-product_s-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/3-product_s-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Electric Kettlet 1.5L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/3-product_s-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Electric Kettlet 1.5L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+											#tab-14.grid.wide.product-category__content-wrapper.tab-pane
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Electric Kettlet 1.5L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/2-product_m-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/3-product_s-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/3-product_s-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Electric Kettlet 1.5L
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/3-product_s-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Kitchen Dining Table
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-01.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-02.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-03.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-04.png', alt='')
+			//- Categories tabs double
+			.grid.wide.content-product-category
+				.row.product-category__wrapper.wrapper
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									.tag-title
+										h2 Shoes &amp; Accessories
+									li.tab-item.tab--active
+										a.tab-link(href='#tab-15')
+											span.cat-name Nike
+									li.tab-item
+										a.tab-link(href='#tab-16')
+											span.cat-name Adidas 
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/4-banner-market_m-01.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-15.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Men&rsquo;s Gel-Venture 7
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brook Men Arenaline
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Men&rsquo;s Gel-Venture 7
+															.product-price.group-product__price
+																.price-final $388.66
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-04.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+											#tab-16.grid.wide.product-category__content-wrapper.tab-pane
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-04.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Men&rsquo;s Gel-Venture 7
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brook Men Arenaline
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Men&rsquo;s Gel-Venture 7
+															.product-price.group-product__price
+																.price-final $388.66
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-01.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-02.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-03.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-04.png', alt='')
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									.tag-title
+										h2 Kids &amp; Accessories
+									li.tab-item.tab--active
+										a.tab-link(href='#tab-17')
+											span.cat-name Hermes
+									li.tab-item
+										a.tab-link(href='#tab-18')
+											span.cat-name Uniqlo 
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/4-banner-market_m-02.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-17.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/5-handbage_01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Gilden Kids Toddler
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Men&rsquo;s Gel-Venture 7
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brook Men Arenaline
+															.product-price.group-product__price
+																.price-final $388.66
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-04.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+											#tab-18.grid.wide.product-category__content-wrapper.tab-pane
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-04.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Bosch WAT286H0GB
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-03.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brooks Mens Ghost
+															.product-price.group-product__price
+																.price-final $388.66
+												ul.row.product-category__row.overflow-x-auto
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/5-handbage_01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Gilden Kids Toddler
+															.product-price.group-product__price
+																.price-final $388.66
+																.price-old $569.99
+														span.onsale.onsale--right
+															span 20%
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-01.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Men&rsquo;s Gel-Venture 7
+															.product-price.group-product__price
+																.price-final $388.66
+													li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+														a.product-img(href='')
+															img(src='./img/products/4-shoes-02.jpg', alt='')
+														.product-action
+															i.add-to-cart.fas.fa-cart-plus
+															i.quick-view.far.fa-eye
+															i.to-compare.fas.fa-exchange-alt
+															i.add-to-wish-list.far.fa-heart
+														.product__detail
+															a.product-name(href='') Brook Men Arenaline
+															.product-price.group-product__price
+																.price-final $388.66
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-01.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-02.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-03.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/brand-04.png', alt='')
+			//- Group product
+			.content-group-product
+				.row
+					.col.l-6.m-12.c-12.container.mg-bot-60
+						.group-product-container
+							.group-product__heading.tag-title__wrapper
+								.tag-title
+									h2 Featured Products
+							.grid.wide
+								ul.row.group-product__list.overflow-x-auto
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-01.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-02.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Galaxy Wi-Fi 4G
+										.product-price
+											.price-final $388.66
+											.price-old $569.99
+										span.group-product__sale.onsale
+											span 20%
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/2-product_m-01.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Roku Smart LED TV
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/2-product_m-03.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-price
+											.price-final $388.66
+								ul.row.group-product__list.overflow-x-auto
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/1-product_m-03.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/2-product_m-06.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Galaxy Wi-Fi 4G
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/2-product_m-07.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Roku Smart LED TV
+										.product-price
+											.price-final $388.66
+									li.col.l-4.m-3.c-6.product-wrapper
+										a.product-img(href='')
+											img(src='./img/products/2-product_m-08.jpg', alt='')
+										.product-action
+											i.add-to-cart.fas.fa-cart-plus
+											i.quick-view.far.fa-eye
+											i.to-compare.fas.fa-exchange-alt
+											i.add-to-wish-list.far.fa-heart
+										a.product-name(href='') Bosch WAT286H0GB
+										.product-price
+											.price-final $388.66
+					.col.l-6.m-12.c-12
+						.grid.wide.group-product-container
+							.row
+								.col.l-6.container.mg-bot-60
+									.group-product__heading.tag-title__wrapper
+										.tag-title
+											h2 Best Of The Week
+									.grid.wide
+										ul.row.group-product__list.overflow-x-auto
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') iPad Mini wifi 4G Lorem, i p s u  dolor sit amet conse ctetur adipisicing elit. 
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+										ul.row.group-product__list.overflow-x-auto
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/1-product_s-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+										ul.row.group-product__list.overflow-x-auto
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/3-product_s-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor
+														.product-price.group-product__price
+															.price-final $388.66
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/2-product_m-03.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/5-handbage_01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+								.col.l-6.container.mg-bot-60
+									.group-product__heading.tag-title__wrapper
+										.tag-title
+											h2 Popular In Categories
+									.grid.wide
+										ul.row.group-product__list.overflow-x-auto
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/2-product_m-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-03.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/2-product_m-10.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+										ul.row.group-product__list.overflow-x-auto
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-04.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/1-product_s-01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/2-product_m-06.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+										ul.row.group-product__list.overflow-x-auto
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/2-product_m-04.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor
+														.product-price.group-product__price
+															.price-final $388.66
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/4-shoes-04.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+															.price-old $569.99
+													span.group-product__sale.onsale
+														span 20%
+											li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+												.item-horizontal
+													a.product-img(href='')
+														img(src='./img/products/5-handbage_01.jpg', alt='')
+													.group-product__detail.product-info
+														a.product-name(href='') Lorem ipsum dolor sit amet
+														.product-price.group-product__price
+															.price-final $388.66
+			//- Banners images
+			.grid.wide.content-banner-images.container.mg-bot-60
+				.row
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img
+							a(href='')
+								img(src='./img/banners/5-banner-market_s-01.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img
+							a(href='')
+								img(src='./img/banners/5-banner-market_s-02.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img
+							a(href='')
+								img(src='./img/banners/5-banner-market_s-03.jpg', alt='')
+		//- News letter
+		.content-newsletter
+			.container
+				.newsletter__title
+					h3 Join Our Newsletter Now
+				.newsletter__content
+					form.news-letter__subcribe(action='')
+						.newsletter__field
+							.newsletter__control
+								.newsletter__input
+									input(type='email', placeholder='Enter your email')
+								.newsletter__action
+									button(type='submit') Subscribe
+				p.newsletter__des
+					| Will be used in accordance with our 
+					a(href='') Privacy Policy
+		//- Shipping support
+		.content-shipping-support
+			.container
+				.row
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.fas.fa-car
+						.shipping-content
+							span.size-18 Free Delivery
+							p On all Orders over $99
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.fas.fa-sync-alt
+						.shipping-content
+							span.size-18 90 Days Return
+							p If goods have problems
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.far.fa-address-card
+						.shipping-content
+							span.size-18 100% Safe &amp; Secure
+							p Proin condimentum sagittis
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.far.fa-life-ring
+						.shipping-content
+							span.size-18 100% Safe &amp; Secure
+							p Proin condimentum sagittis

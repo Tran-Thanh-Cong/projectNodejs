@@ -16,10 +16,10 @@ block header
                 i.ficon.ft-search
               ul.dropdown-menu
                 li.arrow_box
-                  form(method='GET' action='')
+                  form
                     .input-group.search-box
                       .position-relative.has-icon-right.full-width
-                        input.form-control#search(type="text" placeholder="Search here..." name="search")
+                        input.form-control#search(type="text" placeholder="Search here...")
                         .form-control-position.navbar-search-close
                           i.ft-x
           ul.nav.navbar-nav.float-right
@@ -94,7 +94,7 @@ block content
       .content-wrapper-before
       .content-header.row
         .content-header-left.col-md-4.col-12.mb-2
-          h3.content-header-title Category
+          h3.content-header-title Category Detail
         .content-header-right.col-md-8.col-12
           .breadcrumbs-top.float-md-right
             .breadcrumb-wrapper.mr-1
@@ -102,13 +102,13 @@ block content
                 li.breadcrumb-item
                   a(href="/admin") Home
                 li.breadcrumb-item.active.
-                  Detail Category	
+                  Category Detail
       .content-body
         .row
           .col-12
             .card
               .card-header
-                h4.card-title Detail Category
+                h4.card-title Category Detail
                 a.heading-elements-toggle
                   i.la.la-ellipsis-v.font-medium-3
                 .heading-elements
@@ -126,39 +126,21 @@ block content
                       a(data-action="close")
                         i.ft-x
               .card-content.collapse.show
-                a.btn.btn-info.btn-min-width.mr-1.mb-1(style='margin-left: 67%;', href='detailCategory/create') New Detail Category
-              .card-content.collapse.show
                 .card-body
                   .table-responsive
                     table.table
-                      thead
-                        tr
-                          th(scope='col') #
-                          th(scope='col') Name
-                          th(scope='col') Category
-                          th(scope='col') Detail
-                          th(scope='col')
-                          th(scope='col')
-                      tbody
-                        each category, index in datas
-                          tr
-                            td(scope ='row')=index + 1
-                            td(scope='row')=category.name
-                            td(scope='row')=category.category.name
-                            td(scope='row')
-                              a(href="detailCategory/detail/" + category._id) Detail
-                            td(scope='row')
-                              a.btn.btn-success(href='detailCategory/edit/' + category._id) Edit
-                            td(scope='row')
-                              form(method='POST', action='detailCategory/delete/' + category._id + '?_method=DELETE')
-                                button.btn.btn-danger(type='submit') Delete
-                if pages
-                  ul.pagination(style="margin-left: 66.9%;")
-                    li.page-item.disabled
-                      a.page-link(href="#") Page
-                      each page in pages
-                        li.page-item
-                          a.page-link(href="?page=" + page)=page
+                      tr
+                        td(scope ='row') Name
+                        td(scope ='row')=datas.name
+                      tr
+                        td(scope ='row') Category
+                        td(scope ='row')=datas.category.name
+                      tr
+                        td(scope ='row') CreatedAt
+                        td(scope ='row')=datas.createdAt.toDateString()
+                      tr
+                        td(scope ='row') UpdatedAt
+                        td(scope ='row')=datas.updatedAt.toDateString()
   script(src="/js/core/app-menu-lite.js", type="text/javascript")
   script(src="/js/core/app-lite.js", type="text/javascript")
   link(src="/css/A.style.css.pagespeed.cf.Qh1-GdQdyh.css", type="text/css")

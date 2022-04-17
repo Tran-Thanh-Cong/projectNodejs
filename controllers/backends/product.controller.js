@@ -1,11 +1,11 @@
 const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const { escapeRegex } = require('../../helpers/escapeRegex');
-
+const DetailCategory_Model = require('../../models/detailCategory.model');
 class ProductController {
   async index(req, res) {
     const pageNumber = req.query.page;
-    const perPage = 5;
+    const perPage = 10;
     try {
       if (req.query.search) {
         const [products, totalProducts] = await Promise.all([
@@ -43,18 +43,14 @@ class ProductController {
     return res.render('./backends/products/productsView');
   }
 
-  create(req, res) {
-    return res.render('./backends/products/createProductView');
-  }
-
-  async detail(req, res) {
+  async create(req, res) {
     try {
-      const data = await Product_Model.findById(req.params.id);
-      return res.render('./backends/products/productDetailView', {
-        datas: mongooseToObject(data)
-      })
-    } catch (err) {
-      console.log(err.message);
+      const categories = await DetailCategory_Model.find({});
+      return res.render('./backends/products/createProductView', {
+        categories: mutipleMongooseToObject(categories)
+      });
+    } catch (error) {
+      console.log(error.message);
     }
   }
 
@@ -66,6 +62,7 @@ class ProductController {
         discount: req.body.discount,
         amount: req.body.amount,
         images: req.file.filename,
+        detailCategory: req.body.category_id,
       });
       return res.redirect('/admin/products');
     } catch (err) {
@@ -73,11 +70,26 @@ class ProductController {
     }
   }
 
+  async detail(req, res) {
+    try {
+      const data = await Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' });
+      return res.render('./backends/products/productDetailView', {
+        datas: mongooseToObject(data)
+      })
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+
   async edit(req, res) {
     try {
-      const data = await Product_Model.findById(req.params.id);
+      const [product, categories] = await Promise.all([
+        Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' }),
+        DetailCategory_Model.find({})
+      ])
       return res.render('./backends/products/updateProductView', {
-        datas: mongooseToObject(data),
+        datas: mongooseToObject(product),
+        categories: mutipleMongooseToObject(categories)
       });
     } catch (err) {
       console.log(err.message);
@@ -93,7 +105,8 @@ class ProductController {
           price: req.body.price,
           discount: req.body.discount,
           amount: req.body.amount,
-          images: req.file.filename
+          images: req.file.filename,
+          detailCategory: req.body.category_id
         }
       } else {
         data = {
@@ -101,6 +114,7 @@ class ProductController {
           price: req.body.price,
           discount: req.body.discount,
           amount: req.body.amount,
+          detailCategory: req.body.category_id
         }
       }
       await Product_Model.updateOne({ _id: req.params.id }, data);

@@ -124,6 +124,11 @@ block content
                         .form-group
                           label(for='donationinput1') Amount
                           input#donationinput1.form-control(type='text', name='amount')
+                        .form-group 
+                          label(for='donationinput1') Detail Category
+                          Select.form-control(name='category_id')
+                            each category in categories
+                              option(value=category._id)=category.name
                       .form-actions.center
                         input.btn.btn-outline-primary(type='submit', value='Process')
   script(src="/js/core/app-menu-lite.js", type="text/javascript")

@@ -5,13 +5,10 @@ const detailCategorySchema = new Schema({
   name: {
     type: 'string',
   },
-  detailCategory: {
+  category: {
     type: Schema.Types.ObjectId,
     ref: 'categories'
   },
-  category: {
-    type: 'string',
-  }
 }, {
   collection: 'detailCategories',
   timestamps: true,

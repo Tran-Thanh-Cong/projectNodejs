@@ -40,6 +40,12 @@ router.delete('/category/delete/:id', authMiddleware.authAdmin, category.delete)
 
 //detailCategory router
 router.get('/detailCategory', authMiddleware.authAdmin, detailCategory.index)
+router.get('/detailCategory/create', authMiddleware.authAdmin, detailCategory.create);
+router.post('/detailCategory/create', authMiddleware.authAdmin, detailCategory.store);
+router.get('/detailCategory/detail/:id', authMiddleware.authAdmin, detailCategory.detail);
+router.get('/detailCategory/edit/:id', authMiddleware.authAdmin, detailCategory.edit);
+router.put('/detailCategory/edit/:id', authMiddleware.authAdmin, detailCategory.update);
+router.delete('/detailCategory/delete/:id', authMiddleware.authAdmin, detailCategory.delete);
 
 //users router
 router.get('/users', authMiddleware.authAdmin, user.index);
@@ -52,6 +58,5 @@ router.get('/employees/create', authMiddleware.authAdmin, admin.create);
 router.post('/employees/create', authMiddleware.authAdmin, admin.store);
 router.get('/employees/detail/:id', authMiddleware.authAdmin, admin.detail);
 router.delete('/employees/delete/:id', authMiddleware.authAdmin, admin.delete);
-
 
 module.exports = router;

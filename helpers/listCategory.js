@@ -1,6 +1,6 @@
 function filterData(datas, name) {
   const category = datas.filter((data) => {
-    return data.detailCategory.name === name;
+    return data.category.name === name;
   });
 
   return category.map((data) => {
