@@ -1,0 +1,488 @@
+extend ./layout/layout.pug
+block content
+	//- Breadcrumbs
+	.breadcrumbs
+		ul.breadcrumbs-list.grid.wide
+			li.breadcrumbs-item
+				a.breadcrumbs-link(href='/') Home
+			li.breadcrumbs-item
+				a.breadcrumbs-link(href='')=datas.name
+	//- Main content - start
+	main.page-main.bg-white.mg-bot-60
+		.grid.wide.container
+			.row.product-main-content
+				.col.l-6.m-12.c-12.product-media
+					.media-nav
+						each i in [1,2,3]
+							.media-nav-item.media-nav-item--active
+								img(src='/uploads/images/' + datas.images)
+					.media-stage
+						img(src='/uploads/images/' + datas.images)
+						.media-stage__control
+							.media-stage-pre-btn
+								i.ti-angle-left
+							.media-stage-next-btn
+								i.ti-angle-right
+				.col.l-6.m-12.c-12.product-info-main
+					.product-info-stock-sku
+						span.product-info-stock-sku__type SKU: 
+						span.product-info-stock-sku__value Market0137
+					.product-title-wrapper
+						h1.product-title=datas.name
+					.product-review-summary
+						.rating-result
+							i.rating-icon.active.far.fa-star
+							i.rating-icon.active.far.fa-star
+							i.rating-icon.active.far.fa-star
+							i.rating-icon.active.far.fa-star
+							i.rating-icon.far.fa-star
+						.reviews-actions
+							a.action.view(href='')
+								span 1
+								span review
+							a.action.add(href='')
+								span Add Your Review
+					.share-dialog
+						a.share-dialog-fb(href='')
+							i.fab.fa-facebook-f
+							span Facebook
+						a.share-dialog-twt(href='')
+							i.fab.fa-twitter
+							span Twitter
+					.product-stock
+						span.product-stock__title Availability: 
+						span.product-stock__status In stock
+					.product-description
+						table
+							tbody
+								tr
+									th.col-label Item model number:
+									td.col-data  PC-08361922
+								tr
+									th.col-label Item Weight:
+									td.col-data  5 ounces
+								tr
+									th.col-label Product Dimensions:
+									td.col-data 9.8 x 6.8 x 0.3 inches Item 
+					.product-info-price
+						.product-price
+							.price-final=(datas.price)-((datas.price)*datas.discount)/100
+							if datas.discount > 0
+								.price-old=datas.price
+					.product-add-form
+						form(action='')
+							.box-tocart
+								.box-tocart__qty
+									input.qty-down.minus(type="button" value="-")
+									input.qty-control.input-qty(type='number', max=10, min=1, value='1')
+									input.qty-up.is-form.plus(type="button" value="+")
+								.box-tocart__action
+									button.btn-primary ADD TO CART
+					.product-social-links
+						.product-addto-links
+							a.add-to-wish-list(href='')
+								i.far.fa-heart
+							.to-compare
+								i.fas.fa-exchange-alt
+					.product-category
+						label(for='') Categories: 
+						a(href='') Market
+						a(href='') Smart Phones
+						a(href='') Headphone
+					.product-page-brand-common-view
+						label.brand-label(for='') Brands: 
+						ul.product-brands
+							li.brand-item
+								a(href='') Machine
+							li.brand-item
+								a(href='') Yutang
+							li.brand-item
+								a(href='') Frisher
+							li.brand-item
+								a(href='') Digital
+							li.brand-item
+								a(href='') Ling Yutang
+							li.brand-item
+								a(href='') Fridges
+							li.brand-item
+								a(href='') Apllo
+							li.brand-item
+								a(href='') Green Desk
+							li.brand-item
+								a(href='') The north face
+							li.brand-item
+								a(href='') Cross
+							li.brand-item
+								a(href='') Smart
+			.product-info-detail
+				.product-info-detail__tab-wrapper
+					.tab-heading
+						.tabs-item-wrapper
+							ul.tabs-nav
+								li.tab--active
+									a.tab-item(href='#details')
+										span Details
+								li
+									a.tab-item(href='#moreinfo')
+										span More Infomation
+								li
+									a.tab-item(href='#reviews')
+										span Reviews
+										span.counter 3
+					.tab-content
+						//- Detail
+						#details.tab-pane.active
+							.product-detail-description
+								p
+									| The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution.
+									| Designed specifically for the creative professional, this display provides more space
+									| for easier access to all the tools and palettes needed to edit, format and composite
+									| your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there&apos;s
+									| no limit to what you can achieve.
+								p
+									| The Cinema HD features an active-matrix liquid crystal display that produces flicker-free
+									| images that deliver twice the brightness, twice the sharpness and twice the contrast ratio
+									| of a typical CRT display. Unlike other flat panels, it&apos;s designed with a pure digital
+									| interface to deliver distortion-free images that never need adjusting. With over 4 million
+									| digital pixels, the display is uniquely suited for scientific and technical applications
+									| such as visualizing molecular structures or analyzing geological data.
+								p
+									| Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors
+									| across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich
+									| jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple&apos;s ColorSync
+									| technology allows you to create custom profiles to maintain consistent color onscreen and in print.
+									| The result: You can confidently use this display in all your color-critical applications.
+								p
+									img(src='https://mageblueskytech.com/armania/media/wysiwyg/market_details_full.jpg', alt='')
+								p
+									| Protective case for 2019 Apple iPad 10.2&Prime; 7th Generation ONLY (Model Number: A2197 / A2198 / A2200).
+									| It is Not compatible with any other devices. Please check back bottom of your iPad to find the model number.
+									| Ultra slim and lightweight hard back design adds minimal bulk while offers your device great protection.
+									| The translucent frosted back cover allows you to see the Apple icon through your favorite color,
+									| while protects your device against fingerprints and scratches
+								p
+									| Classic and professional design; Full access to all features (Cameras, Speaker, Ports and Buttons),
+									| but NOT support Smart Keyboard in this case. Support auto Sleep/Wake feature; Magnet secures the case closure,
+									| easy snap on and off
+						//- More infomation
+						#moreinfo.tab-pane
+							.product-detail-more-info
+								table
+									tbody
+										tr
+											th.col-label Dimensions
+											td.col-data 25.2 x 15.5 x 7.4
+										tr
+											th.col-label Model
+											td.col-data Adreno 650
+						//- Reviews
+						#reviews.tab-pane
+							.block.product-detail-review
+								.block-title
+									span Customer Reviews
+								.block-content
+									ul.product-detail-review__list
+										li.product-detail-review__item
+											.review-title good product
+											.review-content
+												.review-content-left
+													.review-ratings
+														.rating-summary-item
+															.label.rating-label
+																span Price
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+														.rating-summary-item
+															.label.rating-label
+																span Value
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+														.rating-summary-item
+															.label.rating-label
+																span Quality
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+												.review-content-right
+													.review-content-cmt
+														| &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+														| sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+														| veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+														| Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+														| pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+														| mollit anim id est laborum.&quot;
+													.review-details
+														.review-author
+															span.review-details-label Review by
+															strong.review-details-value Kevin Bacon
+														.review-date
+															span.review-details-label Posted on
+															time.review-details-value 11/20/20
+										li.product-detail-review__item
+											.review-title very good
+											.review-content
+												.review-content-left
+													.review-ratings
+														.rating-summary-item
+															.label.rating-label
+																span Price
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+														.rating-summary-item
+															.label.rating-label
+																span Value
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+														.rating-summary-item
+															.label.rating-label
+																span Quality
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+												.review-content-right
+													.review-content-cmt
+														| &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+														| sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+														| veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+														| Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+														| pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+														| mollit anim id est laborum.&quot;
+													.review-details
+														.review-author
+															span.review-details-label Review by
+															strong.review-details-value Peter Fonda
+														.review-date
+															span.review-details-label Posted on
+															time.review-details-value 11/20/20
+										li.product-detail-review__item
+											.review-title good product
+											.review-content
+												.review-content-left
+													.review-ratings
+														.rating-summary-item
+															.label.rating-label
+																span Price
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+														.rating-summary-item
+															.label.rating-label
+																span Value
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+														.rating-summary-item
+															.label.rating-label
+																span Quality
+															.rating-result
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.active.far.fa-star
+																i.rating-icon.far.fa-star
+												.review-content-right
+													.review-content-cmt
+														| &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+														| sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+														| veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+														| Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+														| pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+														| mollit anim id est laborum.&quot;
+													.review-details
+														.review-author
+															span.review-details-label Review by
+															strong.review-details-value Kevin Bacon
+														.review-date
+															span.review-details-label Posted on
+															time.review-details-value 11/20/20
+								.block-review-add
+									form.review-form(action='')
+										.review-form-title
+											span You&apos;re reviewing:
+											strong Galuxy 4 7 9 Wi-Fi 4G
+										fieldset.fieldset.required.review-field-ratings
+											.field.required
+												legende.label
+													span Your Rating
+											.control
+												.product-review-table
+													.review-field-rating
+														label.label.rating-label(for='')
+															span Price
+														.review-control-vote
+															.rating-result
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+													.review-field-rating
+														label.label.rating-label(for='')
+															span Value
+														.review-control-vote
+															.rating-result
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+													.review-field-rating
+														label.label.rating-label(for='')
+															span Quality
+														.review-control-vote
+															.rating-result
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+																i.rating-icon.far.fa-star
+										.field.review-field-nickname.required
+											label.label(for='')
+												span Nickname
+											.control
+												input.input-text(type='text', name='', id='')
+										.field.review-field-summary.required
+											label.label(for='')
+												span Summary
+											.control
+												input.input-text(type='text', name='', id='')
+										.field.review-field-text.required
+											label.label(for='')
+												span Review
+											.control
+												textarea(name='', id='', cols='5', rows='3')
+										.review-form-actions
+											.actions-primary
+												button.btn-primary(type='submit') Submit Review
+			.product-relate
+				.tag-title__wrapper
+					.tag-title
+						h2 Related Products
+						.tag-title-action
+							span Check items to add to the cart or
+							button(type='button')
+								| Select All
+				.grid
+					ul.row.product-relate__list
+						li.col.l-2-4.m-4.c-6.product-wrapper
+							a.product-img(href='')
+								img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/i/p/iphone_01.jpg', alt='')
+							.product-action
+								a(href='')
+									i.to-compare.fas.fa-exchange-alt
+								a(href='')
+									i.add-to-wish-list.far.fa-heart
+								a(href='')
+									i.add-to-cart.fas.fa-cart-plus
+							.onsale
+								span -20%
+							a.product-name(href='') Lorem ipsum dolor
+							.product-price
+								.price-final $388.66
+								.price-old $569.99
+						li.col.l-2-4.m-4.c-6.product-wrapper
+							a.product-img(href='')
+								img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/p/r/prod_0001s_0007s_0002_1_1.jpg', alt='')
+							.product-action
+								a(href='')
+									i.to-compare.fas.fa-exchange-alt
+								a(href='')
+									i.add-to-wish-list.far.fa-heart
+								a(href='')
+									i.add-to-cart.fas.fa-cart-plus
+							.onsale
+								span -20%
+							a.product-name(href='') Lorem ipsum dolor
+							.product-price
+								.price-final $388.66
+								.price-old $569.99
+						li.col.l-2-4.m-4.c-6.product-wrapper
+							a.product-img(href='')
+								img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances4.jpg', alt='')
+							.product-action
+								a(href='')
+									i.to-compare.fas.fa-exchange-alt
+								a(href='')
+									i.add-to-wish-list.far.fa-heart
+								a(href='')
+									i.add-to-cart.fas.fa-cart-plus
+							.onsale
+								span -20%
+							a.product-name(href='') Lorem ipsum dolor
+							.product-price
+								.price-final $388.66
+								.price-old $569.99
+						li.col.l-2-4.m-4.c-6.product-wrapper
+							a.product-img(href='')
+								img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances2_1.jpg', alt='')
+							.product-action
+								a(href='')
+									i.to-compare.fas.fa-exchange-alt
+								a(href='')
+									i.add-to-wish-list.far.fa-heart
+								a(href='')
+									i.add-to-cart.fas.fa-cart-plus
+							a.product-name(href='') Lorem ipsum dolor
+							.product-price
+								.price-final $388.66
+						li.col.l-2-4.m-4.c-6.product-wrapper
+							a.product-img(href='')
+								img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances6.jpg', alt='')
+							.product-action
+								a(href='')
+									i.to-compare.fas.fa-exchange-alt
+								a(href='')
+									i.add-to-wish-list.far.fa-heart
+								a(href='')
+									i.add-to-cart.fas.fa-cart-plus
+							.onsale
+								span -20%
+							a.product-name(href='') Lorem ipsum dolor
+							.product-price
+								.price-final $388.66
+								.price-old $569.99
+						li.col.l-2-4.m-4.c-6.product-wrapper
+							a.product-img(href='')
+								img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/b0e30b12438bc565aef7dca2860081de/a/p/appliances2_1.jpg', alt='')
+							.product-action
+								a(href='')
+									i.to-compare.fas.fa-exchange-alt
+								a(href='')
+									i.add-to-wish-list.far.fa-heart
+								a(href='')
+									i.add-to-cart.fas.fa-cart-plus
+							.onsale
+								span -20%
+							a.product-name(href='') Lorem ipsum dolor
+							.product-price
+								.price-final $388.66
+								.price-old $569.99
+	//- Main content - end

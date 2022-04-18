@@ -251,9 +251,10 @@ header.page-header
 														ul.col.l-4.m-12.c-12.sub-category__list
 															li.sub-category__item
 																ul.sub-child-menu
-																	each detailCategory in category.listCategory
-																		li.sub-child-menu__item
-																			a.sub-child-menu__link(href='')=detailCategory.name
+																	if category.listCategory
+																		each detailCategory in category.listCategory
+																			li.sub-child-menu__item
+																				a.sub-child-menu__link(href='')=detailCategory.name
 														.col.l-4.sub-category__img(style='padding-right: 2%')
 															img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
 														.col.l-4.sub-category__img(style='padding-left: 2%')

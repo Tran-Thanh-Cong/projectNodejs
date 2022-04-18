@@ -4,7 +4,6 @@ const { filterData } = require('../../helpers/listCategory');
 const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const { filterCategory } = require('../../helpers/filterCategory');
-const { listProducts } = require('../../helpers/listProducts');
 class HomeController {
   async index(req, res) {
     try {
@@ -15,7 +14,10 @@ class HomeController {
         productsSale36,
         hotProducts,
         newProducts, todayProducts,
-        product1, product2
+        product1, product2,
+        productGalaxy1, productGalaxy2, productIpad1,
+        productMacBook1, productMacBook2, productAppleWatch1, productAppleWatch2,
+        featureProducts1, featureProducts2,
       ] = await Promise.all([
         Category_Model.find({}),
         DetailCategory_Model.find({}).populate({ path: 'category' }),
@@ -46,6 +48,15 @@ class HomeController {
         }).limit(3),
         Product_Model.find({}).limit(5),
         Product_Model.find({}).limit(5).skip(5),
+        Product_Model.find({ name: { $regex: 'Samsung Galaxy', $options: 'i' } }).limit(3),
+        Product_Model.find({ name: { $regex: 'Samsung Galaxy', $options: 'i' } }).limit(3).skip(3),
+        Product_Model.find({ name: { $regex: 'iPad', $options: 'i' } }).limit(3),
+        Product_Model.find({ name: { $regex: 'Macbook', $options: 'i' } }).limit(3),
+        Product_Model.find({ name: { $regex: 'Macbook', $options: 'i' } }).limit(3).skip(4),
+        Product_Model.find({ name: { $regex: 'Apple Watch', $options: 'i' } }).limit(3),
+        Product_Model.find({ name: { $regex: 'Apple Watch', $options: 'i' } }).limit(3).skip(2),
+        Product_Model.find({ name: { $regex: 'Samsung', $options: 'i' } }).limit(4),
+        Product_Model.find({ name: { $regex: 'Bluetooth', $options: 'i' } }).limit(4),
       ]);
       const datas = category.map((data) => {
         return {
@@ -71,12 +82,33 @@ class HomeController {
         newProducts: mutipleMongooseToObject(newProducts),
         todayProducts: mutipleMongooseToObject((todayProducts)),
         product1: mutipleMongooseToObject(product1),
-        product2: mutipleMongooseToObject(product2)
+        product2: mutipleMongooseToObject(product2),
+        productGalaxy1: mutipleMongooseToObject(productGalaxy1),
+        productGalaxy2: mutipleMongooseToObject(productGalaxy2),
+        productIpad1: mutipleMongooseToObject(productIpad1),
+        productMacBook1: mutipleMongooseToObject(productMacBook1),
+        productMacBook2: mutipleMongooseToObject(productMacBook2),
+        productAppleWatch1: mutipleMongooseToObject(productAppleWatch1),
+        productAppleWatch2: mutipleMongooseToObject(productAppleWatch2),
+        featureProducts1: mutipleMongooseToObject(featureProducts1),
+        featureProducts2: mutipleMongooseToObject(featureProducts2)
       })
     } catch (err) {
       console.log(err.message);
     }
   }
+
+  async detail(req, res) {
+    try {
+      const product = await Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' });
+      return res.render('./frontends/detailProductView', {
+        datas: mongooseToObject(product),
+      })
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
 }
 
 module.exports = new HomeController;

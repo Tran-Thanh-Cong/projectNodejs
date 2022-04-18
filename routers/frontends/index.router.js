@@ -26,6 +26,9 @@ router.get('/verify-email', verifyEmail.verifyEmail)
 // logout router
 router.get('/logout', logout.logout);
 
+//product
+router.get('/product/:id', home.detail);
+
 // shop router
 router.get('/shop', shop.index);
 
