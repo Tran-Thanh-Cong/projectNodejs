@@ -24,22 +24,24 @@ html(lang="en")
     block content
       //- content here
     include ../blocks/footer.pug
-  script.
-    $('input.input-qty').each(function() {
-      var $this = $(this),
-        qty = $this.parent().find('.is-form'),
-        min = Number($this.attr('min')),
-        max = Number($this.attr('max'))
-      if (min == 0) {
-        var d = 0
-      } else d = min
-      $(qty).on('click', function() {
-        if ($(this).hasClass('minus')) {
-          if (d > min) d += -1
-        } else if ($(this).hasClass('plus')) {
-          var x = Number($this.val()) + 1
-          if (x <= max) d += 1
-        }
-        $this.attr('value', d).val(d)
+    script(type='text/javascript', src='/js/main.js' )
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', type='text/javascript')
+    script.
+      $('input.qty-control').each(function() {
+        var $this = $(this),
+          qty = $this.parent().find('.is-form'),
+          min = Number($this.attr('min')),
+          max = Number($this.attr('max'))
+        if (min == 0) {
+          var d = 0
+        } else d = min
+        $(qty).on('click', function() {
+          if ($(this).hasClass('qty-down')) {
+            if (d > min) d += -1
+          } else if ($(this).hasClass('qty-up')) {
+            var x = Number($this.val()) + 1
+            if (x <= max) d += 1
+          }
+          $this.attr('value', d).val(d)
+        })
       })
-    })

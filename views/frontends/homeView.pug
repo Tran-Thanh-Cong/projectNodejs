@@ -94,10 +94,10 @@ block content
         .row.hot-deal__product
           each data in productsSale36
             .col.l-4.m-6.c-12.hot-deal__product-wrapper
-              a.hot-deal__product-img(href='')
+              a.hot-deal__product-img(href='/product/' + data._id)
                 img(src='/uploads/images/' + data.images)
               .hot-deal__product-detail
-                a.hot-deal__product-detail__name.product-name(href='')=data.name
+                a.hot-deal__product-detail__name.product-name(href='/product/' + data._id)=data.name
                 .hot-deal__product-detail__price
                   .product-price
                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -156,7 +156,7 @@ block content
             ul.row.hot-categories__product-list
               each data in hotSmartPhone
                 li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='')
+                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
                     img(src='/uploads/images/' + data.images)
                   if data.discount > 0
                     span.hot-categories__product-sale.onsale
@@ -168,7 +168,7 @@ block content
                     i.to-compare.fas.fa-exchange-alt
                     i.add-to-wish-list.far.fa-heart
                   .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='')=data.name
+                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
                   .product-review-summary
                     .rating-result
                       i.rating-icon.rating-icon--active.far.fa-star
@@ -193,7 +193,7 @@ block content
             ul.row.hot-categories__product-list
               each data in hotSmartWatch
                 li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='')
+                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
                     img(src='/uploads/images/' + data.images)
                   if data.discount > 0
                     span.hot-categories__product-sale.onsale
@@ -205,7 +205,7 @@ block content
                     i.to-compare.fas.fa-exchange-alt
                     i.add-to-wish-list.far.fa-heart
                   .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='')=data.name 
+                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name 
                   .product-review-summary
                     .rating-result
                       i.rating-icon.rating-icon--active.far.fa-star
@@ -230,7 +230,7 @@ block content
             ul.row.hot-categories__product-list
               each data in hotLaptop
                 li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='')
+                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
                     img(src='/uploads/images/' + data.images)
                   if data.discount > 0
                     span.hot-categories__product-sale.onsale
@@ -242,7 +242,7 @@ block content
                     i.to-compare.fas.fa-exchange-alt
                     i.add-to-wish-list.far.fa-heart
                   .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='')=data.name
+                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
                   .product-review-summary
                     .rating-result
                       i.rating-icon.rating-icon--active.far.fa-star
@@ -267,7 +267,7 @@ block content
             ul.row.hot-categories__product-list
               each data in hotTablet
                 li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='')
+                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
                     img(src='/uploads/images/' + data.images)
                   if data.discount > 0
                     span.hot-categories__product-sale.onsale
@@ -279,7 +279,7 @@ block content
                     i.to-compare.fas.fa-exchange-alt
                     i.add-to-wish-list.far.fa-heart
                   .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='')=data.name
+                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
                   .product-review-summary
                     .rating-result
                       i.rating-icon.rating-icon--active.far.fa-star
@@ -304,7 +304,7 @@ block content
             ul.row.hot-categories__product-list
               each data in hotTainghe
                 li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='')
+                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
                     img(src='/uploads/images/' + data.images)
                   if data.discount > 0
                     span.hot-categories__product-sale.onsale
@@ -316,7 +316,7 @@ block content
                     i.to-compare.fas.fa-exchange-alt
                     i.add-to-wish-list.far.fa-heart
                   .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='')=data.name
+                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
                   .product-review-summary
                     .rating-result
                       i.rating-icon.rating-icon--active.far.fa-star
@@ -341,7 +341,7 @@ block content
             ul.row.hot-categories__product-list
               each data in hotMouse
                 li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='')
+                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
                     img(src='/uploads/images/' + data.images)
                   if data.discount > 0
                     span.hot-categories__product-sale.onsale
@@ -353,7 +353,7 @@ block content
                     i.to-compare.fas.fa-exchange-alt
                     i.add-to-wish-list.far.fa-heart
                   .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='')=data.name
+                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
                   .product-review-summary
                     .rating-result
                       i.rating-icon.rating-icon--active.far.fa-star
@@ -406,7 +406,7 @@ block content
                 ul.row.group-product__list.overflow-x-auto
                   each data in newProducts
                     li.col.l-4.m-3.c-6.product-wrapper
-                      a.product-img(href='')
+                      a.product-img(href='/product/' + data._id)
                         img(src='/uploads/images/' + data.images)
                       if data.discount > 0
                         span.hot-categories__product-sale.onsale
@@ -417,7 +417,7 @@ block content
                         i.quick-view.far.fa-eye
                         i.to-compare.fas.fa-exchange-alt
                         i.add-to-wish-list.far.fa-heart
-                      a.product-name(href='')=data.name
+                      a.product-name(href='/product/' + data._id)=data.name
                       .product-price
                         .price-final=(data.price)-((data.price)*data.discount)/100
                         .price-old=data.price
@@ -430,7 +430,7 @@ block content
                   each data in todayProducts
                     li.col.l-6.m-6.c-12.product-wrapper.group-product__item
                       .item-horizontal
-                        a.product-img(href='')
+                        a.product-img(href='/product/' + data._id)
                           img(src='/uploads/images/' + data.images)
                         .group-product__detail
                           a.product-name(href='')=data.name
@@ -454,7 +454,7 @@ block content
                     ul.row.product-category__row.overflow-x-auto
                       each data in product1
                         li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
-                          a.product-img(href='')
+                          a.product-img(href='/product/' + data._id)
                             img(src='/uploads/images/' + data.images)
                           .product-action
                             i.add-to-cart.fas.fa-cart-plus
@@ -462,7 +462,7 @@ block content
                             i.to-compare.fas.fa-exchange-alt
                             i.add-to-wish-list.far.fa-heart
                           .product__detail
-                            a.product-name(href='')=data.name
+                            a.product-name(href='/product/' + data._id)=data.name
                             .product-price.group-product__price
                               .product-price
                                 .price-final=(data.price)-((data.price)*data.discount)/100
@@ -475,7 +475,7 @@ block content
                     ul.row.product-category__row.overflow-x-auto
                       each data in product2
                         li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
-                          a.product-img(href='')
+                          a.product-img(href='/product/' + data._id)
                             img(src='/uploads/images/' + data.images)
                           .product-action
                             i.add-to-cart.fas.fa-cart-plus
@@ -483,7 +483,7 @@ block content
                             i.to-compare.fas.fa-exchange-alt
                             i.add-to-wish-list.far.fa-heart
                           .product__detail
-                            a.product-name(href='')=data.name
+                            a.product-name(href='/product/' + data._id)=data.name
                             .product-price.group-product__price
                               .product-price
                                 .price-final=(data.price)-((data.price)*data.discount)/100
@@ -541,7 +541,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productGalaxy1
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -549,7 +549,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -562,7 +562,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productGalaxy2
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -570,7 +570,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -606,7 +606,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productIpad1
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -614,7 +614,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -627,7 +627,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in hotTablet
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -635,7 +635,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -674,7 +674,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productMacBook1
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -682,7 +682,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -695,7 +695,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productMacBook2
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -703,7 +703,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -739,7 +739,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productAppleWatch1
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -747,7 +747,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -760,7 +760,7 @@ block content
                         ul.row.product-category__row.overflow-x-auto
                           each data in productAppleWatch2
                             li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='')
+                              a.product-img(href='/product/' + data._id)
                                 img(src='/uploads/images/' + data.images)
                               .product-action
                                 i.add-to-cart.fas.fa-cart-plus
@@ -768,7 +768,7 @@ block content
                                 i.to-compare.fas.fa-exchange-alt
                                 i.add-to-wish-list.far.fa-heart
                               .product__detail
-                                a.product-name(href='')=data.name
+                                a.product-name(href='/product/' + data._id)=data.name
                                 .product-price.group-product__price
                                   .product-price
                                     .price-final=(data.price)-((data.price)*data.discount)/100
@@ -800,14 +800,14 @@ block content
                 ul.row.group-product__list.overflow-x-auto
                   each data in featureProducts1
                     li.col.l-4.m-3.c-6.product-wrapper
-                      a.product-img(href='')
+                      a.product-img(href='/product/' + data._id)
                         img(src='/uploads/images/' + data.images)
                       .product-action
                         i.add-to-cart.fas.fa-cart-plus
                         i.quick-view.far.fa-eye
                         i.to-compare.fas.fa-exchange-alt
                         i.add-to-wish-list.far.fa-heart
-                      a.product-name(href='')=data.name
+                      a.product-name(href='/product/' + data._id)=data.name
                       .product-price
                         .price-final=(data.price)-((data.price)*data.discount)/100
                         if data.discount > 0
@@ -815,14 +815,14 @@ block content
                 ul.row.group-product__list.overflow-x-auto
                   each data in featureProducts2
                     li.col.l-4.m-3.c-6.product-wrapper
-                      a.product-img(href='')
+                      a.product-img(href='/product/' + data._id)
                         img(src='/uploads/images/' + data.images)
                       .product-action
                         i.add-to-cart.fas.fa-cart-plus
                         i.quick-view.far.fa-eye
                         i.to-compare.fas.fa-exchange-alt
                         i.add-to-wish-list.far.fa-heart
-                      a.product-name(href='')=data.name
+                      a.product-name(href='/product/' + data._id)=data.name
                       .product-price
                         .price-final=(data.price)-((data.price)*data.discount)/100
                         if data.discount > 0
@@ -839,10 +839,10 @@ block content
                       each data in bestSales
                         li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
                           .item-horizontal
-                            a.product-img(href='')
+                            a.product-img(href='/product/' + data._id)
                               img(src='/uploads/images/'+ data.images)
                             .group-product__detail.product-info
-                              a.product-name(href='')=data.name
+                              a.product-name(href='/product/' + data._id)=data.name
                               .product-price.group-product__price
                                 .product-price
                                   .price-final=(data.price)-((data.price)*data.discount)/100
@@ -856,10 +856,10 @@ block content
                       each data in productMacBook1
                         li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
                           .item-horizontal
-                            a.product-img(href='')
+                            a.product-img(href='/product/' + data._id)
                               img(src='/uploads/images/'+ data.images)
                             .group-product__detail.product-info
-                              a.product-name(href='')=data.name
+                              a.product-name(href='/product/' + data._id)=data.name
                               .product-price.group-product__price
                                 .product-price
                                   .price-final=(data.price)-((data.price)*data.discount)/100
@@ -873,10 +873,10 @@ block content
                       each data in productGalaxy2
                         li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
                           .item-horizontal
-                            a.product-img(href='')
+                            a.product-img(href='/product/' + data._id)
                               img(src='/uploads/images/'+ data.images)
                             .group-product__detail.product-info
-                              a.product-name(href='')=data.name
+                              a.product-name(href='/product/' + data._id)=data.name
                               .product-price.group-product__price
                                 .product-price
                                   .price-final=(data.price)-((data.price)*data.discount)/100
@@ -895,10 +895,10 @@ block content
                       each data in productIpad1
                         li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
                           .item-horizontal
-                            a.product-img(href='')
+                            a.product-img(href='/product/' + data._id)
                               img(src='/uploads/images/'+ data.images)
                             .group-product__detail.product-info
-                              a.product-name(href='')=data.name
+                              a.product-name(href='/product/' + data._id)=data.name
                               .product-price.group-product__price
                                 .product-price
                                   .price-final=(data.price)-((data.price)*data.discount)/100
@@ -912,10 +912,10 @@ block content
                       each data in todayProducts
                         li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
                           .item-horizontal
-                            a.product-img(href='')
+                            a.product-img(href='/product/' + data._id)
                               img(src='/uploads/images/'+ data.images)
                             .group-product__detail.product-info
-                              a.product-name(href='')=data.name
+                              a.product-name(href='/product/' + data._id)=data.name
                               .product-price.group-product__price
                                 .product-price
                                   .price-final=(data.price)-((data.price)*data.discount)/100
@@ -929,10 +929,10 @@ block content
                       each data in product2
                         li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
                           .item-horizontal
-                            a.product-img(href='')
+                            a.product-img(href='/product/' + data._id)
                               img(src='/uploads/images/'+ data.images)
                             .group-product__detail.product-info
-                              a.product-name(href='')=data.name
+                              a.product-name(href='/product/' + data._id)=data.name
                               .product-price.group-product__price
                                 .product-price
                                   .price-final=(data.price)-((data.price)*data.discount)/100
