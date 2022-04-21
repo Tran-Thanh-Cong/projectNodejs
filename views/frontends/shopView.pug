@@ -47,8 +47,27 @@ block content
 															|  and above 
 						.sidebar-addition
 							.block.block-compare
-								.block-title Name
-								.empty You have no items to compare.
+								.block-title Category
+								ul.filter-options-content__list
+									li.filter-options-content__item
+										a.filter-options-content__link(href='?price=0-1000000')
+											span.price 0
+											|  -
+											span.price 1.000.000
+										li.filter-options-content__item
+										a.filter-options-content__link(href='?price=1000001-10000000')
+											span.price 1.000.000
+											|  -
+											span.price 10.000.000
+										li.filter-options-content__item
+										a.filter-options-content__link(href='?price=10000001-50000000')
+											span.price 10.000.000
+											|  -
+											span.price 50.000.000
+										li.filter-options-content__item
+										a.filter-options-content__link(href='?price=50000001-100000000')
+											span.price 50.000.000
+											|  and above 
 					.col.l-9.m-12.c-12.col-main
 						//- Filter
 						.toolbar.toolbar-products
@@ -104,10 +123,9 @@ block content
 													a.action-view(href='')
 														| 1
 											.product-price
-												.price-final
-													span=(data.price)-((data.price)*data.discount)/100
-												.price-old
-													span=data.price
+												.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+												if data.discount > 0
+													.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
 						//- 1 col
 						#col-1.product-grid.full-row
 							.grid
@@ -137,9 +155,9 @@ block content
 															span Add Your Review
 												.product-price
 													.price-final
-														span=(data.price)-((data.price)*data.discount)/100
+														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
 													.price-old
-														span=data.price
+														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
 												.product-description
 													table
 														tbody
@@ -163,6 +181,7 @@ block content
 						.toolbar.toolbar-products.bg-white
 							.pages
 								ul.pages-list
-									each page in pages
-										li.page-item.current
-											a.page(href='?page='+ page)=page
+									if pages
+										each page in pages
+											li.page-item.current
+												a.page(href='?page='+ page)=page

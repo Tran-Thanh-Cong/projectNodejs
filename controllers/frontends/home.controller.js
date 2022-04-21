@@ -4,6 +4,7 @@ const { filterData } = require('../../helpers/listCategory');
 const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const { filterCategory } = require('../../helpers/filterCategory');
+const { filterProductsCategory, filterProductsDetailCategory } = require('../../helpers/filterProducts');
 class HomeController {
   async index(req, res) {
     try {
@@ -100,15 +101,32 @@ class HomeController {
 
   async detail(req, res) {
     try {
-      const product = await Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' });
+      const [product, relatedProduct] = await Promise.all([
+        Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' }),
+        Product_Model.find().populate({ path: 'detailCategory', populate: 'category' })
+      ]);
       return res.render('./frontends/detailProductView', {
         datas: mongooseToObject(product),
+        relatedProduct: mutipleMongooseToObject(filterProductsCategory(relatedProduct, product.detailCategory.category.name))
       })
     } catch (error) {
       console.log(error.message);
     }
   }
 
+  async detailcategory(req, res) {
+    try {
+      const [category, products] = await Promise.all([
+        Category_Model.findById(req.params.id),
+        Product_Model.find({}).populate({ path: 'detailCategory', populate: 'category' })
+      ]);
+      return res.render('./frontends/shopView', {
+        datas: mutipleMongooseToObject(filterProductsCategory(products, category.name))
+      })
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
 }
 
 module.exports = new HomeController;

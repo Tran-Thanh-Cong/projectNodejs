@@ -1,999 +1,1009 @@
 extend ./layout/layout.pug
 block content
-  main.page-main
-    .grid.wide.content-container
-      //- Box on top
-      .row.container.content-box-on-top
-        .col.l-9.m-12.c-12.box-on-top__slider
-          //- Slider banner
-          .slider__banner
-            .slider__banner-wrapper.fade
-              img.slider__banner-img(src='./img/slider/armania_market1_03-1_slider.jpg', alt='')
-              .slider__banner-text
-                h3.slider__banner-text__title.text-1
-                h3.slider__banner-text__title.text-2
-                .slider__banner-text__msg
-                .slider__banner-text__price.text-4
-            .slider__banner-wrapper.fade
-              img.slider__banner-img(src='./img/slider/armania_market1_03-2_slider.jpg', alt='')
-              .slider__banner-text
-                h3.slider__banner-text__title.text-1
-                h3.slider__banner-text__title.text-2
-                .slider__banner-text__msg
-                .slider__banner-text__price.text-4
-          .grid.slider__product-tab
-            ul.row.slider__product-tab__list
-              each data in randomProducts
-                li.col.l-3.m-6.c-12.slider__product-tab__item.product-wrapper
-                  .product-tab__info
-                    a.product-tab__info-img.product-img(href='/product/'+ data._id)
-                      img(src='/uploads/images/' + data.images)
-                    .product-tab__info-detail
-                      a.product-tab__info-detail__name.product-name(href='/product/'+ data._id)=data.name 
-                      .product-tab__info-detail__price
-                        .product-price
-                          .price-final
-                            span=(data.price)-((data.price)*data.discount)/100
-                          .price-old
-                            span=data.price
-        .col.l-3.m-12.c-12.box-on-top__product-on-left
-          .product-on-left__wrapper
-            .product-on-left__bestseller
-              | Bestseller Products
-            .row.product-on-left__info-row.product-wrapper
-              each data in bestSales
-                .col.l-12.m-4.c-6.product-on-left__info
-                  a.product-on-left__info-img.product-img(href='/product/'+ data._id)
-                    img(src='/uploads/images/' + data.images)
-                  .product-on-left__info-detail.product-name
-                    a.product-on-left__name.product-name(href='/product/' + data._id)
-                      span=data.name
-                    .product-on-left__price
-                      .product-price
-                        .price-final
-                          span=(data.price)-((data.price)*data.discount)/100
-                        .price-old
-                          span=data.price
-              .product-on-left-action.pre-and-next
-                .product-on-left-action__pre.product-action--pre
-                  i.previous-btn.product-on-left-action__pre-btn.ti-angle-left
-                .product-on-left-action__next.show.product-action--next
-                  i.next-btn.product-on-left-action__next-btn.ti-angle-right
-              div(style='text-align:center; width: 100%; height: 0;')
-                span.dot
-                span.dot
-                span.dot
-            .product-on-left__images
-              .row.product-on-left__images-row
-                each data in bestSales
-                  a.col.l-4.m-4.c-4.product-on-left__images-link(href='')
-                    img(src='/uploads/images/' + data.images)
-
-      //- Hot deal
-      .content-hot-deal.container
-        .hot-deal__heading
-          h2.hot-deal__heading__title Daily Deals
-          .hot-deal__heading__countdown
-            .countdown-days.countdown
-              span.countdown-days__number.countdown-number
-              span.countdown-days__text.countdown-text Days
-            .countdown-hours.countdown
-              span.countdown-hours__number.countdown-number 01
-              span.countdown-hours__text.countdown-text Hours
-            .countdown-mins.countdown
-              span.countdown-mins__number.countdown-number 22
-              span.countdown-mins__text.countdown-text Mins
-            .countdown-secs.countdown
-              span.countdown-secs__number.countdown-number 00
-              span.countdown-secs__text.countdown-text Secs
-          p.hot-deal__heading__des
-            | Get Upto
-            span 40%
-            | Back On Purchase
-          a.hot-deal__heading__view-btn(href='/shop') Shop Now
-        .row.hot-deal__product
-          each data in productsSale36
-            .col.l-4.m-6.c-12.hot-deal__product-wrapper
-              a.hot-deal__product-img(href='/product/' + data._id)
-                img(src='/uploads/images/' + data.images)
-              .hot-deal__product-detail
-                a.hot-deal__product-detail__name.product-name(href='/product/' + data._id)=data.name
-                .hot-deal__product-detail__price
-                  .product-price
-                    .price-final=(data.price)-((data.price)*data.discount)/100
-                    if data.discount > 0
-                      .price-old=data.price
-                .hot-deal__product-detail__des
-                  ul
-                    li Small screen 7.9&quot; Retina
-                    li Compatible with Apple Pencil
-                span.hot-deal__product-detail__sale
-                  span.hot-deal__sale-title SALES
-                  span.hot-deal__sale-title-text=data.discount
-                  span.hot-deal__sale-title-text % OFF
-                .hot-deal__product-detail__action
-                  .hot-deal__product-detail__btn.btn ADD TO CART
-                  .hot-deal__product-detail__link.product-action
-                    a.quick-view
-                      i.far.fa-eye
-                    a.add-to-wish-list
-                      i.far.fa-heart
-                    a.to-compare(href='', title='Add to Compare')
-                      i.fas.fa-exchange-alt
-      //- Hot categories
-      .content-hot-categories.container.tabs-container
-        .hot-categories__heading
-          .hot-categories__heading-wrapper
-            ul.hot-categories__list.tabs-nav
-              .hot-categories__titile.tag-title
-                h3 Hot Categories
-              li.hot-categories__item.tab--active
-                a.hot-categories__link(href='#tab-1')
-                  img.hot-categories__thumb(src='./img/hot-categories/Find X3 series-navigation-black-v21.png', alt='')
-                  h3.hot-categories__name.hot-cat-name Smart Phones
-              li.hot-categories__item
-                a.hot-categories__link(href='#tab-2')
-                  img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_03_.png', alt='')
-                  h3.hot-categories__name.hot-cat-name Smart Watch
-              li.hot-categories__item
-                a.hot-categories__link(href='#tab-3')
-                  img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_01_.png', alt='')
-                  h3.hot-categories__name.hot-cat-name  Laptop
-              li.hot-categories__item
-                a.hot-categories__link(href='#tab-4')
-                  img.hot-categories__thumb(src='./img/hot-categories/Tablet-128x129.png', alt='')
-                  h3.hot-categories__name.hot-cat-name Tablets &amp; iPad
-              li.hot-categories__item
-                a.hot-categories__link(href='#tab-5')
-                  img.hot-categories__thumb(src='./img/hot-categories/Tainghe-128x129.png', alt='')
-                  h3.hot-categories__name.hot-cat-name Head Phone &amp; Tai nghe
-              li.hot-categories__item
-                a.hot-categories__link(href='#tab-6')
-                  img.hot-categories__thumb(src='./img/hot-categories/112.png', alt='')
-                  h3.hot-categories__name.hot-cat-name Mouse &amp; Magic Mouse
-        .grid.wide.hot-categories__product.tab-content
-          #tab-1.hot-categories__product-wrapper.tab-pane.active
-            ul.row.hot-categories__product-list
-              each data in hotSmartPhone
-                li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
-                    img(src='/uploads/images/' + data.images)
-                  if data.discount > 0
-                    span.hot-categories__product-sale.onsale
-                      span=data.discount 
-                      | %
-                  .hot-categories__product-action.product-action
-                    i.add-to-cart.fas.fa-cart-plus
-                    i.quick-view.far.fa-eye
-                    i.to-compare.fas.fa-exchange-alt
-                    i.add-to-wish-list.far.fa-heart
-                  .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
-                  .product-review-summary
-                    .rating-result
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.far.fa-star
-                      i.rating-icon.far.fa-star
-                    .rating-action
-                      a.action-view(href='')
-                        | 1
-                  .hot-categories__product__price
-                    .product-price
-                      .price-final=(data.price)-((data.price)*data.discount)/100
-                      if data.discount > 0
-                        .price-old=data.price
-              .hot-categories__product-action.pre-and-next
-                .hot-categories__product__pre.product-action--pre
-                  i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
-                .hot-categories__product__next.show.product-action--next
-                  i.next-btn.hot-categories__product__next-btn.ti-angle-right
-          #tab-2.hot-categories__product-wrapper.tab-pane
-            ul.row.hot-categories__product-list
-              each data in hotSmartWatch
-                li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
-                    img(src='/uploads/images/' + data.images)
-                  if data.discount > 0
-                    span.hot-categories__product-sale.onsale
-                      span=data.discount
-                      | %
-                  .hot-categories__product-action.product-action
-                    i.add-to-cart.fas.fa-cart-plus
-                    i.quick-view.far.fa-eye
-                    i.to-compare.fas.fa-exchange-alt
-                    i.add-to-wish-list.far.fa-heart
-                  .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name 
-                  .product-review-summary
-                    .rating-result
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.far.fa-star
-                      i.rating-icon.far.fa-star
-                    .rating-action
-                      a.action-view(href='')
-                        | 1
-                  .hot-categories__product__price
-                    .product-price
-                      .price-final=(data.price)-((data.price)*data.discount)/100
-                      if data.discount > 0
-                        .price-old=data.price
-              .hot-categories__product-action.pre-and-next
-                .hot-categories__product__pre.product-action--pre
-                  i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
-                .hot-categories__product__next.show.product-action--next
-                  i.next-btn.hot-categories__product__next-btn.ti-angle-right
-          #tab-3.hot-categories__product-wrapper.tab-pane
-            ul.row.hot-categories__product-list
-              each data in hotLaptop
-                li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
-                    img(src='/uploads/images/' + data.images)
-                  if data.discount > 0
-                    span.hot-categories__product-sale.onsale
-                      span=data.discount
-                      | %
-                  .hot-categories__product-action.product-action
-                    i.add-to-cart.fas.fa-cart-plus
-                    i.quick-view.far.fa-eye
-                    i.to-compare.fas.fa-exchange-alt
-                    i.add-to-wish-list.far.fa-heart
-                  .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
-                  .product-review-summary
-                    .rating-result
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.far.fa-star
-                      i.rating-icon.far.fa-star
-                    .rating-action
-                      a.action-view(href='')
-                        | 1
-                  .hot-categories__product__price
-                    .product-price
-                      .price-final=(data.price)-((data.price)*data.discount)/100
-                      if data.discount > 0
-                        .price-old=data.price
-              .hot-categories__product-action.pre-and-next
-                .hot-categories__product__pre.product-action--pre
-                  i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
-                .hot-categories__product__next.show.product-action--next
-                  i.next-btn.hot-categories__product__next-btn.ti-angle-right
-          #tab-4.hot-categories__product-wrapper.tab-pane
-            ul.row.hot-categories__product-list
-              each data in hotTablet
-                li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
-                    img(src='/uploads/images/' + data.images)
-                  if data.discount > 0
-                    span.hot-categories__product-sale.onsale
-                      span=data.discount
-                      | %
-                  .hot-categories__product-action.product-action
-                    i.add-to-cart.fas.fa-cart-plus
-                    i.quick-view.far.fa-eye
-                    i.to-compare.fas.fa-exchange-alt
-                    i.add-to-wish-list.far.fa-heart
-                  .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
-                  .product-review-summary
-                    .rating-result
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.far.fa-star
-                      i.rating-icon.far.fa-star
-                    .rating-action
-                      a.action-view(href='')
-                        | 1
-                  .hot-categories__product__price
-                    .product-price
-                      .price-final=(data.price)-((data.price)*data.discount)/100
-                      if data.discount > 0
-                        .price-old=data.price
-              .hot-categories__product-action.pre-and-next
-                .hot-categories__product__pre.product-action--pre
-                  i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
-                .hot-categories__product__next.show.product-action--next
-                  i.next-btn.hot-categories__product__next-btn.ti-angle-right
-          #tab-5.hot-categories__product-wrapper.tab-pane
-            ul.row.hot-categories__product-list
-              each data in hotTainghe
-                li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
-                    img(src='/uploads/images/' + data.images)
-                  if data.discount > 0
-                    span.hot-categories__product-sale.onsale
-                      span=data.discount
-                      | %
-                  .hot-categories__product-action.product-action
-                    i.add-to-cart.fas.fa-cart-plus
-                    i.quick-view.far.fa-eye
-                    i.to-compare.fas.fa-exchange-alt
-                    i.add-to-wish-list.far.fa-heart
-                  .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
-                  .product-review-summary
-                    .rating-result
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.far.fa-star
-                      i.rating-icon.far.fa-star
-                    .rating-action
-                      a.action-view(href='')
-                        | 1
-                  .hot-categories__product__price
-                    .product-price
-                      .price-final=(data.price)-((data.price)*data.discount)/100
-                      if data.discount > 0
-                        .price-old=data.price
-              .hot-categories__product-action.pre-and-next
-                .hot-categories__product__pre.product-action--pre
-                  i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
-                .hot-categories__product__next.show.product-action--next
-                  i.next-btn.hot-categories__product__next-btn.ti-angle-right
-          #tab-6.hot-categories__product-wrapper.tab-pane
-            ul.row.hot-categories__product-list
-              each data in hotMouse
-                li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
-                  a.hot-categories__product-img.product-img(href='/product/' + data._id)
-                    img(src='/uploads/images/' + data.images)
-                  if data.discount > 0
-                    span.hot-categories__product-sale.onsale
-                      span=data.discount 
-                      | %
-                  .hot-categories__product-action.product-action
-                    i.add-to-cart.fas.fa-cart-plus
-                    i.quick-view.far.fa-eye
-                    i.to-compare.fas.fa-exchange-alt
-                    i.add-to-wish-list.far.fa-heart
-                  .hot-categories__product-detail
-                    a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
-                  .product-review-summary
-                    .rating-result
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.rating-icon--active.far.fa-star
-                      i.rating-icon.far.fa-star
-                      i.rating-icon.far.fa-star
-                    .rating-action
-                      a.action-view(href='')
-                        | 1
-                  .hot-categories__product__price
-                    .product-price
-                      .price-final=(data.price)-((data.price)*data.discount)/100
-                      if data.discount > 0
-                        .price-old=data.price
-              .hot-categories__product-action.pre-and-next
-                .hot-categories__product__pre.product-action--pre
-                  i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
-                .hot-categories__product__next.show.product-action--next
-                  i.next-btn.hot-categories__product__next-btn.ti-angle-right
-      //- Group product
-      .content-group-product.mg-bot-60
-        .row
-          .col.l-6.m-0.c-0
-            .grid.wide
-              .row
-                .col.l-6.m-0.c-0.group-product__banner
-                  .group-product__banner-col.container
-                    .group-product__banner-col__img.banner-wrapper
-                      .img-hover-light-effect
-                        a(href='')
-                          img(src='./img/banners/1-banner-market_s-01.jpg', alt='')
-                    .group-product__banner-col__img.banner-wrapper
-                      .img-hover-light-effect
-                        a(href='')
-                          img(src='./img/banners/1-banner-market_s-02.jpg', alt='')
-                    .group-product__banner-col__img.banner-wrapper
-                      .img-hover-light-effect
-                        a(href='')
-                          img(src='./img/banners/1-banner-market_s-03.jpg', alt='')
-                .col.l-6.m-0.c-0.group-product__banner-col.banner-hori.container
-                  a.group-product__banner-col__img
-                    img(src='./img/banners/1-banner-market_m-01.jpg', alt='')
-          .col.l-6.m-12.c-12.container.col-left
-            .group-product-container.mg-bot-35
-              .group-product__heading.tag-title__wrapper
-                .tag-title
-                  h2 New Products
-              .grid.wide
-                ul.row.group-product__list.overflow-x-auto
-                  each data in newProducts
-                    li.col.l-4.m-3.c-6.product-wrapper
-                      a.product-img(href='/product/' + data._id)
-                        img(src='/uploads/images/' + data.images)
-                      if data.discount > 0
-                        span.hot-categories__product-sale.onsale
-                          span=data.discount 
-                          | %
-                      .product-action
-                        i.add-to-cart.fas.fa-cart-plus
-                        i.quick-view.far.fa-eye
-                        i.to-compare.fas.fa-exchange-alt
-                        i.add-to-wish-list.far.fa-heart
-                      a.product-name(href='/product/' + data._id)=data.name
-                      .product-price
-                        .price-final=(data.price)-((data.price)*data.discount)/100
-                        .price-old=data.price
-            .group-product-container
-              .group-product__heading.tag-title__wrapper
-                .tag-title
-                  h2 Today&rsquo;s Popular Pick
-              .grid.wide
-                ul.row.group-product__list.overflow-x-auto
-                  each data in todayProducts
-                    li.col.l-6.m-6.c-12.product-wrapper.group-product__item
-                      .item-horizontal
-                        a.product-img(href='/product/' + data._id)
-                          img(src='/uploads/images/' + data.images)
-                        .group-product__detail
-                          a.product-name(href='')=data.name
-                          .product-price.group-product__price
-                            .product-price
-                              .price-final=(data.price)-((data.price)*data.discount)/100
-                              .price-old=data.price
-                        span.group-product__sale.onsale
-                          span=data.discount
-                          | %
-      //- Catagories tabs full screen
-      .content-product-category.container.mg-bot-60.tabs-container
-        div
-          .product-category__wrapper.wrapper
-            .grid.wide
-              .row
-                .col.l-2.m-3.c-0.product-category__banner.tab-banner
-                  img(src='./img/banners/2-banner-market_m-01.jpg', alt='')
-                .col.l-10.m-9.c-12.product-category__content.tab-content
-                  #tab-7.grid.wide.product-category__content-wrapper.tab-pane.active
-                    ul.row.product-category__row.overflow-x-auto
-                      each data in product1
-                        li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
-                          a.product-img(href='/product/' + data._id)
-                            img(src='/uploads/images/' + data.images)
-                          .product-action
-                            i.add-to-cart.fas.fa-cart-plus
-                            i.quick-view.far.fa-eye
-                            i.to-compare.fas.fa-exchange-alt
-                            i.add-to-wish-list.far.fa-heart
-                          .product__detail
-                            a.product-name(href='/product/' + data._id)=data.name
-                            .product-price.group-product__price
-                              .product-price
-                                .price-final=(data.price)-((data.price)*data.discount)/100
-                                if data.discount > 0
-                                  .price-old=data.price
-                          span.onsale.onsale--right
-                            if data.discount > 0
-                              span=data.discount 
-                              | %
-                    ul.row.product-category__row.overflow-x-auto
-                      each data in product2
-                        li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
-                          a.product-img(href='/product/' + data._id)
-                            img(src='/uploads/images/' + data.images)
-                          .product-action
-                            i.add-to-cart.fas.fa-cart-plus
-                            i.quick-view.far.fa-eye
-                            i.to-compare.fas.fa-exchange-alt
-                            i.add-to-wish-list.far.fa-heart
-                          .product__detail
-                            a.product-name(href='/product/' + data._id)=data.name
-                            .product-price.group-product__price
-                              .product-price
-                                .price-final=(data.price)-((data.price)*data.discount)/100
-                                if data.discount > 0
-                                  .price-old=data.price
-                          span.onsale.onsale--right
-                            if data.discount > 0
-                              span=data.discount 
-                              | %
-            .grid.wide
-              .row.content-product-category__brand.brand-list
-                a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                  img(src='./img/brands/logo-acer.png', alt='')
-                a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                  img(src='./img/brands/logo-asus.png', alt='')
-                a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                  img(src='./img/brands/logo-dell.png', alt='')
-                a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                  img(src='./img/brands/logo-macbook.png', alt='')
-                a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                  img(src='./img/brands/logo-intel.png', alt='')
-                a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                  img(src='./img/brands/logo-msi.png', alt='')
-      //- Banners images
-      .grid.wide.content-banner-images.container.mg-bot-60
-        .row
-          .col.l-4.m-4.c-12.banner-wrapper
-            .banner-img.img-hover-light-effect
-              a(href='')
-                img(src='./img/banners/3-banner-market_hor-m-01.jpg', alt='')
-          .col.l-4.m-4.c-12.banner-wrapper
-            .banner-img.img-hover-light-effect
-              a(href='')
-                img(src='./img/banners/3-banner-market_hor-m-02.jpg', alt='')
-          .col.l-4.m-4.c-12.banner-wrapper
-            .banner-img.img-hover-light-effect
-              a(href='')
-                img(src='./img/banners/3-banner-market_hor-m-03.jpg', alt='')
-      //- Categories tabs double
-      .grid.wide.content-product-category
-        .row.product-category__wrapper.wrapper
-          .col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
-            div
-              div
-                ul.content-product-category__heading.tabs-nav.tag-title__wrapper
-                  .tag-title
-                    h2 Smartphone
-                .grid.wide
-                  .row
-                    .col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
-                      .banner-img.img-hover-light-effect
-                        img(src='./img/banners/3-banner-market_m-01.jpg', alt='')
-                    .col.l-8.m-9.c-12.product-category__content
-                      #tab-11.grid.wide.product-category__content-wrapper.tab-pane.active
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productGalaxy1
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productGalaxy2
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                .grid.wide
-                  .row.content-product-category__brand.brand-list-haft.brand-list
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-macbook.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-dell.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-intel.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-acer.png', alt='')
-          .col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
-            div
-              div
-                ul.content-product-category__heading.tabs-nav.tag-title__wrapper
-                  li.tag-title
-                    h2 Tablets 
-                .grid.wide
-                  .row
-                    .col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
-                      .banner-img.img-hover-light-effect
-                        img(src='./img/banners/3-banner-market_m-02.jpg', alt='')
-                    .col.l-8.m-9.c-12.product-category__content
-                      #tab-13.grid.wide.product-category__content-wrapper.tab-pane.active
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productIpad1
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in hotTablet
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                .grid.wide
-                  .row.content-product-category__brand.brand-list-haft.brand-list
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-msi.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-asus.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-macbook.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-acer.png', alt='')
-      //- Categories tabs double
-      .grid.wide.content-product-category
-        .row.product-category__wrapper.wrapper
-          .col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
-            div
-              div
-                ul.content-product-category__heading.tabs-nav.tag-title__wrapper
-                  .tag-title
-                    h2 Macbook
-                .grid.wide
-                  .row
-                    .col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
-                      .banner-img.img-hover-light-effect
-                        img(src='./img/banners/4-banner-market_m-01.jpg', alt='')
-                    .col.l-8.m-9.c-12.product-category__content
-                      #tab-15.grid.wide.product-category__content-wrapper.tab-pane.active
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productMacBook1
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productMacBook2
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                .grid.wide
-                  .row.content-product-category__brand.brand-list-haft.brand-list
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-asus.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-acer.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-macbook.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-dell.png', alt='')
-          .col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
-            div
-              div
-                ul.content-product-category__heading.tabs-nav.tag-title__wrapper
-                  .tag-title
-                    h2 Apple Watches
-                .grid.wide
-                  .row
-                    .col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
-                      .banner-img.img-hover-light-effect
-                        img(src='./img/banners/4-banner-market_m-02.jpg', alt='')
-                    .col.l-8.m-9.c-12.product-category__content
-                      #tab-17.grid.wide.product-category__content-wrapper.tab-pane.active
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productAppleWatch1
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                        ul.row.product-category__row.overflow-x-auto
-                          each data in productAppleWatch2
-                            li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
-                              a.product-img(href='/product/' + data._id)
-                                img(src='/uploads/images/' + data.images)
-                              .product-action
-                                i.add-to-cart.fas.fa-cart-plus
-                                i.quick-view.far.fa-eye
-                                i.to-compare.fas.fa-exchange-alt
-                                i.add-to-wish-list.far.fa-heart
-                              .product__detail
-                                a.product-name(href='/product/' + data._id)=data.name
-                                .product-price.group-product__price
-                                  .product-price
-                                    .price-final=(data.price)-((data.price)*data.discount)/100
-                                    if data.discount > 0
-                                      .price-old=data.price
-                              span.onsale.onsale--right
-                                if data.discount > 0
-                                  span=data.discount
-                                  | %	
-                .grid.wide
-                  .row.content-product-category__brand.brand-list-haft.brand-list
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-acer.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-msi.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-dell.png', alt='')
-                    a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
-                      img(src='./img/brands/logo-macbook.png', alt='')
-      //- Group product
-      .content-group-product
-        .row
-          .col.l-6.m-12.c-12.container.mg-bot-60
-            .group-product-container
-              .group-product__heading.tag-title__wrapper
-                .tag-title
-                  h2 Featured Products
-              .grid.wide
-                ul.row.group-product__list.overflow-x-auto
-                  each data in featureProducts1
-                    li.col.l-4.m-3.c-6.product-wrapper
-                      a.product-img(href='/product/' + data._id)
-                        img(src='/uploads/images/' + data.images)
-                      .product-action
-                        i.add-to-cart.fas.fa-cart-plus
-                        i.quick-view.far.fa-eye
-                        i.to-compare.fas.fa-exchange-alt
-                        i.add-to-wish-list.far.fa-heart
-                      a.product-name(href='/product/' + data._id)=data.name
-                      .product-price
-                        .price-final=(data.price)-((data.price)*data.discount)/100
-                        if data.discount > 0
-                          .price-old=data.price
-                ul.row.group-product__list.overflow-x-auto
-                  each data in featureProducts2
-                    li.col.l-4.m-3.c-6.product-wrapper
-                      a.product-img(href='/product/' + data._id)
-                        img(src='/uploads/images/' + data.images)
-                      .product-action
-                        i.add-to-cart.fas.fa-cart-plus
-                        i.quick-view.far.fa-eye
-                        i.to-compare.fas.fa-exchange-alt
-                        i.add-to-wish-list.far.fa-heart
-                      a.product-name(href='/product/' + data._id)=data.name
-                      .product-price
-                        .price-final=(data.price)-((data.price)*data.discount)/100
-                        if data.discount > 0
-                          .price-old=data.price
-          .col.l-6.m-12.c-12
-            .grid.wide.group-product-container
-              .row
-                .col.l-6.container.mg-bot-60
-                  .group-product__heading.tag-title__wrapper
-                    .tag-title
-                      h2 Best Of The Week
-                  .grid.wide
-                    ul.row.group-product__list.overflow-x-auto
-                      each data in bestSales
-                        li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
-                          .item-horizontal
-                            a.product-img(href='/product/' + data._id)
-                              img(src='/uploads/images/'+ data.images)
-                            .group-product__detail.product-info
-                              a.product-name(href='/product/' + data._id)=data.name
-                              .product-price.group-product__price
-                                .product-price
-                                  .price-final=(data.price)-((data.price)*data.discount)/100
-                                  if data.discount > 0
-                                    .price-old=data.price
-                            span.group-product__sale.onsale
-                              if data.discount > 0
-                                span=data.discount
-                                | %
-                    ul.row.group-product__list.overflow-x-auto
-                      each data in productMacBook1
-                        li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
-                          .item-horizontal
-                            a.product-img(href='/product/' + data._id)
-                              img(src='/uploads/images/'+ data.images)
-                            .group-product__detail.product-info
-                              a.product-name(href='/product/' + data._id)=data.name
-                              .product-price.group-product__price
-                                .product-price
-                                  .price-final=(data.price)-((data.price)*data.discount)/100
-                                  if data.discount > 0
-                                    .price-old=data.price
-                            span.group-product__sale.onsale
-                              if data.discount > 0
-                                span=data.discount
-                                | %
-                    ul.row.group-product__list.overflow-x-auto
-                      each data in productGalaxy2
-                        li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
-                          .item-horizontal
-                            a.product-img(href='/product/' + data._id)
-                              img(src='/uploads/images/'+ data.images)
-                            .group-product__detail.product-info
-                              a.product-name(href='/product/' + data._id)=data.name
-                              .product-price.group-product__price
-                                .product-price
-                                  .price-final=(data.price)-((data.price)*data.discount)/100
-                                  if data.discount > 0
-                                    .price-old=data.price
-                            span.group-product__sale.onsale
-                              if data.discount > 0
-                                span=data.discount
-                                | %
-                .col.l-6.container.mg-bot-60
-                  .group-product__heading.tag-title__wrapper
-                    .tag-title
-                      h2 Popular In Categories
-                  .grid.wide
-                    ul.row.group-product__list.overflow-x-auto
-                      each data in productIpad1
-                        li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
-                          .item-horizontal
-                            a.product-img(href='/product/' + data._id)
-                              img(src='/uploads/images/'+ data.images)
-                            .group-product__detail.product-info
-                              a.product-name(href='/product/' + data._id)=data.name
-                              .product-price.group-product__price
-                                .product-price
-                                  .price-final=(data.price)-((data.price)*data.discount)/100
-                                  if data.discount > 0
-                                    .price-old=data.price
-                            span.group-product__sale.onsale
-                              if data.discount > 0
-                                span=data.discount
-                                | %
-                    ul.row.group-product__list.overflow-x-auto
-                      each data in todayProducts
-                        li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
-                          .item-horizontal
-                            a.product-img(href='/product/' + data._id)
-                              img(src='/uploads/images/'+ data.images)
-                            .group-product__detail.product-info
-                              a.product-name(href='/product/' + data._id)=data.name
-                              .product-price.group-product__price
-                                .product-price
-                                  .price-final=(data.price)-((data.price)*data.discount)/100
-                                  if data.discount > 0
-                                    .price-old=data.price
-                            span.group-product__sale.onsale
-                              if data.discount > 0
-                                span=data.discount
-                                | %
-                    ul.row.group-product__list.overflow-x-auto
-                      each data in product2
-                        li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
-                          .item-horizontal
-                            a.product-img(href='/product/' + data._id)
-                              img(src='/uploads/images/'+ data.images)
-                            .group-product__detail.product-info
-                              a.product-name(href='/product/' + data._id)=data.name
-                              .product-price.group-product__price
-                                .product-price
-                                  .price-final=(data.price)-((data.price)*data.discount)/100
-                                  if data.discount > 0
-                                    .price-old=data.price
-                            span.group-product__sale.onsale
-                              if data.discount > 0
-                                span=data.discount
-                                | %
-      //- Banners images
-      .grid.wide.content-banner-images.container.mg-bot-60
-        .row
-          .col.l-4.m-4.c-12.banner-wrapper
-            .banner-img
-              a(href='')
-                img(src='./img/banners/5-banner-market_s-01.jpg', alt='')
-          .col.l-4.m-4.c-12.banner-wrapper
-            .banner-img
-              a(href='')
-                img(src='./img/banners/5-banner-market_s-02.jpg', alt='')
-          .col.l-4.m-4.c-12.banner-wrapper
-            .banner-img
-              a(href='')
-                img(src='./img/banners/5-banner-market_s-03.jpg', alt='')
-    //- News letter
-    .content-newsletter
-      .container
-        .newsletter__title
-          h3 Join Our Newsletter Now
-        .newsletter__content
-          form.news-letter__subcribe(action='')
-            .newsletter__field
-              .newsletter__control
-                .newsletter__input
-                  input(type='email', placeholder='Enter your email')
-                .newsletter__action
-                  button(type='submit') Subscribe
-        p.newsletter__des
-          | Will be used in accordance with our 
-          a(href='') Privacy Policy
-    //- Shipping support
-    .content-shipping-support
-      .container
-        .row
-          .col.l-3.m-6.c-12.shipping-wrapper
-            i.shipping-icon.fas.fa-car
-            .shipping-content
-              span.size-18 Free Delivery
-              p On all Orders over $99
-          .col.l-3.m-6.c-12.shipping-wrapper
-            i.shipping-icon.fas.fa-sync-alt
-            .shipping-content
-              span.size-18 90 Days Return
-              p If goods have problems
-          .col.l-3.m-6.c-12.shipping-wrapper
-            i.shipping-icon.far.fa-address-card
-            .shipping-content
-              span.size-18 100% Safe &amp; Secure
-              p Proin condimentum sagittis
-          .col.l-3.m-6.c-12.shipping-wrapper
-            i.shipping-icon.far.fa-life-ring
-            .shipping-content
-              span.size-18 100% Safe &amp; Secure
-              p Proin condimentum sagittis
+	main.page-main
+		.grid.wide.content-container
+			//- Box on top
+			.row.container.content-box-on-top
+				.col.l-9.m-12.c-12.box-on-top__slider
+					//- Slider banner
+					.slider__banner
+						.slider__banner-wrapper.fade
+							img.slider__banner-img(src='./img/slider/armania_market1_03-1_slider.jpg', alt='')
+							.slider__banner-text
+								h3.slider__banner-text__title.text-1
+								h3.slider__banner-text__title.text-2
+								.slider__banner-text__msg
+								.slider__banner-text__price.text-4
+						.slider__banner-wrapper.fade
+							img.slider__banner-img(src='./img/slider/armania_market1_03-2_slider.jpg', alt='')
+							.slider__banner-text
+								h3.slider__banner-text__title.text-1
+								h3.slider__banner-text__title.text-2
+								.slider__banner-text__msg
+								.slider__banner-text__price.text-4
+					.grid.slider__product-tab
+						ul.row.slider__product-tab__list
+							each data in randomProducts
+								li.col.l-3.m-6.c-12.slider__product-tab__item.product-wrapper
+									.product-tab__info
+										a.product-tab__info-img.product-img(href='/product/'+ data._id)
+											img(src='/uploads/images/' + data.images)
+										span.group-product__sale.onsale
+											if data.discount > 0
+												span=data.discount
+												| %
+										.product-tab__info-detail
+											a.product-tab__info-detail__name.product-name(href='/product/'+ data._id)=data.name 
+											.product-tab__info-detail__price
+												.product-price
+													.price-final
+														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+													.price-old
+														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+				.col.l-3.m-12.c-12.box-on-top__product-on-left
+					.product-on-left__wrapper
+						.product-on-left__bestseller
+							| Bestseller Products
+						.row.product-on-left__info-row.product-wrapper
+							each data in bestSales
+								.col.l-12.m-4.c-6.product-on-left__info
+									a.product-on-left__info-img.product-img(href='/product/'+ data._id)
+										img(src='/uploads/images/' + data.images)
+									.product-on-left__info-detail.product-name
+										a.product-on-left__name.product-name(href='/product/' + data._id)
+											span=data.name
+										span.group-product__sale.onsale
+											if data.discount > 0
+												span=data.discount
+												| %
+										.product-on-left__price
+											.product-price
+												.price-final
+													span=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+												.price-old
+													span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.product-on-left-action.pre-and-next
+								.product-on-left-action__pre.product-action--pre
+									i.previous-btn.product-on-left-action__pre-btn.ti-angle-left
+								.product-on-left-action__next.show.product-action--next
+									i.next-btn.product-on-left-action__next-btn.ti-angle-right
+							div(style='text-align:center; width: 100%; height: 0;')
+								span.dot
+								span.dot
+								span.dot
+						.product-on-left__images
+							.row.product-on-left__images-row
+								each data in bestSales
+									a.col.l-4.m-4.c-4.product-on-left__images-link(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+			//- Hot deal
+			.content-hot-deal.container
+				.hot-deal__heading
+					h2.hot-deal__heading__title Daily Deals
+					.hot-deal__heading__countdown
+						.countdown-days.countdown
+							span.countdown-days__number.countdown-number
+							span.countdown-days__text.countdown-text Days
+						.countdown-hours.countdown
+							span.countdown-hours__number.countdown-number 01
+							span.countdown-hours__text.countdown-text Hours
+						.countdown-mins.countdown
+							span.countdown-mins__number.countdown-number 22
+							span.countdown-mins__text.countdown-text Mins
+						.countdown-secs.countdown
+							span.countdown-secs__number.countdown-number 00
+							span.countdown-secs__text.countdown-text Secs
+					p.hot-deal__heading__des
+						| Get Upto
+						span 40%
+						| Back On Purchase
+					a.hot-deal__heading__view-btn(href='/shop') Shop Now
+				.row.hot-deal__product
+					each data in productsSale36
+						.col.l-4.m-6.c-12.hot-deal__product-wrapper
+							a.hot-deal__product-img(href='/product/' + data._id)
+								img(src='/uploads/images/' + data.images)
+							.hot-deal__product-detail
+								a.hot-deal__product-detail__name.product-name(href='/product/' + data._id)=data.name
+								.hot-deal__product-detail__price
+									.product-price
+										.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+										if data.discount > 0
+											.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+								.hot-deal__product-detail__des
+									ul
+										li Small screen 7.9&quot; Retina
+										li Compatible with Apple Pencil
+								span.hot-deal__product-detail__sale
+									span.hot-deal__sale-title SALES
+									span.hot-deal__sale-title-text=data.discount
+									span.hot-deal__sale-title-text % OFF
+								.hot-deal__product-detail__action
+									.hot-deal__product-detail__btn.btn ADD TO CART
+									.hot-deal__product-detail__link.product-action
+										a.quick-view
+											i.far.fa-eye
+										a.add-to-wish-list
+											i.far.fa-heart
+										a.to-compare(href='', title='Add to Compare')
+											i.fas.fa-exchange-alt
+			//- Hot categories
+			.content-hot-categories.container.tabs-container
+				.hot-categories__heading
+					.hot-categories__heading-wrapper
+						ul.hot-categories__list.tabs-nav
+							.hot-categories__titile.tag-title
+								h3 Hot Categories
+							li.hot-categories__item.tab--active
+								a.hot-categories__link(href='#tab-1')
+									img.hot-categories__thumb(src='./img/hot-categories/Find X3 series-navigation-black-v21.png', alt='')
+									h3.hot-categories__name.hot-cat-name Smart Phones
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-2')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_03_.png', alt='')
+									h3.hot-categories__name.hot-cat-name Smart Watch
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-3')
+									img.hot-categories__thumb(src='./img/hot-categories/market-thumb1_01_.png', alt='')
+									h3.hot-categories__name.hot-cat-name  Laptop
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-4')
+									img.hot-categories__thumb(src='./img/hot-categories/Tablet-128x129.png', alt='')
+									h3.hot-categories__name.hot-cat-name Tablets &amp; iPad
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-5')
+									img.hot-categories__thumb(src='./img/hot-categories/Tainghe-128x129.png', alt='')
+									h3.hot-categories__name.hot-cat-name Head Phone &amp; Tai nghe
+							li.hot-categories__item
+								a.hot-categories__link(href='#tab-6')
+									img.hot-categories__thumb(src='./img/hot-categories/112.png', alt='')
+									h3.hot-categories__name.hot-cat-name Mouse &amp; Magic Mouse
+				.grid.wide.hot-categories__product.tab-content
+					#tab-1.hot-categories__product-wrapper.tab-pane.active
+						ul.row.hot-categories__product-list
+							each data in hotSmartPhone
+								li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+									a.hot-categories__product-img.product-img(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+									if data.discount > 0
+										span.hot-categories__product-sale.onsale
+											span=data.discount 
+											| %
+									.hot-categories__product-action.product-action
+										i.add-to-cart.fas.fa-cart-plus
+										i.quick-view.far.fa-eye
+										i.to-compare.fas.fa-exchange-alt
+										i.add-to-wish-list.far.fa-heart
+									.hot-categories__product-detail
+										a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
+									.product-review-summary
+										.rating-result
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.far.fa-star
+											i.rating-icon.far.fa-star
+										.rating-action
+											a.action-view(href='')
+												| 1
+									.hot-categories__product__price
+										.product-price
+											.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+											if data.discount > 0
+												.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-2.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							each data in hotSmartWatch
+								li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+									a.hot-categories__product-img.product-img(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+									if data.discount > 0
+										span.hot-categories__product-sale.onsale
+											span=data.discount
+											| %
+									.hot-categories__product-action.product-action
+										i.add-to-cart.fas.fa-cart-plus
+										i.quick-view.far.fa-eye
+										i.to-compare.fas.fa-exchange-alt
+										i.add-to-wish-list.far.fa-heart
+									.hot-categories__product-detail
+										a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name 
+									.product-review-summary
+										.rating-result
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.far.fa-star
+											i.rating-icon.far.fa-star
+										.rating-action
+											a.action-view(href='')
+												| 1
+									.hot-categories__product__price
+										.product-price
+											.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+											if data.discount > 0
+												.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-3.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							each data in hotLaptop
+								li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+									a.hot-categories__product-img.product-img(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+									if data.discount > 0
+										span.hot-categories__product-sale.onsale
+											span=data.discount
+											| %
+									.hot-categories__product-action.product-action
+										i.add-to-cart.fas.fa-cart-plus
+										i.quick-view.far.fa-eye
+										i.to-compare.fas.fa-exchange-alt
+										i.add-to-wish-list.far.fa-heart
+									.hot-categories__product-detail
+										a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
+									.product-review-summary
+										.rating-result
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.far.fa-star
+											i.rating-icon.far.fa-star
+										.rating-action
+											a.action-view(href='')
+												| 1
+									.hot-categories__product__price
+										.product-price
+											.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+											if data.discount > 0
+												.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-4.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							each data in hotTablet
+								li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+									a.hot-categories__product-img.product-img(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+									if data.discount > 0
+										span.hot-categories__product-sale.onsale
+											span=data.discount
+											| %
+									.hot-categories__product-action.product-action
+										i.add-to-cart.fas.fa-cart-plus
+										i.quick-view.far.fa-eye
+										i.to-compare.fas.fa-exchange-alt
+										i.add-to-wish-list.far.fa-heart
+									.hot-categories__product-detail
+										a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
+									.product-review-summary
+										.rating-result
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.far.fa-star
+											i.rating-icon.far.fa-star
+										.rating-action
+											a.action-view(href='')
+												| 1
+									.hot-categories__product__price
+										.product-price
+											.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+											if data.discount > 0
+												.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-5.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							each data in hotTainghe
+								li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+									a.hot-categories__product-img.product-img(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+									if data.discount > 0
+										span.hot-categories__product-sale.onsale
+											span=data.discount
+											| %
+									.hot-categories__product-action.product-action
+										i.add-to-cart.fas.fa-cart-plus
+										i.quick-view.far.fa-eye
+										i.to-compare.fas.fa-exchange-alt
+										i.add-to-wish-list.far.fa-heart
+									.hot-categories__product-detail
+										a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
+									.product-review-summary
+										.rating-result
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.far.fa-star
+											i.rating-icon.far.fa-star
+										.rating-action
+											a.action-view(href='')
+												| 1
+									.hot-categories__product__price
+										.product-price
+											.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+											if data.discount > 0
+												.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+					#tab-6.hot-categories__product-wrapper.tab-pane
+						ul.row.hot-categories__product-list
+							each data in hotMouse
+								li.col.l-1-7.m-3.c-6.hot-categories__product-item.product-wrapper
+									a.hot-categories__product-img.product-img(href='/product/' + data._id)
+										img(src='/uploads/images/' + data.images)
+									if data.discount > 0
+										span.hot-categories__product-sale.onsale
+											span=data.discount 
+											| %
+									.hot-categories__product-action.product-action
+										i.add-to-cart.fas.fa-cart-plus
+										i.quick-view.far.fa-eye
+										i.to-compare.fas.fa-exchange-alt
+										i.add-to-wish-list.far.fa-heart
+									.hot-categories__product-detail
+										a.hot-categories__product__name.product-name(href='/product/' + data._id)=data.name
+									.product-review-summary
+										.rating-result
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.rating-icon--active.far.fa-star
+											i.rating-icon.far.fa-star
+											i.rating-icon.far.fa-star
+										.rating-action
+											a.action-view(href='')
+												| 1
+									.hot-categories__product__price
+										.product-price
+											.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+											if data.discount > 0
+												.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+							.hot-categories__product-action.pre-and-next
+								.hot-categories__product__pre.product-action--pre
+									i.previous-btn.btn--disabled.hot-categories__product__pre-btn.ti-angle-left
+								.hot-categories__product__next.show.product-action--next
+									i.next-btn.hot-categories__product__next-btn.ti-angle-right
+			//- Group product
+			.content-group-product.mg-bot-60
+				.row
+					.col.l-6.m-0.c-0
+						.grid.wide
+							.row
+								.col.l-6.m-0.c-0.group-product__banner
+									.group-product__banner-col.container
+										.group-product__banner-col__img.banner-wrapper
+											.img-hover-light-effect
+												a(href='')
+													img(src='./img/banners/1-banner-market_s-01.jpg', alt='')
+										.group-product__banner-col__img.banner-wrapper
+											.img-hover-light-effect
+												a(href='')
+													img(src='./img/banners/1-banner-market_s-02.jpg', alt='')
+										.group-product__banner-col__img.banner-wrapper
+											.img-hover-light-effect
+												a(href='')
+													img(src='./img/banners/1-banner-market_s-03.jpg', alt='')
+								.col.l-6.m-0.c-0.group-product__banner-col.banner-hori.container
+									a.group-product__banner-col__img
+										img(src='./img/banners/1-banner-market_m-01.jpg', alt='')
+					.col.l-6.m-12.c-12.container.col-left
+						.group-product-container.mg-bot-35
+							.group-product__heading.tag-title__wrapper
+								.tag-title
+									h2 New Products
+							.grid.wide
+								ul.row.group-product__list.overflow-x-auto
+									each data in newProducts
+										li.col.l-4.m-3.c-6.product-wrapper
+											a.product-img(href='/product/' + data._id)
+												img(src='/uploads/images/' + data.images)
+											if data.discount > 0
+												span.hot-categories__product-sale.onsale
+													span=data.discount 
+													| %
+											.product-action
+												i.add-to-cart.fas.fa-cart-plus
+												i.quick-view.far.fa-eye
+												i.to-compare.fas.fa-exchange-alt
+												i.add-to-wish-list.far.fa-heart
+											a.product-name(href='/product/' + data._id)=data.name
+											.product-price
+												.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+												if data.discount > 0
+													.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+						.group-product-container
+							.group-product__heading.tag-title__wrapper
+								.tag-title
+									h2 Today&rsquo;s Popular Pick
+							.grid.wide
+								ul.row.group-product__list.overflow-x-auto
+									each data in todayProducts
+										li.col.l-6.m-6.c-12.product-wrapper.group-product__item
+											.item-horizontal
+												a.product-img(href='/product/' + data._id)
+													img(src='/uploads/images/' + data.images)
+												.group-product__detail
+													a.product-name(href='')=data.name
+													.product-price.group-product__price
+														.product-price
+															.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+															if data.discount > 0
+																.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+												span.group-product__sale.onsale
+													if data.discount > 0
+														span=data.discount
+														| %
+			//- Catagories tabs full screen
+			.content-product-category.container.mg-bot-60.tabs-container
+				div
+					.product-category__wrapper.wrapper
+						.grid.wide
+							.row
+								.col.l-2.m-3.c-0.product-category__banner.tab-banner
+									img(src='./img/banners/2-banner-market_m-01.jpg', alt='')
+								.col.l-10.m-9.c-12.product-category__content.tab-content
+									#tab-7.grid.wide.product-category__content-wrapper.tab-pane.active
+										ul.row.product-category__row.overflow-x-auto
+											each data in product1
+												li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+													a.product-img(href='/product/' + data._id)
+														img(src='/uploads/images/' + data.images)
+													.product-action
+														i.add-to-cart.fas.fa-cart-plus
+														i.quick-view.far.fa-eye
+														i.to-compare.fas.fa-exchange-alt
+														i.add-to-wish-list.far.fa-heart
+													.product__detail
+														a.product-name(href='/product/' + data._id)=data.name
+														.product-price.group-product__price
+															.product-price
+																.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																if data.discount > 0
+																	.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+													span.onsale.onsale--right
+														if data.discount > 0
+															span=data.discount 
+															| %
+										ul.row.product-category__row.overflow-x-auto
+											each data in product2
+												li.col.l-2-4.m-4.c-6.product-wrapper.product-wrapper--medium
+													a.product-img(href='/product/' + data._id)
+														img(src='/uploads/images/' + data.images)
+													.product-action
+														i.add-to-cart.fas.fa-cart-plus
+														i.quick-view.far.fa-eye
+														i.to-compare.fas.fa-exchange-alt
+														i.add-to-wish-list.far.fa-heart
+													.product__detail
+														a.product-name(href='/product/' + data._id)=data.name
+														.product-price.group-product__price
+															.product-price
+																.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																if data.discount > 0
+																	.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+													span.onsale.onsale--right
+														if data.discount > 0
+															span=data.discount 
+															| %
+						.grid.wide
+							.row.content-product-category__brand.brand-list
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/logo-acer.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/logo-asus.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/logo-dell.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/logo-macbook.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/logo-intel.png', alt='')
+								a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+									img(src='./img/brands/logo-msi.png', alt='')
+			//- Banners images
+			.grid.wide.content-banner-images.container.mg-bot-60
+				.row
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img.img-hover-light-effect
+							a(href='')
+								img(src='./img/banners/3-banner-market_hor-m-01.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img.img-hover-light-effect
+							a(href='')
+								img(src='./img/banners/3-banner-market_hor-m-02.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img.img-hover-light-effect
+							a(href='')
+								img(src='./img/banners/3-banner-market_hor-m-03.jpg', alt='')
+			//- Categories tabs double
+			.grid.wide.content-product-category
+				.row.product-category__wrapper.wrapper
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									.tag-title
+										h2 Smartphone
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/3-banner-market_m-01.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-11.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													each data in productGalaxy1
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+												ul.row.product-category__row.overflow-x-auto
+													each data in productGalaxy2
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-macbook.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-dell.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-intel.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-acer.png', alt='')
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									li.tag-title
+										h2 Tablets 
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/3-banner-market_m-02.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-13.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													each data in productIpad1
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+												ul.row.product-category__row.overflow-x-auto
+													each data in hotTablet
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-msi.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-asus.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-macbook.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-acer.png', alt='')
+			//- Categories tabs double
+			.grid.wide.content-product-category
+				.row.product-category__wrapper.wrapper
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									.tag-title
+										h2 Macbook
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/4-banner-market_m-01.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-15.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													each data in productMacBook1
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+												ul.row.product-category__row.overflow-x-auto
+													each data in productMacBook2
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-asus.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-acer.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-macbook.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-dell.png', alt='')
+					.col.l-6.m-12.c-12.category-tab-container.container.mg-bot-60.tabs-container
+						div
+							div
+								ul.content-product-category__heading.tabs-nav.tag-title__wrapper
+									.tag-title
+										h2 Apple Watches
+								.grid.wide
+									.row
+										.col.l-4.m-3.c-0.product-category__banner.tab-banner.banner-wrapper
+											.banner-img.img-hover-light-effect
+												img(src='./img/banners/4-banner-market_m-02.jpg', alt='')
+										.col.l-8.m-9.c-12.product-category__content
+											#tab-17.grid.wide.product-category__content-wrapper.tab-pane.active
+												ul.row.product-category__row.overflow-x-auto
+													each data in productAppleWatch1
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+															span.onsale.onsale--right
+																if data.discount > 0
+																	span=data.discount
+																	| %	
+												ul.row.product-category__row.overflow-x-auto
+													each data in productAppleWatch2
+														li.col.l-6.m-4.c-6.product-wrapper.product-wrapper--medium
+															a.product-img(href='/product/' + data._id)
+																img(src='/uploads/images/' + data.images)
+															.product-action
+																i.add-to-cart.fas.fa-cart-plus
+																i.quick-view.far.fa-eye
+																i.to-compare.fas.fa-exchange-alt
+																i.add-to-wish-list.far.fa-heart
+															.product__detail
+																a.product-name(href='/product/' + data._id)=data.name
+																.product-price.group-product__price
+																	.product-price
+																		.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																		if data.discount > 0
+																			.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+								.grid.wide
+									.row.content-product-category__brand.brand-list-haft.brand-list
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-acer.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-msi.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-dell.png', alt='')
+										a.col.l-2.m-3.c-4.product-category__brand-link.brand-img(href='')
+											img(src='./img/brands/logo-macbook.png', alt='')
+			//- Group product
+			.content-group-product
+				.row
+					.col.l-6.m-12.c-12.container.mg-bot-60
+						.group-product-container
+							.group-product__heading.tag-title__wrapper
+								.tag-title
+									h2 Featured Products
+							.grid.wide
+								ul.row.group-product__list.overflow-x-auto
+									each data in featureProducts1
+										li.col.l-4.m-3.c-6.product-wrapper
+											a.product-img(href='/product/' + data._id)
+												img(src='/uploads/images/' + data.images)
+											span.group-product__sale.onsale
+												if data.discount > 0
+													span=data.discount
+													| %
+											.product-action
+												i.add-to-cart.fas.fa-cart-plus
+												i.quick-view.far.fa-eye
+												i.to-compare.fas.fa-exchange-alt
+												i.add-to-wish-list.far.fa-heart
+											a.product-name(href='/product/' + data._id)=data.name
+											.product-price
+												.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+												if data.discount > 0
+													.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+								ul.row.group-product__list.overflow-x-auto
+									each data in featureProducts2
+										li.col.l-4.m-3.c-6.product-wrapper
+											a.product-img(href='/product/' + data._id)
+												img(src='/uploads/images/' + data.images)
+											.product-action
+												i.add-to-cart.fas.fa-cart-plus
+												i.quick-view.far.fa-eye
+												i.to-compare.fas.fa-exchange-alt
+												i.add-to-wish-list.far.fa-heart
+											a.product-name(href='/product/' + data._id)=data.name
+											.product-price
+												.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+												if data.discount > 0
+													.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+					.col.l-6.m-12.c-12
+						.grid.wide.group-product-container
+							.row
+								.col.l-6.container.mg-bot-60
+									.group-product__heading.tag-title__wrapper
+										.tag-title
+											h2 Best Of The Week
+									.grid.wide
+										ul.row.group-product__list.overflow-x-auto
+											each data in bestSales
+												li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+													.item-horizontal
+														a.product-img(href='/product/' + data._id)
+															img(src='/uploads/images/'+ data.images)
+														.group-product__detail.product-info
+															a.product-name(href='/product/' + data._id)=data.name
+															.product-price.group-product__price
+																.product-price
+																	.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																	if data.discount > 0
+																		.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+														span.group-product__sale.onsale
+															if data.discount > 0
+																span=data.discount
+																| %
+										ul.row.group-product__list.overflow-x-auto
+											each data in productMacBook1
+												li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+													.item-horizontal
+														a.product-img(href='/product/' + data._id)
+															img(src='/uploads/images/'+ data.images)
+														.group-product__detail.product-info
+															a.product-name(href='/product/' + data._id)=data.name
+															.product-price.group-product__price
+																.product-price
+																	.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																	if data.discount > 0
+																		.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+														span.group-product__sale.onsale
+															if data.discount > 0
+																span=data.discount
+																| %
+										ul.row.group-product__list.overflow-x-auto
+											each data in productGalaxy2
+												li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+													.item-horizontal
+														a.product-img(href='/product/' + data._id)
+															img(src='/uploads/images/'+ data.images)
+														.group-product__detail.product-info
+															a.product-name(href='/product/' + data._id)=data.name
+															.product-price.group-product__price
+																.product-price
+																	.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																	if data.discount > 0
+																		.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+														span.group-product__sale.onsale
+															if data.discount > 0
+																span=data.discount
+																| %
+								.col.l-6.container.mg-bot-60
+									.group-product__heading.tag-title__wrapper
+										.tag-title
+											h2 Popular In Categories
+									.grid.wide
+										ul.row.group-product__list.overflow-x-auto
+											each data in productIpad1
+												li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+													.item-horizontal
+														a.product-img(href='/product/' + data._id)
+															img(src='/uploads/images/'+ data.images)
+														.group-product__detail.product-info
+															a.product-name(href='/product/' + data._id)=data.name
+															.product-price.group-product__price
+																.product-price
+																	.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																	if data.discount > 0
+																		.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+														span.group-product__sale.onsale
+															if data.discount > 0
+																span=data.discount
+																| %
+										ul.row.group-product__list.overflow-x-auto
+											each data in todayProducts
+												li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+													.item-horizontal
+														a.product-img(href='/product/' + data._id)
+															img(src='/uploads/images/'+ data.images)
+														.group-product__detail.product-info
+															a.product-name(href='/product/' + data._id)=data.name
+															.product-price.group-product__price
+																.product-price
+																	.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																	if data.discount > 0
+																		.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+														span.group-product__sale.onsale
+															if data.discount > 0
+																span=data.discount
+																| %
+										ul.row.group-product__list.overflow-x-auto
+											each data in product2
+												li.col.l-12.m-6.c-12.product-wrapper.no-border.group-product__item
+													.item-horizontal
+														a.product-img(href='/product/' + data._id)
+															img(src='/uploads/images/'+ data.images)
+														.group-product__detail.product-info
+															a.product-name(href='/product/' + data._id)=data.name
+															.product-price.group-product__price
+																.product-price
+																	.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((data.price)-(data.price*data.discount)/100).toFixed())
+																	if data.discount > 0
+																		.price-old=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
+														span.group-product__sale.onsale
+															if data.discount > 0
+																span=data.discount
+																| %
+			//- Banners images
+			.grid.wide.content-banner-images.container.mg-bot-60
+				.row
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img
+							a(href='')
+								img(src='./img/banners/5-banner-market_s-01.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img
+							a(href='')
+								img(src='./img/banners/5-banner-market_s-02.jpg', alt='')
+					.col.l-4.m-4.c-12.banner-wrapper
+						.banner-img
+							a(href='')
+								img(src='./img/banners/5-banner-market_s-03.jpg', alt='')
+		//- News letter
+		.content-newsletter
+			.container
+				.newsletter__title
+					h3 Join Our Newsletter Now
+				.newsletter__content
+					form.news-letter__subcribe(action='')
+						.newsletter__field
+							.newsletter__control
+								.newsletter__input
+									input(type='email', placeholder='Enter your email')
+								.newsletter__action
+									button(type='submit') Subscribe
+				p.newsletter__des
+					| Will be used in accordance with our 
+					a(href='') Privacy Policy
+		//- Shipping support
+		.content-shipping-support
+			.container
+				.row
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.fas.fa-car
+						.shipping-content
+							span.size-18 Free Delivery
+							p On all Orders over $99
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.fas.fa-sync-alt
+						.shipping-content
+							span.size-18 90 Days Return
+							p If goods have problems
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.far.fa-address-card
+						.shipping-content
+							span.size-18 100% Safe &amp; Secure
+							p Proin condimentum sagittis
+					.col.l-3.m-6.c-12.shipping-wrapper
+						i.shipping-icon.far.fa-life-ring
+						.shipping-content
+							span.size-18 100% Safe &amp; Secure
+							p Proin condimentum sagittis

@@ -4,7 +4,8 @@ header.page-header
 		//- Header top-bar
 		.header-topbar
 			.header-topbar__advertisement
-				img(src='https://mageblueskytech.com/armania/media/wysiwyg/topbar-advastment.jpg', alt='')
+				a(href='/')
+					img(src='https://mageblueskytech.com/armania/media/wysiwyg/topbar-advastment.jpg', alt='')
 			.header-topbar__inner-wrap
 				.grid.wide
 					.row.container.header-topbar__inner
@@ -45,69 +46,9 @@ header.page-header
 						.header-search__block-search
 							.block-search__content
 								i.search-icon.fas.fa-search
-								.search-field
+								form.search-field(action='/shop', method='GET')
 									.search-field__control
-										input.search-field__input-text(type='text', onfocus='displaySearchSuggest()', onblur='hideSearchSuggest()', placeholder='Search entire store here...')
-										.search-field__control__search-suite
-											//- Search suggest
-											//- Remove class 'hidden' to display
-											.search-suggest.hidden
-												.search-suggest__container
-													.search-suggest__heading
-														span Products
-														a.search-suggest__see-all(href='')
-															span See all
-															span.see-all__result 20
-													.search-suggest__product
-														ul.search-suggest__product__list
-															li.search-suggest__product__item
-																a.search-suggest__product__link(href='')
-																	.search-suggest__img
-																		a.search-suggest__img__link(href='', alt='', title='iPad Mini wifi 4G')
-																			img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/1285fb951e45abaaca1c3c3bf25a9673/t/a/tablet_samll_01_1.jpg', alt='')
-																	.search-suggest__info
-																		.search-suggest__info__titile
-																			a.search-suggest__info__titile-link(href='') iPad Mini wifi 4G 
-																		.search-suggest__info__review
-																			.product-review-summary
-																				.rating-result
-																					i.rating-icon.active.far.fa-star
-																					i.rating-icon.active.far.fa-star
-																					i.rating-icon.active.far.fa-star
-																					i.rating-icon.far.fa-star
-																					i.rating-icon.far.fa-star
-																				.reviews-actions
-																					a.action.view(href='')
-																						span 1
-																						span review
-																		.search-suggest__info__price
-																			.special-price $368.99
-																			.old-price $569.99
-															li.search-suggest__product__item
-																a.search-suggest__product__link(href='')
-																	.search-suggest__img
-																		a.search-suggest__img__link(href='', alt='', title='iPad Mini wifi 4G')
-																			img(src='https://mageblueskytech.com/armania/media/catalog/product/cache/1285fb951e45abaaca1c3c3bf25a9673/t/a/tablet_samll_01_1.jpg', alt='')
-																	.search-suggest__info
-																		.search-suggest__info__titile
-																			a.search-suggest__info__titile-link(href='') iPad Mini wifi 4G 
-																		.search-suggest__info__review
-																			.product-review-summary
-																				.rating-result
-																					i.rating-icon.active.far.fa-star
-																					i.rating-icon.active.far.fa-star
-																					i.rating-icon.active.far.fa-star
-																					i.rating-icon.far.fa-star
-																					i.rating-icon.far.fa-star
-																				.reviews-actions
-																					a.action.view(href='')
-																						span 1
-																						span review
-																		.search-suggest__info__price
-																			.special-price $368.99
-																			.old-price $569.99
-											//- Search suggest - No result
-											.search-no-result.hidden No Result
+										input.search-field__input-text(type='text', name="search", placeholder='Search entire store here...')
 									.search-field__action
 										button.search-field__action-btn(type='submit')
 											span Search
@@ -245,7 +186,7 @@ header.page-header
 									if datas
 										each category in datas
 											li.drop-down-menu__item
-												a.drop-down-menu__link(href='/')=category.name
+												a.drop-down-menu__link(href='/shop/'+ category._id)=category.name
 												.grid.wide.vertical-menu__sub-category
 													.row.sub-category__list-wrapper
 														ul.col.l-4.m-12.c-12.sub-category__list
@@ -254,7 +195,7 @@ header.page-header
 																	if category.listCategory
 																		each detailCategory in category.listCategory
 																			li.sub-child-menu__item
-																				a.sub-child-menu__link(href='')=detailCategory.name
+																				a.sub-child-menu__link(href='/shop/' + detailCategory._id)=detailCategory.name
 														.col.l-4.sub-category__img(style='padding-right: 2%')
 															img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
 														.col.l-4.sub-category__img(style='padding-left: 2%')

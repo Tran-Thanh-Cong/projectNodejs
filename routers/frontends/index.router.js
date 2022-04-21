@@ -8,9 +8,11 @@ const blog = require('../../controllers/frontends/blog.controller');
 const contact = require('../../controllers/frontends/contact.controller');
 const logout = require('../../controllers/frontends/logout.controller');
 const verifyEmail = require('../../controllers/frontends/verifyEmail.controller');
+const authMiddleware = require('../../middlewares/auth.middleware')
 
 // home router
 router.get('/', home.index);
+router.get('/shop/:id', home.detailcategory);
 
 // login router
 router.get('/login', login.login_get);
@@ -28,10 +30,11 @@ router.get('/logout', logout.logout);
 
 //product
 router.get('/product/:id', home.detail);
+router.post('/product/:id', authMiddleware.authUser, shop.addToCart);
 
 // shop router
 router.get('/shop', shop.index);
-
+router.get('/shop/product/:id', shop.detailProduct);
 // blog router
 router.get('/blog', blog.index);
 
