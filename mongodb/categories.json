@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "name": "Smart Phone",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1648195596414"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650124593705"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "name": "Tablet",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1648195596415"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650124893342"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "623d780c1d8f0e3ec81315b2"
+  },
+  "name": "Laptops",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1648195596415"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650124914075"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "623ec894984ff33fa7b084d2"
+  },
+  "name": "Tai nghe",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1648281748342"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128129250"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "623ec8f3984ff33fa7b084da"
+  },
+  "name": "Smart Watch",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1648281843649"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650124759736"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625ae4c0adb65a626b2894d9"
+  },
+  "name": "Loa",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650123968273"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650123968273"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625ae8a6adb65a626b2895b2"
+  },
+  "name": "Camera",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650124966512"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127626921"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af2d11f87f4311f6fbf46"
+  },
+  "name": "Mouse",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127569275"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127716687"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "name": "Phụ kiện",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127697791"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127697791"
+    }
+  }
+}]

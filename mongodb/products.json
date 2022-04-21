@@ -1,0 +1,1036 @@
+[{
+  "_id": {
+    "$oid": "62583f8ccffc381c58e61b42"
+  },
+  "name": "OPPO Reno6 5G",
+  "price": 11190000,
+  "discount": 36,
+  "amount": 20,
+  "images": "1650164812024hot-deal_03.jpg",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1649950604858"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650164812031"
+    }
+  },
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fab"
+  }
+},{
+  "_id": {
+    "$oid": "625a87adc80874feaa4c69fe"
+  },
+  "name": "Macbook Pro",
+  "price": 54000000,
+  "discount": 40,
+  "amount": 10,
+  "images": "1650163382075macbook_pro_14_inch_mac24h.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650100141844"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650163382084"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625acf4d3332267ee6481f47"
+  },
+  "name": "iPad Pro 2022",
+  "price": 25000000,
+  "discount": 40,
+  "amount": 10,
+  "images": "1650162183444product_slider_m_01.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fac"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650118477019"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650162183454"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625b7a478855a058e9c21788"
+  },
+  "name": "Apple Watch Series 7",
+  "price": 43000000,
+  "discount": 40,
+  "amount": 10,
+  "images": "1650162247318product_slider_m_02.jpg",
+  "detailCategory": {
+    "$oid": "625af21981d91b9f06916f2a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650162247330"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650162247330"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625b83e2f1f35289ca6cc509"
+  },
+  "name": "Samsung Galaxy Note",
+  "price": 18999000,
+  "discount": 36,
+  "amount": 10,
+  "images": "1650164706192hot-deal_01.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fa9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650164706206"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650175634015"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625b84baf1f35289ca6cc524"
+  },
+  "name": "Apple Watch Series 6",
+  "price": 10990000,
+  "discount": 36,
+  "amount": 11,
+  "images": "1650176929300beu_b2_hong.jpg",
+  "detailCategory": {
+    "$oid": "625af21981d91b9f06916f2a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650164922637"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176929308"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625badc4c6b2205b7571bccd"
+  },
+  "name": "Samsung Galaxy M33",
+  "price": 10000000,
+  "discount": 10,
+  "amount": 10,
+  "images": "1650175428575samsung_galaxy M33.png",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fa9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650175428590"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650175428590"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bae52801df993e09ca96c"
+  },
+  "name": "Samsung Galaxy A12",
+  "price": 12999000,
+  "discount": 20,
+  "amount": 12,
+  "images": "1650175570940samsung_galaxy_a12_2021_black.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fa9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650175570952"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650175570952"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bae77801df993e09ca982"
+  },
+  "name": "Samsung Galaxy A13",
+  "price": 21000000,
+  "discount": 10,
+  "amount": 12,
+  "images": "1650175607595samsung_galaxy_a13_cam.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fa9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650175607607"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650175607607"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625baec3801df993e09ca9b0"
+  },
+  "name": "Samsung Galaxy A22",
+  "price": 25999000,
+  "discount": 40,
+  "amount": 5,
+  "images": "1650175683930samsung_galaxy_a22_4g_mint.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fa9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650175683941"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650175683941"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bafab8e36ce70cded2b67"
+  },
+  "name": "Xiaomi Redmi 10 Gray",
+  "price": 8000000,
+  "discount": 0,
+  "amount": 12,
+  "images": "1650175915894Xiaomi_redmi_10_gray.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6faa"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650175915908"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650175915908"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb0d98e36ce70cded2ba2"
+  },
+  "name": "Xiaomi Redmi 10 Back",
+  "price": 6700000,
+  "discount": 2,
+  "amount": 12,
+  "images": "1650176217496xiaomi_redmi_10c_đen.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6faa"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176217507"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176217507"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb1328e36ce70cded2bb9"
+  },
+  "name": "Xiaomi Redmi Note 11",
+  "price": 12980000,
+  "discount": 6,
+  "amount": 9,
+  "images": "1650176306477Xiaomi_redmi_note_11_black.jpeg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6faa"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176306487"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176306487"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb1e98e36ce70cded2bdc"
+  },
+  "name": "Samsung Galaxy Watch 40mm",
+  "price": 21000000,
+  "discount": 2,
+  "amount": 21,
+  "images": "1650176488999samsung_galaxy_watch_4_40mm.jpg",
+  "detailCategory": {
+    "$oid": "625af25b1f87f4311f6fbf18"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176489012"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176489012"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb24e8e36ce70cded2bf3"
+  },
+  "name": "Apple Watch S3 GPS",
+  "price": 21000999,
+  "discount": 0,
+  "amount": 5,
+  "images": "1650176590447apple_watch_s3_gps_42mm.jpg",
+  "detailCategory": {
+    "$oid": "625af21981d91b9f06916f2a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176590457"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176590457"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb2bd2ecbc12a1aeea718"
+  },
+  "name": "Apple Watch Series S6",
+  "price": 23000999,
+  "discount": 0,
+  "amount": 3,
+  "images": "1650176701612s6_44mm.jpg",
+  "detailCategory": {
+    "$oid": "625af21981d91b9f06916f2a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176701624"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176701624"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb2fd2ecbc12a1aeea72f"
+  },
+  "name": "Samsung Galaxy Watch 3",
+  "price": 21999000,
+  "discount": 5,
+  "amount": 11,
+  "images": "1650176765535samsung_galaxy_watch_3_41mm.jpg",
+  "detailCategory": {
+    "$oid": "625af25b1f87f4311f6fbf18"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176765545"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176816539"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb37e2ecbc12a1aeea757"
+  },
+  "name": "Apple Watch SE 40mm",
+  "price": 8000999,
+  "discount": 0,
+  "amount": 4,
+  "images": "1650176894944se_40mm.jpg",
+  "detailCategory": {
+    "$oid": "625af21981d91b9f06916f2a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650176894957"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650176894957"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb4cf2ecbc12a1aeea7ad"
+  },
+  "name": "iPad Ari 5 Blue",
+  "price": 21000999,
+  "discount": 5,
+  "amount": 5,
+  "images": "1650177231461ipad_air_5_wifi_blue.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fad"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650177231473"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650177231473"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb52e2ecbc12a1aeea7c4"
+  },
+  "name": "iPad Pro 2021 Gray",
+  "price": 50000999,
+  "discount": 10,
+  "amount": 8,
+  "images": "1650177326371ipad_pro_2021_11_inch_gray.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fac"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650177326382"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650177326382"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bb5802ecbc12a1aeea7db"
+  },
+  "name": "Samsung Galaxy A7 Lite",
+  "price": 21000999,
+  "discount": 0,
+  "amount": 10,
+  "images": "1650177408785samsung_galaxy_tab_a7_lite_gray.jpg",
+  "detailCategory": {
+    "$oid": "625af0c581d91b9f06916e7d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650177408796"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650177408796"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc4812ecbc12a1aeea846"
+  },
+  "name": "Samsung Galaxy Tab S7",
+  "price": 23999000,
+  "discount": 5,
+  "amount": 8,
+  "images": "1650181249754samsung_galaxy_tab_s7_xanh.jpg",
+  "detailCategory": {
+    "$oid": "625af0c581d91b9f06916e7d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181249768"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181249768"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc4b72ecbc12a1aeea85d"
+  },
+  "name": "Samsung Galaxy Tab S8",
+  "price": 40999888,
+  "discount": 10,
+  "amount": 4,
+  "images": "1650181303564Samsung_Galaxy_tab_s8_black.jpg",
+  "detailCategory": {
+    "$oid": "625af0c581d91b9f06916e7d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181303575"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181303575"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc5212ecbc12a1aeea874"
+  },
+  "name": "iPad Pro 2022 Gray",
+  "price": 50999000,
+  "discount": 10,
+  "amount": 6,
+  "images": "1650181409246ipad_pro_2021_129_inch_gray.jpg",
+  "detailCategory": {
+    "$oid": "625a30020e0e13f196ee6fac"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181409257"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181409257"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc57a2ecbc12a1aeea88b"
+  },
+  "name": "Airpords 3",
+  "price": 5000999,
+  "discount": 10,
+  "amount": 11,
+  "images": "1650181498486airpods-3-hop-sac-khong-day-thumb-600x600.jpeg",
+  "detailCategory": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181498497"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181498497"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc5b02ecbc12a1aeea8a2"
+  },
+  "name": "Airpords pro",
+  "price": 9000999,
+  "discount": 0,
+  "amount": 10,
+  "images": "1650181552258bluetooth-airpods-pro.jpg",
+  "detailCategory": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181552270"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181552270"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc5db2ecbc12a1aeea8ad"
+  },
+  "name": "Bluetooth-mozard K8",
+  "price": 9000999,
+  "discount": 0,
+  "amount": 11,
+  "images": "1650181595009bluetooth-mozard-k8.jpeg",
+  "detailCategory": {
+    "$oid": "625af5391f87f4311f6fc044"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181595012"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181595012"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc61f2ecbc12a1aeea8b8"
+  },
+  "name": "Bluetooth-true-wireless",
+  "price": 3000999,
+  "discount": 0,
+  "amount": 11,
+  "images": "1650181663741bluetooth-true-wireless-ava.png",
+  "detailCategory": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181663748"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181663748"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc6752ecbc12a1aeea8db"
+  },
+  "name": "Bluetooth-wireless",
+  "price": 5000999,
+  "discount": 10,
+  "amount": 9,
+  "images": "1650181749169bluetooth-true-wireless-rezo-f15.jpeg",
+  "detailCategory": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181749178"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181749178"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc6a22ecbc12a1aeea8e6"
+  },
+  "name": "Tai nghe Bluetooth-Kanen",
+  "price": 21000999,
+  "discount": 20,
+  "amount": 9,
+  "images": "1650181794660tai-nghe-bluetooth-kanen-k6.jpeg",
+  "detailCategory": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181794662"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181794662"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc6dc2ecbc12a1aeea8fd"
+  },
+  "name": "Bluetooth-true-sony",
+  "price": 900000,
+  "discount": 0,
+  "amount": 6,
+  "images": "1650181852292bluetooth-true-wireless-sony.jpg",
+  "detailCategory": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181852302"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181852302"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc7762ecbc12a1aeea93c"
+  },
+  "name": "Chuột không dây dareu",
+  "price": 1000000,
+  "discount": 10,
+  "amount": 9,
+  "images": "1650182006520chuot-co-day-dareu.jpeg",
+  "detailCategory": {
+    "$oid": "625bc7462ecbc12a1aeea920"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182006528"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182006528"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc7952ecbc12a1aeea947"
+  },
+  "name": "Chuột apple",
+  "price": 7000999,
+  "discount": 12,
+  "amount": 11,
+  "images": "1650182037862chuot-bluetooth-apple.jpg",
+  "detailCategory": {
+    "$oid": "625af4b31f87f4311f6fbffa"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182037864"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182037864"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc7cf2ecbc12a1aeea95e"
+  },
+  "name": "Chuột gamming zadez",
+  "price": 7000000,
+  "discount": 18,
+  "amount": 4,
+  "images": "1650182095804chuot-gaming-zadez.jpg",
+  "detailCategory": {
+    "$oid": "625bc7462ecbc12a1aeea920"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182095815"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182095815"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc8512ecbc12a1aeea975"
+  },
+  "name": "Chuột có dây razer",
+  "price": 900000,
+  "discount": 0,
+  "amount": 12,
+  "images": "1650182225802chuot-co-day-gaming-razer.jpg",
+  "detailCategory": {
+    "$oid": "625af4c61f87f4311f6fc006"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182225812"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182225812"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc8752ecbc12a1aeea980"
+  },
+  "name": "Chuột logitech",
+  "price": 700000,
+  "discount": 5,
+  "amount": 11,
+  "images": "1650182261142chuot-gaming-logitech-g102.jpg",
+  "detailCategory": {
+    "$oid": "625af4c61f87f4311f6fc006"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182261145"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182261145"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc8ad2ecbc12a1aeea997"
+  },
+  "name": "Chuột không dây corsair",
+  "price": 7000000,
+  "discount": 20,
+  "amount": 9,
+  "images": "1650182317453chuot-khong-day-gaming-corsair.jpg",
+  "detailCategory": {
+    "$oid": "625bc7462ecbc12a1aeea920"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182317462"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182317462"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc8cf2ecbc12a1aeea9a2"
+  },
+  "name": "Chuột bluetooth apple",
+  "price": 10999000,
+  "discount": 30,
+  "amount": 9,
+  "images": "1650182351791chuot-bluetooth-apple.jpg",
+  "detailCategory": {
+    "$oid": "625af4b31f87f4311f6fbffa"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650182351795"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650182351795"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c48aae47ba43ec59d2ee4"
+  },
+  "name": "Macbook Pro- M1-2021",
+  "price": 90999000,
+  "discount": 10,
+  "amount": 3,
+  "images": "1650215082758apple-macbook-pro-14-m1-pro-2021.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215082771"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215082771"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c48d3e47ba43ec59d2eef"
+  },
+  "name": "Macbook Pro M1 2020",
+  "price": 70999000,
+  "discount": 5,
+  "amount": 4,
+  "images": "1650215123086macbook-pro-m1-2020-gray.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215123090"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215123090"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c48fbe47ba43ec59d2efa"
+  },
+  "name": "Macbook Air M1 2020",
+  "price": 30500000,
+  "discount": 0,
+  "amount": 6,
+  "images": "1650215163300macbook-air-m1-2020-gold.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215163306"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215163306"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c4a9de47ba43ec59d2f29"
+  },
+  "name": "Lenovo Thinkpad",
+  "price": 24000999,
+  "discount": 5,
+  "amount": 6,
+  "images": "1650215581829lenovo-gaming.png",
+  "detailCategory": {
+    "$oid": "625af16081d91b9f06916ecd"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215581841"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215581841"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c4adae47ba43ec59d2f46"
+  },
+  "name": "Macbook M1 Pro Max",
+  "price": 105999000,
+  "discount": 6,
+  "amount": 20,
+  "images": "1650215642185apple-macbook-pro-16-m1-pro-2021.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215642190"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215642190"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c4b29e47ba43ec59d2f63"
+  },
+  "name": "Macbook Air 2018",
+  "price": 30999000,
+  "discount": 5,
+  "amount": 5,
+  "images": "1650215721497macbook-pro-14-m1-max-2021.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215721507"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215721507"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625c4b5de47ba43ec59d2f80"
+  },
+  "name": "Macbook Air Pro 2022",
+  "price": 50000000,
+  "discount": 0,
+  "amount": 10,
+  "images": "1650215773507macbook-air-m1-2020-gold.png",
+  "detailCategory": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650215773512"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650215773512"
+    }
+  }
+}]

@@ -1,0 +1,799 @@
+[{
+  "_id": {
+    "$oid": "625a30020e0e13f196ee6fa8"
+  },
+  "name": "Apple",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650077698664"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650093722252"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625a30020e0e13f196ee6fa9"
+  },
+  "name": "Samsung",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625a30020e0e13f196ee6faa"
+  },
+  "name": "Xiaomi",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625a30020e0e13f196ee6fab"
+  },
+  "name": "OPPO",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625a30020e0e13f196ee6fac"
+  },
+  "name": "iPad Pro",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126961807"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625a30020e0e13f196ee6fad"
+  },
+  "name": "iPad Air",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650077698665"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126992609"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625aefd281d91b9f06916dee"
+  },
+  "name": "Nokia",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650126802437"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126802437"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625aefe181d91b9f06916dfa"
+  },
+  "name": "Realme",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650126817926"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126817926"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af00c81d91b9f06916e0c"
+  },
+  "name": "Vivo",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650126860681"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126860681"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af02481d91b9f06916e18"
+  },
+  "name": "Asus",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650126884885"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126884885"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af05f81d91b9f06916e2c"
+  },
+  "name": "iPad 10.2",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650126943816"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650126943816"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af0a981d91b9f06916e64"
+  },
+  "name": "iPad mini",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127017410"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127017410"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af0c581d91b9f06916e7d"
+  },
+  "name": "Samsung",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127045286"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127045286"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af0d681d91b9f06916e89"
+  },
+  "name": "Lenovo",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127062783"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127062783"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af0eb81d91b9f06916e98"
+  },
+  "name": "Nokia",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127083169"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127091278"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af11781d91b9f06916ebe"
+  },
+  "name": "Macbook",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127127198"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127127198"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af16081d91b9f06916ecd"
+  },
+  "name": "HP",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127200286"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127200286"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af16a81d91b9f06916ed9"
+  },
+  "name": "Dell",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127210820"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127210820"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af17b81d91b9f06916ee5"
+  },
+  "name": "ASUS",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127227319"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127227319"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af18881d91b9f06916ef1"
+  },
+  "name": "MSI",
+  "category": {
+    "$oid": "623d780c1d8f0e3ec81315b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127240498"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127240498"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af1b081d91b9f06916f00"
+  },
+  "name": "Loa Bluetooth",
+  "category": {
+    "$oid": "625ae4c0adb65a626b2894d9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127280919"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127280919"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af1d181d91b9f06916f0c"
+  },
+  "name": "Loa Karaoke",
+  "category": {
+    "$oid": "625ae4c0adb65a626b2894d9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127313145"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127313145"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af1fb81d91b9f06916f1b"
+  },
+  "name": "Loa Tivi | Soundbar",
+  "category": {
+    "$oid": "625ae4c0adb65a626b2894d9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127355125"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127355125"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af21981d91b9f06916f2a"
+  },
+  "name": "Apple Watch",
+  "category": {
+    "$oid": "623ec8f3984ff33fa7b084da"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127385860"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127385860"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af25b1f87f4311f6fbf18"
+  },
+  "name": "Samsung",
+  "category": {
+    "$oid": "623ec8f3984ff33fa7b084da"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127451193"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127451193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af2721f87f4311f6fbf27"
+  },
+  "name": "Xiaomi",
+  "category": {
+    "$oid": "623ec8f3984ff33fa7b084da"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127474350"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127474350"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af28b1f87f4311f6fbf33"
+  },
+  "name": "Huawei",
+  "category": {
+    "$oid": "623ec8f3984ff33fa7b084da"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127499624"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127499624"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af3a31f87f4311f6fbfd4"
+  },
+  "name": "Camera hành trình",
+  "category": {
+    "$oid": "625ae8a6adb65a626b2895b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127779242"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127779242"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af3ad1f87f4311f6fbfe0"
+  },
+  "name": "Ca an ninh",
+  "category": {
+    "$oid": "625ae8a6adb65a626b2895b2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650127789249"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650127789249"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af4b31f87f4311f6fbffa"
+  },
+  "name": "Chuôt không dây Apple",
+  "category": {
+    "$oid": "625af2d11f87f4311f6fbf46"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128051433"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128051433"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af4c61f87f4311f6fc006"
+  },
+  "name": "Magic mouse",
+  "category": {
+    "$oid": "625af2d11f87f4311f6fbf46"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128070808"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128070808"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af4f61f87f4311f6fc015"
+  },
+  "name": "Tai nghe Bluetooth",
+  "category": {
+    "$oid": "623ec894984ff33fa7b084d2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128118434"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128118434"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af52e1f87f4311f6fc038"
+  },
+  "name": "Tai nghe nhét tai",
+  "category": {
+    "$oid": "623ec894984ff33fa7b084d2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128174084"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128174084"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af5391f87f4311f6fc044"
+  },
+  "name": "Tai nghe chụp tai",
+  "category": {
+    "$oid": "623ec894984ff33fa7b084d2"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128185286"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128185286"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af55a1f87f4311f6fc053"
+  },
+  "name": "Phụ kiện Apple",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128218289"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128218289"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af56b1f87f4311f6fc05f"
+  },
+  "name": "Dán điện thoại",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128235270"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128235270"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af57f1f87f4311f6fc06b"
+  },
+  "name": "Sạc",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128255173"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128255173"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af58b1f87f4311f6fc077"
+  },
+  "name": "Pin dự phòng",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128267053"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128267053"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af5ad1f87f4311f6fc086"
+  },
+  "name": "Phụ kiện máy tính - Laptop",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128301626"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128301626"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af5c21f87f4311f6fc092"
+  },
+  "name": "Thẻ nhớ - USB",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128322427"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128322427"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625af5ce1f87f4311f6fc09e"
+  },
+  "name": "Dây đeo đồng hồ",
+  "category": {
+    "$oid": "625af3511f87f4311f6fbfb0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650128334229"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650128334229"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "625bc7462ecbc12a1aeea920"
+  },
+  "name": "Chuột gamming",
+  "category": {
+    "$oid": "625af2d11f87f4311f6fbf46"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650181958683"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650181958683"
+    }
+  }
+}]

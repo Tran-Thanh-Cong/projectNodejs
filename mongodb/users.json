@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "62402a4d33fda12aea509d04"
+  },
+  "username": "haongu",
+  "email": "tranthanhcong06052000@gmail.com",
+  "password": "$2b$10$reBdijTxt/2wz5iELqj9BOVzUtxTtSTS74547rEUjPgTM1g9cnRXG",
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1648372301147"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1648372336266"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "624dc85476aae233556ac642"
+  },
+  "username": "Cong060500",
+  "email": "tranthanhcongktpm2@gmail.com",
+  "password": "$2b$10$yCMUS4tvx2aa8LtOBcfoB.gFddnVKuAJ8//QSTyxSyu3uJLumQ7Ii",
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1649264724213"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1649264732926"
+    }
+  }
+}]
