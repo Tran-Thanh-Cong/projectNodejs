@@ -49,25 +49,10 @@ block content
 							.block.block-compare
 								.block-title Category
 								ul.filter-options-content__list
-									li.filter-options-content__item
-										a.filter-options-content__link(href='?price=0-1000000')
-											span.price 0
-											|  -
-											span.price 1.000.000
-										li.filter-options-content__item
-										a.filter-options-content__link(href='?price=1000001-10000000')
-											span.price 1.000.000
-											|  -
-											span.price 10.000.000
-										li.filter-options-content__item
-										a.filter-options-content__link(href='?price=10000001-50000000')
-											span.price 10.000.000
-											|  -
-											span.price 50.000.000
-										li.filter-options-content__item
-										a.filter-options-content__link(href='?price=50000001-100000000')
-											span.price 50.000.000
-											|  and above 
+									//- each datas in categorise
+									//- 	li.filter-options-content__item
+									//- 		a.filter-options-content__link(href='?category=' + datas.name)
+									//- 			span.price=datas.name
 					.col.l-9.m-12.c-12.col-main
 						//- Filter
 						.toolbar.toolbar-products
