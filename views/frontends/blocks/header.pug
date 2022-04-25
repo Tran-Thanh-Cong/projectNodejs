@@ -72,7 +72,8 @@ header.page-header
 					.header-action__cart
 						.header-action__cart-header.dropdown-btn
 							i.header-action__cart-icon.header-icon.fas.fa-shopping-cart
-							span.cart__count 4
+							if shop
+								span.cart__count=shop.totalItems
 						.header-action__cart-list.dropdown-content
 							.header-cart-list-wrapper
 								.close-btn.header-cart-list__close-btn
@@ -80,74 +81,29 @@ header.page-header
 								//- Cart has items
 								.header-cart-has-items
 									.header-cart-has-items__wrapper
-										ol.header-cart__list
-											li.header-cart__item
-												a.header-cart__item-img(href='')
-													img(src='./img/products/1-product_m-03.jpg', alt='')
-												.header-cart__item-detail
-													a.item-detail__name(href='') iPad Mini wifi 4G
-													.item-detail__pricing
-														.item-detail__price-container $368.99
-														i.qty-mul-icon.ti-close
-														.item-detail__qty 1
-												.header-cart__item-action
-													.item-action__primary
-														a.item-action__primary-link(href='')
-															i.ti-close
-													.item-action__secondary
-														a.item-action__secondary-link(href='')
-															i.fas.fa-cog
-											li.header-cart__item
-												a.header-cart__item-img(href='')
-													img(src='./img/products/2-product_m-06.jpg', alt='')
-												.header-cart__item-detail
-													a.item-detail__name(href='') Lorem ipsum dolor sit
-													.item-detail__pricing
-														.item-detail__price-container $368.99
-														i.qty-mul-icon.ti-close
-														.item-detail__qty 1
-												.header-cart__item-action
-													.item-action__primary
-														a.item-action__primary-link(href='')
-															i.ti-close
-													.item-action__secondary
-														a.item-action__secondary-link(href='')
-															i.fas.fa-cog
-											li.header-cart__item
-												a.header-cart__item-img(href='')
-													img(src='./img/products/2-product_m-02.jpg', alt='')
-												.header-cart__item-detail
-													a.item-detail__name(href='') Lorem ipsum dolor sit amet, consectetur adipis
-													.item-detail__pricing
-														.item-detail__price-container $368.99
-														i.qty-mul-icon.ti-close
-														.item-detail__qty 1
-												.header-cart__item-action
-													.item-action__primary
-														a.item-action__primary-link(href='')
-															i.ti-close
-													.item-action__secondary
-														a.item-action__secondary-link(href='')
-															i.fas.fa-cog
-											li.header-cart__item
-												a.header-cart__item-img(href='')
-													img(src='./img/products/4-shoes-01.jpg', alt='')
-												.header-cart__item-detail
-													a.item-detail__name(href='') Lorem ipsum dolor sit
-													.item-detail__pricing
-														.item-detail__price-container $368.99
-														i.qty-mul-icon.ti-close
-														.item-detail__qty 1
-												.header-cart__item-action
-													.item-action__primary
-														a.item-action__primary-link(href='')
-															i.ti-close
-													.item-action__secondary
-														a.item-action__secondary-link(href='')
-															i.fas.fa-cog
+										ul.header-cart__list
+											if addToCart
+												each datas in addToCart
+													li.header-cart__item
+														a.header-cart__item-img(href='')
+															img(src='./uploads/images/'+ datas.images)
+														.header-cart__item-detail
+															a.item-detail__name(href='')=datas.name
+															.item-detail__pricing
+																.item-detail__price-container=datas.price
+																i.qty-mul-icon.ti-close
+																.item-detail__qty=datas.quantity
+														.header-cart__item-action
+															.item-action__primary
+																a.item-action__primary-link(href='')
+																	i.ti-close
+															.item-action__secondary
+																a.item-action__secondary-link(href='')
+																	i.fas.fa-cog
 									.header-cart-has-items__subtotal
 										span.items__subtotal__label Cart Subtotal
-										.items__subtotal__price $2368.99
+										if shop
+											.items__subtotal__price=shop.totalPrice
 									.header-cart-has-items__action
 										a.btn.check-out-btn.d-block(href='') Proceed to Checkout
 									.header-cart-has-items__action

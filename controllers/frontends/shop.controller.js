@@ -129,11 +129,13 @@ class ShopController {
         }
         cart.totalItems += Number(req.body.add_product)
         cart = await cart.save();
-        res.locals.cart = await Cart_Model.findOne({ user_id: decodedToken.id });
+        const datas = await Cart_Model.findOne({ user_id: decodedToken.id });
+        res.locals.shop = datas;
+        res.locals.addtoCart = mutipleMongooseToObject(datas.products)
         return res.redirect('/shop');
       } else {
         //no cart for user, create a new cart
-        const cart = await Cart_Model.insertMany({
+        let cart = await Cart_Model.insertMany({
           user_id: decodedToken.id,
           products: [{
             productID: product._id,
@@ -145,7 +147,9 @@ class ShopController {
           totalItems: Number(req.body.add_product),
           totalPrice: (product.price * (1 - product.discount * 0.01)) * Number(req.body.add_product)
         });
-        res.locals.cart = cart
+        const datas = await Cart_Model.findOne({ user_id: decodedToken.id });
+        res.locals.shop = datas;
+        res.locals.addtoCart = mutipleMongooseToObject(datas.products)
         return res.redirect('/shop');
       }
     } catch (error) {

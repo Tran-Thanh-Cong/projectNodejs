@@ -1,5 +1,4 @@
 const User_Model = require('../../models/user.model');
-const Admin_Model = require('../../models/admin.model');
 const bcrypt = require('bcrypt');
 const { createToken } = require('../../helpers/createToken');
 class LoginController {
