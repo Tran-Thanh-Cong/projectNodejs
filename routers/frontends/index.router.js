@@ -30,11 +30,12 @@ router.get('/logout', logout.logout);
 
 //product
 router.get('/product/:id', home.detail);
-router.post('/product/:id', authMiddleware.authUser, shop.addToCart);
 
 // shop router
 router.get('/shop', shop.index);
 router.get('/shop/product/:id', shop.detailProduct);
+router.post('/product/:id', authMiddleware.authUser, shop.addToCart);
+
 // blog router
 router.get('/blog', blog.index);
 

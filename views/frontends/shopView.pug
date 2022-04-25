@@ -47,12 +47,14 @@ block content
 															|  and above 
 						.sidebar-addition
 							.block.block-compare
-								.block-title Category
-								ul.filter-options-content__list
-									//- each datas in categorise
-									//- 	li.filter-options-content__item
-									//- 		a.filter-options-content__link(href='?category=' + datas.name)
-									//- 			span.price=datas.name
+								.block-title Sort By
+									ul.filter-options-content__list
+										li.filter-options-content__item
+											a.filter-options-content__link(href='?sortName=asc')
+												span.price Name
+										li.filter-options-content__item
+											a.filter-options-content__link(href='?sortPrice=desc')
+												span.price Price
 					.col.l-9.m-12.c-12.col-main
 						//- Filter
 						.toolbar.toolbar-products
@@ -68,13 +70,6 @@ block content
 								span.toolbar-number 12
 								| of
 								span.toolbar-number 18
-							.toolbar-sorter.sorter
-								form.form(method="POST")
-									label.sorter-label(for='') Sort By
-									select.sorter-options(name='sortby', id='', onSelected = "test();")
-										option(value='position', selected='selected') Position
-										option(value='name') Name
-										option(value='price') Price
 						//- 4 col
 						#col-4.product-grid.active
 							.grid
@@ -166,7 +161,25 @@ block content
 						.toolbar.toolbar-products.bg-white
 							.pages
 								ul.pages-list
-									if pages
-										each page in pages
+									if pages > 0
+										-var i = current > 3 ? current - 2 : 1
+										if i!==1
 											li.page-item.current
-												a.page(href='?page='+ page)=page
+												a.page(href='#') ...
+										- for(;i<= current +2  && i< pages; i++)
+											if i== current
+												li.page-item.current.active
+													a.page(href='?page='+i)=i
+											else
+												li.page-item.current
+													a.page(href='?page='+i)=i
+											if (i==current+2 && i< pages)
+												li.page-item.current
+													a.page(href='#') ...
+										if current === pages
+											li.page-item.current.disabled
+												a.page(href='#')=pages
+										else
+											li.page-item.current
+												a.page(href='?page='+pages)=pages
+

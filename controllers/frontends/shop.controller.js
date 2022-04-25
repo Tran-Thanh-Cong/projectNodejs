@@ -1,70 +1,83 @@
 const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
-const Cart = require('../../models/Cart.model');
 const { escapeRegex } = require('../../helpers/escapeRegex');
 const { filterProductsCategory, filterProductsDetailCategory } = require('../../helpers/filterProducts');
-const Category_Model = require('../../models/category.model');
+const Cart_Model = require('../../models/Cart.model');
+const { verifyToken } = require('../../helpers/verifyToken');
 class ShopController {
   async index(req, res) {
-    const pageNumber = req.query.page;
+    const pageNumber = req.query.page || 1;
     const perPage = 8;
     try {
 
       if (req.query.search) {
-        const [products, categories] = await Promise.all([
+        const [products, totalProducts] = await Promise.all([
           Product_Model.find({ name: new RegExp(escapeRegex(req.query.search), 'gi') }).limit(perPage).skip((pageNumber - 1) * perPage),
-          Category_Model.find({}),
+          Product_Model.find({ name: new RegExp(escapeRegex(req.query.search), 'gi') })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(products.length / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
         return res.render('./frontends/shopView', {
           datas: mutipleMongooseToObject(products),
-          pages: pages,
-          categories: mutipleMongooseToObject(categories)
+          pages: Math.ceil(totalProducts.length / perPage),
+          current: pageNumber
         });
       }
 
       if (req.query.price) {
         const priceString = req.query.price.split('-');
         const price = priceString.map((i) => Number(i));
-        const [proPrice, categories] = await Promise.all([
+        const [proPrice, totalProPri] = await Promise.all([
           Product_Model.find({
             price: {
               $gte: price[0],
               $lt: price[1]
             }
           }).limit(perPage).skip((pageNumber - 1) * perPage),
-          Category_Model.find({})
+          Product_Model.find({
+            price: {
+              $gte: price[0],
+              $lt: price[1]
+            }
+          })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(proPrice.length / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
         return res.render('./frontends/shopView', {
           datas: mutipleMongooseToObject(proPrice),
-          pages: pages,
-          categories: mutipleMongooseToObject(categories),
+          pages: Math.ceil(totalProPri.length / perPage),
+          current: pageNumber
         });
       }
 
-      const [products, totalProducts, categories] = await Promise.all([
+      if (req.query.sortName) {
+        const [productSortName, totalProducts] = await Promise.all([
+          Product_Model.find({}, null, { sort: { name: 1 } }).limit(perPage).skip((pageNumber - 1) * perPage),
+          Product_Model.countDocuments()
+        ]);
+        return res.render('./frontends/shopView', {
+          datas: mutipleMongooseToObject(productSortName),
+          pages: Math.ceil(totalProducts / perPage),
+          current: pageNumber
+        })
+      }
+
+      if (req.query.sortPrice) {
+        const [productSortPrice, totalProducts] = await Promise.all([
+          Product_Model.find({}).sort({ price: -1 }).limit(perPage).skip((pageNumber - 1) * perPage),
+          Product_Model.countDocuments()
+        ]);
+        return res.render('./frontends/shopView', {
+          datas: mutipleMongooseToObject(productSortPrice),
+          pages: Math.ceil(totalProducts / perPage),
+          current: pageNumber
+        })
+      }
+
+      const [products, totalProducts] = await Promise.all([
         Product_Model.find({}).limit(perPage).skip((pageNumber - 1) * perPage),
         Product_Model.countDocuments(),
-        Category_Model.find({})
       ]);
-      const pages = [];
-      const totalPages = Math.ceil(totalProducts / perPage);
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
       return res.render('./frontends/shopView', {
         datas: mutipleMongooseToObject(products),
-        pages: pages,
-        categories: mutipleMongooseToObject(categories)
+        pages: Math.ceil(totalProducts / perPage),
+        current: pageNumber
       });
     } catch (error) {
       console.log(error.message);
@@ -86,17 +99,60 @@ class ShopController {
     }
   }
 
-  addToCart(req, res) {
-    const cart = new Cart(req.session.cart ? req.session.cart : {});
-    Product_Model.findById(req.params.id, (err, product) => {
-      if (err) {
-        console.log(err.message);
+  async addToCart(req, res) {
+    try {
+      const [decodedToken, product] = await Promise.all([
+        verifyToken(req.cookies.token),
+        Product_Model.findById(req.params.id)
+      ]);
+      let cart = await Cart_Model.findOne({ user_id: decodedToken.id });
+      if (cart) {
+        //product exists in the cart, update the quantity
+        let itemIndex = cart.products.findIndex(p => p.productID == req.params.id);
+        if (itemIndex > -1) {
+          debugger
+          let productItem = cart.products[itemIndex];
+          productItem.quantity += Number(req.body.add_product);
+          cart.products[itemIndex] = productItem;
+          cart.totalPrice += productItem.price * Number(req.body.add_product);
+          cart.totalItems += Number(req.body.add_product);
+        } else {
+          //product does not exists in cart, add new item
+          cart.products.push({
+            productID: product._id,
+            quantity: Number(req.body.add_product),
+            name: product.name,
+            images: product.images,
+            price: product.price * (1 - product.discount * 0.01)
+          })
+          cart.totalPrice += Number(req.body.add_product) * product.price * (1 - product.discount * 0.01);
+        }
+        cart.totalItems += Number(req.body.add_product)
+        cart = await cart.save();
+        res.locals.cart = await Cart_Model.findOne({ user_id: decodedToken.id });
+        return res.redirect('/shop');
+      } else {
+        //no cart for user, create a new cart
+        const cart = await Cart_Model.insertMany({
+          user_id: decodedToken.id,
+          products: [{
+            productID: product._id,
+            quantity: Number(req.body.add_product),
+            name: product.name,
+            images: product.images,
+            price: product.price * (1 - product.discount * 0.01)
+          }],
+          totalItems: Number(req.body.add_product),
+          totalPrice: (product.price * (1 - product.discount * 0.01)) * Number(req.body.add_product)
+        });
+        res.locals.cart = cart
+        return res.redirect('/shop');
       }
-      cart.add(product, product.id, Number(req.body.add_product));
-      req.session.cart = cart;
-      return res.redirect('/');
-    })
+    } catch (error) {
+      console.log(error.message);
+    }
   }
+
 }
 
 module.exports = new ShopController;
