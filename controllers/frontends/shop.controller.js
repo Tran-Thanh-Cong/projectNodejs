@@ -2,6 +2,8 @@ const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const { escapeRegex } = require('../../helpers/escapeRegex');
 const { filterProductsCategory, filterProductsDetailCategory } = require('../../helpers/filterProducts');
+const Cart_Model = require('../../models/Cart.model');
+const { verifyToken } = require('../../helpers/verifyToken');
 class ShopController {
   async index(req, res) {
     const pageNumber = req.query.page || 1;
@@ -72,6 +74,15 @@ class ShopController {
         Product_Model.find({}).limit(perPage).skip((pageNumber - 1) * perPage),
         Product_Model.countDocuments(),
       ]);
+
+      if (req.cookies.token) {
+        const decodedToken = await verifyToken(req.cookies.token);
+        const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
+        if (cartProduct) {
+          res.locals.cart = cartProduct[0];
+          res.locals.cartProduct = cartProduct[0].products
+        }
+      }
       return res.render('./frontends/shopView', {
         datas: mutipleMongooseToObject(products),
         pages: Math.ceil(totalProducts / perPage),
@@ -88,6 +99,15 @@ class ShopController {
         Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' }),
         Product_Model.find().populate({ path: 'detailCategory', populate: 'category' })
       ]);
+
+      if (req.cookies.token) {
+        const decodedToken = await verifyToken(req.cookies.token);
+        const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
+        if (cartProduct) {
+          res.locals.cart = cartProduct[0];
+          res.locals.cartProduct = cartProduct[0].products
+        }
+      }
       return res.render('./frontends/detailProductView', {
         datas: mongooseToObject(product),
         relatedProduct: mutipleMongooseToObject(filterProductsCategory(relatedProduct, product.detailCategory.category.name))

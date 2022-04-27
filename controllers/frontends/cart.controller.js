@@ -1,8 +1,7 @@
 const Cart_Model = require('../../models/Cart.model');
 const { verifyToken } = require('../../helpers/verifyToken');
-const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const Product_Model = require('../../models/product.model');
-
+const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 class CartController {
   async addToCart(req, res) {
     try {
@@ -28,14 +27,12 @@ class CartController {
             name: product.name,
             images: product.images,
             price: product.price * (1 - product.discount * 0.01),
+            discount: product.discount
           })
           cart.totalPrice += Number(req.body.add_product) * product.price * (1 - product.discount * 0.01);
         }
         cart.totalItems += Number(req.body.add_product)
         cart = await cart.save();
-        const datas = await Cart_Model.findOne({ user_id: decodedToken.id });
-        res.locals.shop = datas;
-        res.locals.addtoCart = mutipleMongooseToObject(datas.products)
         return res.redirect('/shop');
       } else {
         //no cart for user, create a new cart
@@ -47,13 +44,11 @@ class CartController {
             name: product.name,
             images: product.images,
             price: product.price * (1 - product.discount * 0.01),
+            discount: product.discount
           }],
           totalItems: Number(req.body.add_product),
           totalPrice: (product.price * (1 - product.discount * 0.01)) * Number(req.body.add_product)
         });
-        const datas = await Cart_Model.findOne({ user_id: decodedToken.id });
-        res.locals.shop = datas;
-        res.locals.addtoCart = mutipleMongooseToObject(datas.products)
         return res.redirect('/shop');
       }
     } catch (error) {
@@ -65,13 +60,28 @@ class CartController {
     try {
       const decodedToken = await verifyToken(req.cookies.token);
       const cart = await Cart_Model.findOne({ user_id: decodedToken.id });
-      console.log(cart);
+      if (req.cookies.token) {
+        const decodedToken = await verifyToken(req.cookies.token);
+        const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
+        if (cartProduct) {
+          res.locals.cart = cartProduct[0];
+          res.locals.cartProduct = cartProduct[0].products
+        }
+      }
       return res.render('./frontends/cartCheckoutView', {
-        datas: mutipleMongooseToObject(cart.products),
+        datas: mutipleMongooseToObject(cart.products) ? mutipleMongooseToObject(cart.products) : {},
         cart: cart
       });
     } catch (error) {
       console.log(error.message);
+    }
+  }
+
+  async removeProductCart(req, res) {
+    try {
+
+    } catch (error) {
+      console.log(error.message)
     }
   }
 }

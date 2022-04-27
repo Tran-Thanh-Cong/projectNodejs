@@ -5,6 +5,8 @@ const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
 const { filterCategory } = require('../../helpers/filterCategory');
 const { filterProductsCategory, filterProductsDetailCategory } = require('../../helpers/filterProducts');
+const Cart_Model = require('../../models/Cart.model');
+const { verifyToken } = require('../../helpers/verifyToken');
 class HomeController {
   async index(req, res) {
     try {
@@ -69,6 +71,14 @@ class HomeController {
           updatedAt: data.updatedAt
         };
       });
+      if (req.cookies.token) {
+        const decodedToken = await verifyToken(req.cookies.token);
+        const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
+        if (cartProduct) {
+          res.locals.cart = cartProduct[0];
+          res.locals.cartProduct = cartProduct[0].products
+        }
+      }
       res.locals.datas = datas;
       return res.render('./frontends/homeView', {
         bestSales: mutipleMongooseToObject(productMaxSales),
@@ -105,6 +115,14 @@ class HomeController {
         Product_Model.findById(req.params.id).populate({ path: 'detailCategory', populate: 'category' }),
         Product_Model.find().populate({ path: 'detailCategory', populate: 'category' })
       ]);
+      if (req.cookies.token) {
+        const decodedToken = await verifyToken(req.cookies.token);
+        const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
+        if (cartProduct) {
+          res.locals.cart = cartProduct[0];
+          res.locals.cartProduct = cartProduct[0].products
+        }
+      }
       return res.render('./frontends/detailProductView', {
         datas: mongooseToObject(product),
         relatedProduct: mutipleMongooseToObject(filterProductsCategory(relatedProduct, product.detailCategory.category.name))

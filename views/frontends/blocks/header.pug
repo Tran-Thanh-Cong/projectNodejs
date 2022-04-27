@@ -1,175 +1,176 @@
 //- Header - start
 header.page-header
-	.header-container
-		//- Header top-bar
-		.header-topbar
-			.header-topbar__advertisement
-				a(href='/')
-					img(src='https://mageblueskytech.com/armania/media/wysiwyg/topbar-advastment.jpg', alt='')
-			.header-topbar__inner-wrap
-				.grid.wide
-					.row.container.header-topbar__inner
-						.topbar-inner__link
-							p Welcome to our online store - Always free delivery
-						.topbar-inner__link
-							a.topbar-inner__link__store-locator(href='', title='Store location') Store Location
-							.topbar-inner__link__language-currency.menu-hover
-								.topbar__switcher-language
-									.topbar__switcher-language__option
-										.topbar__switcher-language__trigger.language-option(onclick='')
-											span English 21
-											i.ti-angle-down.arrow-down-icon
-										ul.topbar__switcher-language__drop-down.drop-down-menu
-											li.topbar__switcher-language__item.drop-down-menu__item
-												a.topbar__switcher-language__link.drop-down-menu__link(href='') English 22
-											li.topbar__switcher-language__item.drop-down-menu__item
-												a.topbar__switcher-language__link.drop-down-menu__link(href='') English 23
-											li.topbar__switcher-language__item.drop-down-menu__item
-												a.topbar__switcher-language__link.drop-down-menu__link(href='') English 24
-							.topbar-inner__link__language-currency.menu-hover
-								.topbar__switcher-language
-									.topbar__switcher-language__option
-										.topbar__switcher-language__trigger.money-option
-											span USD - US Dollar
-											i.ti-angle-down.arrow-down-icon
-										ul.topbar__switcher-language__drop-down.drop-down-menu
-											li.topbar__switcher-language__item.drop-down-menu__item
-												a.topbar__switcher-language__link.drop-down-menu__link(href='') GBP - British Pound
-		//- Header middle-bar
-		.grid.wide.header-middle
-			.row.container.header-middle__container
-				a.header-logo(href='/')
-					img(src='https://mageblueskytech.com/armania/media/logo/stores/23/logo.png', alt='')
-				//- Search
-				.header-search
-					.header-search-container
-						.header-search__block-search
-							.block-search__content
-								i.search-icon.fas.fa-search
-								form.search-field(action='/shop', method='GET')
-									.search-field__control
-										input.search-field__input-text(type='text', name="search", placeholder='Search entire store here...')
-									.search-field__action
-										button.search-field__action-btn(type='submit')
-											span Search
-						.header-search__search-key
-							ul.search-key__list
-								li.search-key__item
-									a.search-key__link(href='#') Computer &amp; Laptops
-								li.search-key__item
-									a.search-key__link(href='#') Camera &amp; Photo
-								li.search-key__item
-									a.search-key__link(href='#') SmartPhone &amp; Tablets
-								li.search-key__item
-									a.search-key__link(href='#') Games &amp; Consoles
-								li.search-key__item
-									a.search-key__link(href='#') Fashion &amp; Jewellry
-				.header-action
-					.header-action__wish-list
-						i.header-action__wish-list-icon.header-icon.far.fa-heart
-						span.wish-list__count 0
-					//- Cart
-					.header-action__cart
-						.header-action__cart-header.dropdown-btn
-							i.header-action__cart-icon.header-icon.fas.fa-shopping-cart
-							if shop
-								span.cart__count=shop.totalItems
-						.header-action__cart-list.dropdown-content
-							.header-cart-list-wrapper
-								.close-btn.header-cart-list__close-btn
-									i.ti-close
-								//- Cart has items
-								.header-cart-has-items
-									.header-cart-has-items__wrapper
-										ul.header-cart__list
-											if addToCart
-												each datas in addToCart
-													li.header-cart__item
-														a.header-cart__item-img(href='')
-															img(src='./uploads/images/'+ datas.images)
-														.header-cart__item-detail
-															a.item-detail__name(href='')=datas.name
-															.item-detail__pricing
-																.item-detail__price-container=datas.price
-																i.qty-mul-icon.ti-close
-																.item-detail__qty=datas.quantity
-														.header-cart__item-action
-															.item-action__primary
-																a.item-action__primary-link(href='')
-																	i.ti-close
-															.item-action__secondary
-																a.item-action__secondary-link(href='')
-																	i.fas.fa-cog
-									.header-cart-has-items__subtotal
-										span.items__subtotal__label Cart Subtotal
-										if shop
-											.items__subtotal__price=shop.totalPrice
-									.header-cart-has-items__action
-										a.btn.check-out-btn.d-block(href='') Proceed to Checkout
-									.header-cart-has-items__action
-										a.btn-primary.items__action__view-card(href='/cart-checkout') View Cart
-								//- Cart has no item
-								.hidden.header-cart-no-item__msg You have no items in your shopping cart.
-					.header-action__account
-						.header-action__account-icon
-							i.far.fa-user-circle
-						.header-action__account-wrap
-							if !user || user === null
-								a.account__link(href='/login')
-									| Sign In
-								a.account__link(href='/register')
-									| Create an Account
-							else
-								h2.account__link=user.username
-								a.account__link(href='/logout')
-									| Logout
-		//- Header content
-		.grid.wide.header-content
-			.row.container.header-content__container
-				nav.col.l-10.m-9.header-content__nav
-					.just-mobile(style='width: 100%;')
-						i.ti-menu.menu-icon
-					nav.primary-menu.menu-wrapper
-						ul.primary-menu__list
-							h3.mobile-primary-menu__title
-								span Menu
-								i#close-menu.close-btn.ti-close
-							li.primary-menu__item.menu-hover
-								span.primary-menu__link.pointer.dropdown-btn
-									a.primary-menu__link(href="/") Home
-									i.ti-angle-down.arrow-down-icon
-								ul.primary-menu__submenu.drop-down-menu
-									if datas
-										each category in datas
-											li.drop-down-menu__item
-												a.drop-down-menu__link(href='/shop/'+ category._id)=category.name
-												.grid.wide.vertical-menu__sub-category
-													.row.sub-category__list-wrapper
-														ul.col.l-4.m-12.c-12.sub-category__list
-															li.sub-category__item
-																ul.sub-child-menu
-																	if category.listCategory
-																		each detailCategory in category.listCategory
-																			li.sub-child-menu__item
-																				a.sub-child-menu__link(href='/shop/' + detailCategory._id)=detailCategory.name
-														.col.l-4.sub-category__img(style='padding-right: 2%')
-															img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
-														.col.l-4.sub-category__img(style='padding-left: 2%')
-															img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
-							li.primary-menu__item
-								a.primary-menu__link(href='/shop')
-									| Shop
-									span.primary-menu__link-hot HOT!
-							li.primary-menu__item
-								a.primary-menu__link(href='/blog')
-									| Blog
-							li.primary-menu__item
-								a.primary-menu__link(href='/contact')
-									| Contact
-				.col.l-2.m-3.header-content__action
-					.hotline
-						span.hotline-title Hotline: 
-						a.hotline-number(href='tel:(+800) 1234 56789') (+80) 398171495
-		.overlay
-		.bgOverlay
+  .header-container
+    //- Header top-bar
+    .header-topbar
+      .header-topbar__advertisement
+        a(href='/')
+          img(src='https://mageblueskytech.com/armania/media/wysiwyg/topbar-advastment.jpg', alt='')
+      .header-topbar__inner-wrap
+        .grid.wide
+          .row.container.header-topbar__inner
+            .topbar-inner__link
+              p Welcome to our online store - Always free delivery
+            .topbar-inner__link
+              a.topbar-inner__link__store-locator(href='', title='Store location') Store Location
+              .topbar-inner__link__language-currency.menu-hover
+                .topbar__switcher-language
+                  .topbar__switcher-language__option
+                    .topbar__switcher-language__trigger.language-option(onclick='')
+                      span English 21
+                      i.ti-angle-down.arrow-down-icon
+                    ul.topbar__switcher-language__drop-down.drop-down-menu
+                      li.topbar__switcher-language__item.drop-down-menu__item
+                        a.topbar__switcher-language__link.drop-down-menu__link(href='') English 22
+                      li.topbar__switcher-language__item.drop-down-menu__item
+                        a.topbar__switcher-language__link.drop-down-menu__link(href='') English 23
+                      li.topbar__switcher-language__item.drop-down-menu__item
+                        a.topbar__switcher-language__link.drop-down-menu__link(href='') English 24
+              .topbar-inner__link__language-currency.menu-hover
+                .topbar__switcher-language
+                  .topbar__switcher-language__option
+                    .topbar__switcher-language__trigger.money-option
+                      span USD - US Dollar
+                      i.ti-angle-down.arrow-down-icon
+                    ul.topbar__switcher-language__drop-down.drop-down-menu
+                      li.topbar__switcher-language__item.drop-down-menu__item
+                        a.topbar__switcher-language__link.drop-down-menu__link(href='') GBP - British Pound
+    //- Header middle-bar
+    .grid.wide.header-middle
+      .row.container.header-middle__container
+        a.header-logo(href='/')
+          img(src='https://mageblueskytech.com/armania/media/logo/stores/23/logo.png', alt='')
+        //- Search
+        .header-search
+          .header-search-container
+            .header-search__block-search
+              .block-search__content
+                i.search-icon.fas.fa-search
+                form.search-field(action='/shop', method='GET')
+                  .search-field__control
+                    input.search-field__input-text(type='text', name="search", placeholder='Search entire store here...')
+                  .search-field__action
+                    button.search-field__action-btn(type='submit')
+                      span Search
+            .header-search__search-key
+              ul.search-key__list
+                li.search-key__item
+                  a.search-key__link(href='#') Computer &amp; Laptops
+                li.search-key__item
+                  a.search-key__link(href='#') Camera &amp; Photo
+                li.search-key__item
+                  a.search-key__link(href='#') SmartPhone &amp; Tablets
+                li.search-key__item
+                  a.search-key__link(href='#') Games &amp; Consoles
+                li.search-key__item
+                  a.search-key__link(href='#') Fashion &amp; Jewellry
+        .header-action
+          .header-action__wish-list
+            i.header-action__wish-list-icon.header-icon.far.fa-heart
+            span.wish-list__count 0
+          //- Cart
+          .header-action__cart
+            .header-action__cart-header.dropdown-btn
+              i.header-action__cart-icon.header-icon.fas.fa-shopping-cart
+              if cart
+                span.cart__count=cart.totalItems
+            .header-action__cart-list.dropdown-content
+              .header-cart-list-wrapper
+                .close-btn.header-cart-list__close-btn
+                  i.ti-close
+                //- Cart has items
+                .header-cart-has-items
+                  .header-cart-has-items__wrapper
+                    ul.header-cart__list
+                      if cartProduct
+                        each data in cartProduct
+                          li.header-cart__item
+                            a.header-cart__item-img(href='')
+                              img(src='/uploads/images/'+ data.images)
+                            .header-cart__item-detail
+                              a.item-detail__name(href='')=data.name
+                              .item-detail__pricing
+                                .item-detail__price-container=data.price
+                                i.qty-mul-icon.ti-close
+                                .item-detail__qty=data.quantity
+                            .header-cart__item-action
+                              .item-action__primary
+                                a.item-action__primary-link(href='')
+                                  i.ti-close
+                              .item-action__secondary
+                                a.item-action__secondary-link(href='')
+                                  i.fas.fa-cog
+                  .header-cart-has-items__subtotal
+                    span.items__subtotal__label Cart Subtotal
+                    if cart
+                      .items__subtotal__price=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((cart.totalPrice).toFixed())
+                        |đ
+                  .header-cart-has-items__action
+                    a.btn.check-out-btn.d-block(href='') Proceed to Checkout
+                  .header-cart-has-items__action
+                    a.btn-primary.items__action__view-card(href='/cart-checkout') View Cart
+                //- Cart has no item
+                .hidden.header-cart-no-item__msg You have no items in your shopping cart.
+          .header-action__account
+            .header-action__account-icon
+              i.far.fa-user-circle
+            .header-action__account-wrap
+              if !user || user === null
+                a.account__link(href='/login')
+                  | Sign In
+                a.account__link(href='/register')
+                  | Create an Account
+              else
+                h2.account__link=user.username
+                a.account__link(href='/logout')
+                  | Logout
+    //- Header content
+    .grid.wide.header-content
+      .row.container.header-content__container
+        nav.col.l-10.m-9.header-content__nav
+          .just-mobile(style='width: 100%;')
+            i.ti-menu.menu-icon
+          nav.primary-menu.menu-wrapper
+            ul.primary-menu__list
+              h3.mobile-primary-menu__title
+                span Menu
+                i#close-menu.close-btn.ti-close
+              li.primary-menu__item.menu-hover
+                span.primary-menu__link.pointer.dropdown-btn
+                  a.primary-menu__link(href="/") Home
+                  i.ti-angle-down.arrow-down-icon
+                ul.primary-menu__submenu.drop-down-menu
+                  if datas
+                    each category in datas
+                      li.drop-down-menu__item
+                        a.drop-down-menu__link(href='/shop/'+ category._id)=category.name
+                        .grid.wide.vertical-menu__sub-category
+                          .row.sub-category__list-wrapper
+                            ul.col.l-4.m-12.c-12.sub-category__list
+                              li.sub-category__item
+                                ul.sub-child-menu
+                                  if category.listCategory
+                                    each detailCategory in category.listCategory
+                                      li.sub-child-menu__item
+                                        a.sub-child-menu__link(href='/shop/' + detailCategory._id)=detailCategory.name
+                            .col.l-4.sub-category__img(style='padding-right: 2%')
+                              img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
+                            .col.l-4.sub-category__img(style='padding-left: 2%')
+                              img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
+              li.primary-menu__item
+                a.primary-menu__link(href='/shop')
+                  | Shop
+                  span.primary-menu__link-hot HOT!
+              li.primary-menu__item
+                a.primary-menu__link(href='/blog')
+                  | Blog
+              li.primary-menu__item
+                a.primary-menu__link(href='/contact')
+                  | Contact
+        .col.l-2.m-3.header-content__action
+          .hotline
+            span.hotline-title Hotline: 
+            a.hotline-number(href='tel:(+800) 1234 56789') (+80) 398171495
+    .overlay
+    .bgOverlay
 //- Header - end

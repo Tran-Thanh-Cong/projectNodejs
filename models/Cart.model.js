@@ -22,6 +22,9 @@ const cartSchema = new Schema({
     },
     price: {
       type: 'number'
+    },
+    discount: {
+      type: 'number'
     }
   }],
   totalItems: {

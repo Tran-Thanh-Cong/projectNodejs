@@ -11,7 +11,7 @@ block content
 						.cart-main-title-wrapper
 							.cart-main-title
 								.cart-main-title__item.item
-									span Item
+									span Products
 								.cart-main-title__item.price
 									span Price
 								.cart-main-title__item.qty
@@ -32,30 +32,28 @@ block content
 											.cart-main-product__info-detail-wrapper
 												.cart-main-product__info-detail
 													.product-price
-														.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format(((product.price)-(product.price*product.discount)/100).toFixed())
+														.price-final=new Intl.NumberFormat('vn-IN', { maximumSignificantDigits: 3 }).format((product.price).toFixed())
 													.product-qty
 														.box-tocart__qty
 															a.qty-down(href='')
 																i.fas.fa-minus
-															input.qty-control(type='text', value='1')
+															input.qty-control(type='text', value=product.quantity)
 															a.qty-up(href='')
 																i.fas.fa-plus
 													.product-price-total-item
-														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((product.price).toFixed())
+														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format(((product.price) * product.quantity).toFixed())
 												.cart-main-product__action
-													a.action-edit(href='', title='Edit item parameters')
-														i.fas.fa-cog
-													a.action-remove(href='', title='Remove item')
+													a.action-remove(href='/remove/' + product._id, title='Remove item')
 														i.fas.fa-times
 						.cart-main-action
 							.left
-								a.action-continue.btn-primary(href='')
+								a.action-continue.btn-primary(href='/shop')
 									i.ti-angle-left
 									| Continue Shopping
 							.right
-								button.action-clear.btn-primary
+								a.action-clear.btn-primary
 									| Clear Shopping Cart
-								button.action-update.btn-primary
+								a.action-update.btn-primary
 									i.fas.fa-sync-alt
 									| Update Shopping Cart
 				.col.l-3.m-12.c-12.cart-summary
@@ -109,17 +107,16 @@ block content
 							.cart-total__title
 								span Subtotal
 							.cart-total__amount
-								span $796.24
-						.cart-total-item
-							.cart-total__title
-								span Shipping (Flat Rate - Fixed)
-							.cart-total__amount
-								span $15.00
+								if cart
+									span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((cart.totalPrice).toFixed())
+									|đ
 						.cart-total-item
 							.cart-total__title
 								span Order Total
 							.cart-total__amount.total
-								span $811.24
+								if cart
+									span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((cart.totalPrice).toFixed())
+									|đ
 					.block-discount
 						.block-title.panel-heading
 							span Apply Discount Code
