@@ -15,11 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
-app.use(function(req, res, next) {
-  res.locals.session = req.session;
-  next();
-});
-
 //view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

@@ -19,7 +19,8 @@ block content
 								.cart-main-title__item.subtotal
 									span Subtotal
 						.cart-main-product-list
-							if datas
+							if !datas || datas == null
+							else
 								each product in datas
 									.cart-main-product-item
 										.cart-main-product__info
@@ -43,7 +44,7 @@ block content
 													.product-price-total-item
 														span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format(((product.price) * product.quantity).toFixed())
 												.cart-main-product__action
-													a.action-remove(href='/remove/' + product._id, title='Remove item')
+													a.action-remove(href='/remove-product-cart/' + product._id, title='Remove item')
 														i.fas.fa-times
 						.cart-main-action
 							.left
@@ -51,7 +52,7 @@ block content
 									i.ti-angle-left
 									| Continue Shopping
 							.right
-								a.action-clear.btn-primary
+								a.action-clear.btn-primary(href='/clear-cart')
 									| Clear Shopping Cart
 								a.action-update.btn-primary
 									i.fas.fa-sync-alt
@@ -132,5 +133,4 @@ block content
 											button.btn-primary Apply Discount
 					.cart-checkout
 						.action
-							a.btn-primary.d-block(href='express-checkout.php') Proceed to Checkout
-							a.action-multicheckout(href='') Check Out with Multiple Addresses
+							a.btn-primary.d-block(href='/express-checkout') Proceed to Checkout

@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "62690d021d13aa7c2cd693c7"
+  },
+  "user_id": {
+    "$oid": "624dc85476aae233556ac642"
+  },
+  "products": [
+    {
+      "productID": {
+        "$oid": "625a87adc80874feaa4c69fe"
+      },
+      "quantity": 3,
+      "name": "Macbook Pro",
+      "images": "1650163382075macbook_pro_14_inch_mac24h.png",
+      "price": 32400000,
+      "discount": 40,
+      "_id": {
+        "$oid": "62690d021d13aa7c2cd693c8"
+      }
+    },
+    {
+      "productID": {
+        "$oid": "625acf4d3332267ee6481f47"
+      },
+      "quantity": 1,
+      "name": "iPad Pro 2022",
+      "images": "1650162183444product_slider_m_01.jpg",
+      "price": 15000000,
+      "discount": 40,
+      "_id": {
+        "$oid": "62692f8d3db52412fbd9ae79"
+      }
+    }
+  ],
+  "totalItems": 4,
+  "totalPrice": 112200000,
+  "__v": 1,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651051778190"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651060621425"
+    }
+  }
+}]

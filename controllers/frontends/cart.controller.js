@@ -1,4 +1,4 @@
-const Cart_Model = require('../../models/Cart.model');
+const Cart_Model = require('../../models/cart.model');
 const { verifyToken } = require('../../helpers/verifyToken');
 const Product_Model = require('../../models/product.model');
 const { mutipleMongooseToObject, mongooseToObject } = require('../../helpers/convertDataToObject');
@@ -59,30 +59,82 @@ class CartController {
   async cartCheckout(req, res) {
     try {
       const decodedToken = await verifyToken(req.cookies.token);
-      const cart = await Cart_Model.findOne({ user_id: decodedToken.id });
-      if (req.cookies.token) {
-        const decodedToken = await verifyToken(req.cookies.token);
-        const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
-        if (cartProduct) {
-          res.locals.cart = cartProduct[0];
-          res.locals.cartProduct = cartProduct[0].products
+      const cartProduct = await Cart_Model.findOne({ user_id: decodedToken.id });
+      if (cartProduct) {
+        if (cartProduct.products) {
+          res.locals.cart = cartProduct;
+          res.locals.cartProduct = cartProduct.products;
+          return res.render('./frontends/cartCheckoutView', {
+            datas: mutipleMongooseToObject(cartProduct.products),
+            cart: mongooseToObject(cartProduct)
+          });
+        } else {
+          res.locals.cart = null;
+          res.locals.cartProduct = null;
+          return res.render('./frontends/cartCheckoutView', {
+            datas: null,
+            cart: null
+          })
         }
+      } else {
+        res.locals.cart = null;
+        res.locals.cartProduct = null;
+        return res.render('./frontends/cartCheckoutView', {
+          datas: null,
+          cart: null
+        })
       }
-      return res.render('./frontends/cartCheckoutView', {
-        datas: mutipleMongooseToObject(cart.products) ? mutipleMongooseToObject(cart.products) : {},
-        cart: cart
-      });
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
   }
 
   async removeProductCart(req, res) {
     try {
-
+      const decodedToken = await verifyToken(req.cookies.token);
+      let cart = await Cart_Model.findOne({ user_id: decodedToken.id });
+      if (cart) {
+        const itemIndex = cart.products.findIndex(p => p._id.toString() === req.params.id);
+        if (itemIndex > -1) {
+          let productItem = cart.products[itemIndex];
+          cart.totalPrice -= productItem.price * productItem.quantity;
+          cart.totalItems -= productItem.quantity
+          cart.products.splice(itemIndex, 1);
+        }
+        cart = await cart.save();
+      }
+      return res.redirect('/shop');
     } catch (error) {
       console.log(error.message)
     }
   }
+
+  async delete(req, res) {
+    try {
+      const decodedToken = await verifyToken(req.cookies.token);
+      await Cart_Model.deleteOne({ user_id: decodedToken.id });
+      return res.redirect('/shop');
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  async expressCheckoutCart(req, res) {
+    try {
+      const decodedToken = await verifyToken(req.cookies.token);
+      const cartProduct = await Cart_Model.find({ user_id: decodedToken.id });
+      if (cartProduct.length > 0) {
+        res.locals.cart = cartProduct[0];
+        res.locals.cartProduct = cartProduct[0].products;
+      } else {
+        res.locals.cart = null;
+        res.locals.cartProduct = null;
+      }
+      return res.render('./frontends/expressCheckoutCartView');
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
 }
 module.exports = new CartController

@@ -10,6 +10,7 @@ const logout = require('../../controllers/frontends/logout.controller');
 const verifyEmail = require('../../controllers/frontends/verifyEmail.controller');
 const authMiddleware = require('../../middlewares/auth.middleware')
 const cart = require('../../controllers/frontends/cart.controller');
+const order = require('../../controllers/frontends/order.controller');
 
 // home router
 router.get('/', home.index);
@@ -35,10 +36,17 @@ router.get('/product/:id', home.detail);
 // shop router
 router.get('/shop', shop.index);
 router.get('/shop/product/:id', shop.detailProduct);
+router.post('/shop/product/:id', authMiddleware.authUser, cart.addToCart);
 
 //cart router
 router.post('/product/:id', authMiddleware.authUser, cart.addToCart);
 router.get('/cart-checkout', authMiddleware.authUser, cart.cartCheckout);
+router.get('/express-checkout', authMiddleware.authUser, cart.expressCheckoutCart);
+router.get('/clear-cart', authMiddleware.authUser, cart.delete);
+router.get('/remove-product-cart/:id', authMiddleware.authUser, cart.removeProductCart);
+
+//order router
+router.get('/order', authMiddleware.authUser, order.index);
 
 // blog router
 router.get('/blog', blog.index);

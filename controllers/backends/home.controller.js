@@ -1,6 +1,10 @@
 class HomeController {
   index(req, res) {
-    return res.render('./backends/homeView');
+    const date = new Date('yyyy-mm-dd');
+    console.log(date);
+    return res.render('./backends/homeView', {
+      date: date.getDay()
+    });
   }
 }
 

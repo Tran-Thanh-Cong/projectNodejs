@@ -1,0 +1,126 @@
+extend ./layout/layout.pug
+block content
+  main.page-main.page-content.bg-white.mg-bot-60
+    .grid.wide.page-express-checkout
+      .page-title-wrapper
+        h1.page-title
+          span Express Checkout
+      .row.container
+        .col.l-8.m-12.c-12.checkout-wrapper
+          .grid
+            .row
+              // Shipping address
+              .col.l-6.m-12.c-12.checkout-shipping-address-wrapper
+                .checkout-shipping-address
+                  .checkout-shipping-address__title.checkout-title
+                    i.fas.fa-home
+                    span Shipping Address
+                  .checkout-shipping-address__steps
+                    .field.required.shipping-address-firstname
+                      label.label(for='') Email
+                      .control
+                        input(type='text', name='', id='')
+                    .fieldset.field.shipping-street-address
+                      .control
+                        .field.required
+                          label.label(for='') Street Address 
+                          .control
+                            input(type='text', name='', id='')
+                    .field.city
+                      label.label(for='') City
+                      .control
+                        input(type='text', name='', id='')
+                    .field.company
+                      label.label(for='') Company
+                      .control
+                        input(type='text', name='', id='')
+                    .field.phone-number
+                      label.label(for='') Phone Number
+                      .control
+                        input(type='text', name='', id='')
+                        i.far.fa-question-circle
+              .col.l-6.m-12.c-12.checkout-methods-wrapper
+                .checkout-methods
+                  // Shipping methods
+                  .checkout-shipping-method
+                    .checkout-shipping-method__title.checkout-title
+                      i.fas.fa-truck
+                      span Shipping Methods
+                    .checkout-shipping-method__steps
+                      .field.delivery-date
+                        label.label(for='') Shipping Delivery Date
+                        .control
+                          input(type='text', name='', id='')
+                      .field.delivery-comment
+                        label.label(for='') Shipping Delivery Comment
+                        .control
+                          textarea(name='', id='', cols='3', rows='3')
+                      .shipping-method-steps__content
+                        table
+                          tbody
+                            tr
+                              td.col-method
+                                input(type='radio', name='', id='')
+                              td.col-price
+                                span $0.00
+                              td.col-method
+                                span Free
+                              td.col-carrierr
+                                span Free Shipping
+                            tr
+                              td.col-method
+                                input(type='radio', name='', id='')
+                              td.col-price
+                                span $10.00
+                              td.col-method
+                                span Fixed
+                              td.col-carrierr
+                                span Flat Rate
+                  .checkout-payment-method
+                    .checkout-title
+                      i.far.fa-credit-card
+                      span Payment Method
+        .col.l-4.m-12.c-12.checkout-sidebar-wrapper
+          .checkout-sidebar
+            .block-summary
+              .checkout-title
+                span Order Summary
+              .block.items-in-cart
+                .title
+                  if cart
+                    span=cart.totalItems
+                  span  Items In Cart
+                ul.items-in-cart__list
+                  if !cartProduct || cartProduct == null
+                    .hidden.header-cart-no-item__msg You have no items in your shopping cart.
+                  else
+                    each datas in cartProduct
+                      li.items-in-cart__item
+                        .items-in-cart__img-wrapper
+                          .items-in-cart__img
+                            img(src='/uploads/images/'+ datas.images)
+                        .items-in-cart__detail
+                          .items-in-cart-name-block
+                            a.product-name(href='')
+                              span=datas.name
+                            span.details-qty
+                              label.label(for='') Qty: 
+                              input.input-text.qty(type='number', name='', value=datas.quantity, id='')
+                            span.qty-button
+                              span.increase
+                                i.fas.fa-sort-up
+                              span.decrease
+                                i.fas.fa-sort-down
+                          .items-in-cart-subtotal
+                            span.price-excluding-tax=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((datas.price).toFixed())
+                .cart-total
+                  .cart-total-item.total
+                    if !cart || cart == null
+                    else
+                      .cart-total__title
+                        span Order Total
+                      .cart-total__amount.total
+                        span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((cart.totalPrice).toFixed())
+            .place-order-btn
+              a(href='/order').btn-primary.items__action__view-card
+                span Place Order
