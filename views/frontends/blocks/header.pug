@@ -94,7 +94,7 @@ header.page-header
 														.header-cart__item-detail
 															a.item-detail__name(href='')=data.name
 															.item-detail__pricing
-																.item-detail__price-container=data.price
+																.item-detail__price-container=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((data.price).toFixed())
 																i.qty-mul-icon.ti-close
 																.item-detail__qty=data.quantity
 														.header-cart__item-action
@@ -152,8 +152,8 @@ header.page-header
 																ul.sub-child-menu
 																	if category.listCategory
 																		each detailCategory in category.listCategory
-																			li.sub-child-menu__item
-																				a.sub-child-menu__link(href='/shop/' + detailCategory._id)=detailCategory.name
+																			li.sub-child-menu__item.disabled
+																				a.sub-child-menu__link(href='#')=detailCategory.name
 														.col.l-4.sub-category__img(style='padding-right: 2%')
 															img(src='./img/sub-menu/bg_smart-phone.jpg', alt='')
 														.col.l-4.sub-category__img(style='padding-left: 2%')

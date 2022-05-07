@@ -8,37 +8,31 @@ const validator = require('email-validator');
 class AdminController {
   async index(req, res) {
     try {
-      const pageNumber = req.query.page;
+      const pageNumber = req.query.page || 1;
       const perPage = 5;
       if (req.query.search) {
         const [admins, totalAdmins] = await Promise.all([
           Admin_Model.find({
             name: new RegExp(escapeRegex(req.query.search), 'gi')
           }).limit(perPage).skip((pageNumber - 1) * perPage),
-          Admin_Model.countDocuments()
+          Admin_Model.find({
+            name: new RegExp(escapeRegex(req.query.search), 'gi')
+          })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalAdmins / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i)
-        }
         return res.render('./backends/admins/adminsView', {
           datas: mutipleMongooseToObject(admins),
-          pages: pages
+          pages: Math.ceil(totalAdmins.length / perPage),
+          current: pageNumber
         });
       } else {
         const [admins, totalAdmins] = await Promise.all([
           Admin_Model.find({}).limit(perPage).skip((pageNumber - 1) * perPage),
           Admin_Model.countDocuments()
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalAdmins / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i)
-        }
         return res.render('./backends/admins/adminsView', {
           datas: mutipleMongooseToObject(admins),
-          pages: pages
+          pages: Math.ceil(totalAdmins / perPage),
+          current: pageNumber
         })
       }
     } catch (error) {

@@ -4,7 +4,7 @@ const { escapeRegex } = require('../../helpers/escapeRegex');
 
 class CategoryController {
   async index(req, res) {
-    const pageNumber = req.query.page;
+    const pageNumber = req.query.page || 1;
     const perPage = 5;
     try {
       if (req.query.search) {
@@ -12,30 +12,24 @@ class CategoryController {
           Category_Model.find({
             name: new RegExp(escapeRegex(req.query.search), 'gi')
           }).limit(perPage).skip((pageNumber - 1) * perPage),
-          Category_Model.countDocuments()
+          Category_Model.find({
+            name: new RegExp(escapeRegex(req.query.search), 'gi')
+          })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalCategories / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i)
-        }
         return res.render('./backends/categories/categoriesView', {
           datas: mutipleMongooseToObject(categories),
-          pages: pages
+          pages: Math.ceil(totalCategories.length / perPage),
+          current: pageNumber
         });
       } else {
         const [categories, totalCategories] = await Promise.all([
           Category_Model.find({}).limit(perPage).skip((pageNumber - 1) * perPage),
           Category_Model.countDocuments()
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalCategories / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i)
-        }
         return res.render('./backends/categories/categoriesView', {
           datas: mutipleMongooseToObject(categories),
-          pages: pages
+          pages: Math.ceil(totalCategories / perPage),
+          current: pageNumber
         });
       }
     } catch (error) {

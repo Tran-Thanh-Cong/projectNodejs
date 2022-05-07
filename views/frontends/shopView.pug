@@ -79,7 +79,7 @@ block content
 											a.product-img(href='product/'+ data._id)
 												img(src='/uploads/images/' + data.images)
 											.product-action
-												a(href='')
+												a(href='/add-to-cart/'+ data._id)
 													i.add-to-cart.fas.fa-cart-plus
 												a(href='')
 													i.quick-view.far.fa-eye
@@ -151,9 +151,9 @@ block content
 																th.col-label Product Dimensions:
 																td.col-data 9.8 x 6.8 x 0.3 inches Item
 												.product-action-static
-													button.btn.btn-add-to-cart Add to card
+													a.btn.btn-add-to-cart Add to card
 													.action-secondary
-														a.add-to-wish-list(href='')
+														a.add-to-wish-list(href='/add-to-cart/'+ data._id)
 															i.far.fa-heart
 														a.to-compare(href='', title='Add to Compare')
 															i.fas.fa-exchange-alt

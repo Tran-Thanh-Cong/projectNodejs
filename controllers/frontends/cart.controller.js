@@ -136,5 +136,57 @@ class CartController {
     }
   }
 
+  async addProduct(req, res) {
+    try {
+      const [decodedToken, product] = await Promise.all([
+        verifyToken(req.cookies.token),
+        Product_Model.findById(req.params.id)
+      ]);
+      let cart = await Cart_Model.findOne({ user_id: decodedToken.id });
+      if (cart) {
+        //product exists in the cart, update the quantity
+        let itemIndex = cart.products.findIndex(p => p.productID == req.params.id);
+        if (itemIndex > -1) {
+          let productItem = cart.products[itemIndex];
+          productItem.quantity += 1;
+          cart.products[itemIndex] = productItem;
+          cart.totalPrice += productItem.price * 1;
+          cart.totalItems += 1;
+        } else {
+          //product does not exists in cart, add new item
+          cart.products.push({
+            productID: product._id,
+            quantity: 1,
+            name: product.name,
+            images: product.images,
+            price: product.price * (1 - product.discount * 0.01),
+            discount: product.discount
+          })
+          cart.totalPrice += 1 * product.price * (1 - product.discount * 0.01);
+          cart.totalItems += 1
+        }
+        cart = await cart.save();
+        return res.redirect('/');
+      } else {
+        //no cart for user, create a new cart
+        await Cart_Model.insertMany({
+          user_id: decodedToken.id,
+          products: [{
+            productID: product._id,
+            quantity: 1,
+            name: product.name,
+            images: product.images,
+            price: product.price * (1 - product.discount * 0.01),
+            discount: product.discount
+          }],
+          totalItems: 1,
+          totalPrice: (product.price * (1 - product.discount * 0.01)) * 1
+        });
+        return res.redirect('/');
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
 module.exports = new CartController

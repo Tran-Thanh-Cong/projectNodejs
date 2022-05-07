@@ -55,6 +55,7 @@ router.delete('/users/delete/:id', authMiddleware.authAdmin, user.delete);
 
 //orders router
 router.get('/orders', authMiddleware.authAdmin, order.index);
+router.get('/order/detail/:id', authMiddleware.authAdmin, order.detail);
 
 //admins
 router.get('/employees', authMiddleware.authAdmin, admin.index);

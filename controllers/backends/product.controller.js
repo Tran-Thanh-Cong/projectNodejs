@@ -4,7 +4,7 @@ const { escapeRegex } = require('../../helpers/escapeRegex');
 const DetailCategory_Model = require('../../models/detailCategory.model');
 class ProductController {
   async index(req, res) {
-    const pageNumber = req.query.page;
+    const pageNumber = req.query.page || 1;
     const perPage = 10;
     try {
       if (req.query.search) {
@@ -12,35 +12,28 @@ class ProductController {
           Product_Model.find({
             name: new RegExp(escapeRegex(req.query.search), 'gi') //search by name
           }).limit(perPage).skip((pageNumber - 1) * perPage),
-          Product_Model.countDocuments()
+          Product_Model.find({
+            name: new RegExp(escapeRegex(req.query.search), 'gi') //search by name
+          })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalProducts / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
         return res.render('./backends/products/productsView', {
           datas: mutipleMongooseToObject(products),
-          pages: pages,
+          pages: Math.ceil(totalProducts.length / perPage),
+          current: pageNumber
         })
       }
       const [products, totalProducts] = await Promise.all([
         Product_Model.find().limit(perPage).skip((pageNumber - 1) * perPage),
         Product_Model.countDocuments()
       ]);
-      const pages = [];
-      const totalPages = Math.ceil(totalProducts / perPage);
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
       return res.render('./backends/products/productsView', {
         datas: mutipleMongooseToObject(products),
-        pages: pages,
+        pages: Math.ceil(totalProducts / perPage),
+        current: pageNumber
       })
     } catch (err) {
       console.log(err.message);
     }
-    return res.render('./backends/products/productsView');
   }
 
   async create(req, res) {

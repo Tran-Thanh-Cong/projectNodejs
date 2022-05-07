@@ -5,7 +5,7 @@ const Category_Model = require('../../models/category.model');
 
 class DetailCategoryController {
   async index(req, res) {
-    const pageNumber = req.query.page;
+    const pageNumber = req.query.page || 1;
     const perPage = 8;
     try {
       if (req.query.search) {
@@ -13,30 +13,24 @@ class DetailCategoryController {
           DetailCategory_Model.find({
             name: new RegExp(escapeRegex(req.query.search), 'gi')
           }).populate({ path: 'category' }).limit(perPage).skip((pageNumber - 1) * perPage),
-          DetailCategory_Model.countDocuments()
+          DetailCategory_Model.find({
+            name: new RegExp(escapeRegex(req.query.search), 'gi')
+          }).populate({ path: 'category' })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalDetailCategories / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
         return res.render('./backends/detailCategories/detailCategoriesView', {
           datas: mutipleMongooseToObject(detailCategories),
-          pages: pages,
+          pages: Math.ceil(totalDetailCategories.length / perPage),
+          current: pageNumber
         })
       } else {
         const [detailCategories, totalDetailCategories] = await Promise.all([
           DetailCategory_Model.find({}).populate({ path: 'category' }).limit(perPage).skip((pageNumber - 1) * perPage),
-          DetailCategory_Model.countDocuments()
+          DetailCategory_Model.find({}).populate({ path: 'category' })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalDetailCategories / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
         return res.render('./backends/detailCategories/detailcategoriesView', {
           datas: mutipleMongooseToObject(detailCategories),
-          pages: pages,
+          pages: Math.ceil(totalDetailCategories.length / perPage),
+          current: pageNumber
         })
       }
     } catch (error) {

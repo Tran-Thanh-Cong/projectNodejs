@@ -44,9 +44,10 @@ router.get('/cart-checkout', authMiddleware.authUser, cart.cartCheckout);
 router.get('/express-checkout', authMiddleware.authUser, cart.expressCheckoutCart);
 router.get('/clear-cart', authMiddleware.authUser, cart.delete);
 router.get('/remove-product-cart/:id', authMiddleware.authUser, cart.removeProductCart);
+router.get('/add-to-cart/:id', authMiddleware.authUser, cart.addProduct);
 
 //order router
-router.get('/order', authMiddleware.authUser, order.index);
+router.post('/express-checkout', authMiddleware.authUser, order.index);
 
 // blog router
 router.get('/blog', blog.index);

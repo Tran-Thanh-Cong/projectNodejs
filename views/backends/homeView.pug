@@ -1,122 +1,153 @@
 extend ./layout/layout.pug
 block header
-	nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-light
-		.navbar-wrapper
-			.navbar-container.content
-				.collapse.navbar-collapse.show#navbar-mobile
-					ul.nav.navbar-nav.mr-auto.float-left
-						li.nav-item.d-block.d-md-none
-							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href="#")
-								i.ft-menu
-						li.nav-item.d-none.d-md-block
-							a.nav-link.nav-link-expand(href="#")
-								i.ficon.ft-maximize
-						li.nav-item.dropdown.navbar-search
-							a.nav-link.dropdown-toggle.hide(data-toggle="dropdown" href="#")
-								i.ficon.ft-search
-							ul.dropdown-menu
-								li.arrow_box
-									form(method='GET' action='')
-										.input-group.search-box
-											.position-relative.has-icon-right.full-width
-												input.form-control#search(type="text" placeholder="Search here..." name="search")
-												.form-control-position.navbar-search-close
-													i.ft-x
-					ul.nav.navbar-nav.float-right
-						li.dropdown.dropdown-language.nav-item
-							a.dropdown-toggle.nav-link#dropdown-flag(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-								i.flag-icon.flag-icon-us
-								span.selected-language
-							.dropdown-menu(aria-labelledby="dropdown-flag")
-								.arrow_box
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-us
-										|  English
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-cn
-										|  Chinese
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-ru
-										|  Russian
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-fr
-										|  French
-									a.dropdown-item(href="#")
-										i.flag-icon.flag-icon-es
-										|  Spanish
-					ul.nav.navbar-nav.float-right
-						li.dropdown.dropdown-notification.nav-item
-							a.nav-link.nav-link-label(href="#" data-toggle="dropdown")
-								i.ficon.ft-mail
-							.dropdown-menu.dropdown-menu-right
-								.arrow_box_right
-									a.dropdown-item(href="#")
-										i.ft-book
-										|  Read Mail
-									a.dropdown-item(href="#")
-										i.ft-bookmark
-										|  Read Later
-									a.dropdown-item(href="#")
-										i.ft-check-square
-										|  Mark all Read
-						li.dropdown.dropdown-user.nav-item
-							a.dropdown-toggle.nav-link.dropdown-user-link(href="#" data-toggle="dropdown")
-								span.avatar.avatar-online
-									img(src="/img/portrait/small/avatar-s-19.png" alt="avatar")
-									i
-							.dropdown-menu.dropdown-menu-right
-								.arrow_box_right
-									a.dropdown-item(href="#")
-										span.avatar.avatar-online
-											img(src="/img/portrait/small/avatar-s-19.png" alt="avatar")
-											span.text-bold-700.ml-1(style="font-size: 10px; font-weight: bold")=admin.name
-									a.dropdown-item(href="#")
-										i.ft-user
-										|  Edit Profile
-									a.dropdown-item(href="#")
-										i.ft-mail
-										|  My Inbox
-									a.dropdown-item(href="#")
-										i.ft-check-square
-										|  Task
-									a.dropdown-item(href="#")
-										i.ft-message-square
-										|  Chats
-									a.dropdown-item(href="logout")
-										i.ft-power
-										|  Logout	
+  nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-light
+    .navbar-wrapper
+      .navbar-container.content
+        .collapse.navbar-collapse.show#navbar-mobile
+          ul.nav.navbar-nav.mr-auto.float-left
+            li.nav-item.d-block.d-md-none
+              a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href="#")
+                i.ft-menu
+            li.nav-item.d-none.d-md-block
+              a.nav-link.nav-link-expand(href="#")
+                i.ficon.ft-maximize
+            li.nav-item.dropdown.navbar-search
+              a.nav-link.dropdown-toggle.hide(data-toggle="dropdown" href="#")
+                i.ficon.ft-search
+              ul.dropdown-menu
+                li.arrow_box
+                  form(method='GET' action='')
+                    .input-group.search-box
+                      .position-relative.has-icon-right.full-width
+                        input.form-control#search(type="text" placeholder="Search here..." name="search")
+                        .form-control-position.navbar-search-close
+                          i.ft-x
+          ul.nav.navbar-nav.float-right
+            li.dropdown.dropdown-language.nav-item
+              a.dropdown-toggle.nav-link#dropdown-flag(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                i.flag-icon.flag-icon-us
+                span.selected-language
+              .dropdown-menu(aria-labelledby="dropdown-flag")
+                .arrow_box
+                  a.dropdown-item(href="#")
+                    i.flag-icon.flag-icon-us
+                    |  English
+                  a.dropdown-item(href="#")
+                    i.flag-icon.flag-icon-cn
+                    |  Chinese
+                  a.dropdown-item(href="#")
+                    i.flag-icon.flag-icon-ru
+                    |  Russian
+                  a.dropdown-item(href="#")
+                    i.flag-icon.flag-icon-fr
+                    |  French
+                  a.dropdown-item(href="#")
+                    i.flag-icon.flag-icon-es
+                    |  Spanish
+          ul.nav.navbar-nav.float-right
+            li.dropdown.dropdown-notification.nav-item
+              a.nav-link.nav-link-label(href="#" data-toggle="dropdown")
+                i.ficon.ft-mail
+              .dropdown-menu.dropdown-menu-right
+                .arrow_box_right
+                  a.dropdown-item(href="#")
+                    i.ft-book
+                    |  Read Mail
+                  a.dropdown-item(href="#")
+                    i.ft-bookmark
+                    |  Read Later
+                  a.dropdown-item(href="#")
+                    i.ft-check-square
+                    |  Mark all Read
+            li.dropdown.dropdown-user.nav-item
+              a.dropdown-toggle.nav-link.dropdown-user-link(href="#" data-toggle="dropdown")
+                span.avatar.avatar-online
+                  img(src="/img/portrait/small/avatar-s-19.png" alt="avatar")
+                  i
+              .dropdown-menu.dropdown-menu-right
+                .arrow_box_right
+                  a.dropdown-item(href="#")
+                    span.avatar.avatar-online
+                      img(src="/img/portrait/small/avatar-s-19.png" alt="avatar")
+                      span.text-bold-700.ml-1(style="font-size: 10px; font-weight: bold")=admin.name
+                  a.dropdown-item(href="#")
+                    i.ft-user
+                    |  Edit Profile
+                  a.dropdown-item(href="#")
+                    i.ft-mail
+                    |  My Inbox
+                  a.dropdown-item(href="#")
+                    i.ft-check-square
+                    |  Task
+                  a.dropdown-item(href="#")
+                    i.ft-message-square
+                    |  Chats
+                  a.dropdown-item(href="logout")
+                    i.ft-power
+                    |  Logout	
 block content
-	.app-content.content
-		.content-wrapper
-			canvas#myChart
-	input(type="hidden", value=date, id="ngayhomnay") 
-	script(src='https://cdn.jsdelivr.net/npm/chart.js')
-	script.
-		let ngayhomnay = document.querySelector("ngayhomnay")
-		const labels = [
-			ngayhomnay,
-			ngayhomnay,
-			ngayhomnay,
-			ngayhomnay,
-			ngayhomnay,
-			ngayhomnay,
-			ngayhomnay
-		];
-		const data = {
-			labels: labels,
-			datasets: [{
-				label: 'Thống kê mua hàng theo ngày',
-				data: [0, 10, 5, 2, 20, 30, 45],
-				fill: false,
-				borderColor: 'rgb(75, 192, 192)',
-				tension: 0.1
-			}]
-		};
-		const config = {
-			type: 'line',
-			data: data,
-		};
-		const myChart = new Chart(
-			document.getElementById('myChart'),
-			config
-		);
+  .app-content.content
+    .content-wrapper
+      canvas#myChart
+  input(type="hidden", value=today, id="today")
+  input(type="hidden", value=sau1ngay, id="sau1ngay") 
+  input(type="hidden", value=sau2ngay, id="sau2ngay") 
+  input(type="hidden", value=sau3ngay, id="sau3ngay") 
+  input(type="hidden", value=sau4ngay, id="sau4ngay") 
+  input(type="hidden", value=sau5ngay, id="sau5ngay") 
+  input(type="hidden", value=sau6ngay, id="sau6ngay") 
+  input(type="hidden", value=sau7ngay, id="sau7ngay") 
+
+  input(type="hidden", value=sl_today, id="sl_today")
+  input(type="hidden", value=sl_sau1ngay, id="sl_sau1ngay") 
+  input(type="hidden", value=sl_sau2ngay, id="sl_sau2ngay") 
+  input(type="hidden", value=sl_sau3ngay, id="sl_sau3ngay") 
+  input(type="hidden", value=sl_sau4ngay, id="sl_sau4ngay") 
+  input(type="hidden", value=sl_sau5ngay, id="sl_sau5ngay") 
+  input(type="hidden", value=sl_sau6ngay, id="sl_sau6ngay") 
+
+  script(src='https://cdn.jsdelivr.net/npm/chart.js')
+  script.
+    let today = document.querySelector("#today").value;
+    let sau1ngay = document.querySelector("#sau1ngay").value;
+    let sau2ngay = document.querySelector("#sau2ngay").value;
+    let sau3ngay = document.querySelector("#sau3ngay").value;
+    let sau4ngay = document.querySelector("#sau4ngay").value;
+    let sau5ngay = document.querySelector("#sau5ngay").value;
+    let sau6ngay = document.querySelector("#sau6ngay").value;
+
+    let sl_today = document.querySelector("#sl_today").value;
+    let sl_sau1ngay = document.querySelector("#sl_sau1ngay").value;
+    let sl_sau2ngay = document.querySelector("#sl_sau2ngay").value;
+    let sl_sau3ngay = document.querySelector("#sl_sau3ngay").value;
+    let sl_sau4ngay = document.querySelector("#sl_sau4ngay").value;
+    let sl_sau5ngay = document.querySelector("#sl_sau5ngay").value;
+    let sl_sau6ngay = document.querySelector("#sl_sau6ngay").value;
+
+    const labels = [
+      sau6ngay,
+      sau5ngay,
+      sau4ngay,
+      sau3ngay,
+      sau2ngay,
+      sau1ngay,
+      today
+    ];
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Thống kê mua hàng theo ngày',
+        data: [sl_sau6ngay, sl_sau5ngay, sl_sau4ngay, sl_sau3ngay, sl_sau2ngay, sl_sau1ngay, sl_today],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    };
+    const config = {
+      type: 'line',
+      data: data,
+    };
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );

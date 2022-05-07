@@ -4,7 +4,7 @@ const { escapeRegex } = require('../../helpers/escapeRegex');
 
 class UserController {
   async index(req, res) {
-    const pageNumber = req.query.page;
+    const pageNumber = req.query.page || 1;
     const perPage = 5;
     try {
       if (req.query.search) {
@@ -12,30 +12,24 @@ class UserController {
           User_Model.find({
             username: new RegExp(escapeRegex(req.query.search), 'gi')
           }).limit(perPage).skip((pageNumber - 1) * perPage),
-          User_Model.countDocuments()
+          User_Model.find({
+            username: new RegExp(escapeRegex(req.query.search), 'gi')
+          })
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalUsers / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
         return res.render('./backends/users/usersView', {
           datas: mutipleMongooseToObject(users),
-          pages: pages,
+          pages: Math.ceil(totalUsers.length / perPage),
+          current: pageNumber
         });
       } else {
         const [users, totalUsers] = await Promise.all([
           User_Model.find({}).limit(perPage).skip((pageNumber - 1) * perPage),
           User_Model.countDocuments()
         ]);
-        const pages = [];
-        const totalPages = Math.ceil(totalUsers / perPage);
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i)
-        }
         return res.render('./backends/users/usersView', {
           datas: mutipleMongooseToObject(users),
-          pages: pages
+          pages: Math.ceil(totalUsers / perPage),
+          current: pageNumber
         });
       }
     } catch (error) {

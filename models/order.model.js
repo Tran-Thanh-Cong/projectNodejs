@@ -6,6 +6,18 @@ const orderSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
   },
+  email: {
+    type: 'string'
+  },
+  address: {
+    type: 'string'
+  },
+  phonenumber: {
+    type: 'string'
+  },
+  comments: {
+    type: 'string'
+  },
   products: [{
     productID: {
       type: mongoose.Schema.Types.ObjectId,
