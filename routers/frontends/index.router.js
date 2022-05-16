@@ -26,7 +26,7 @@ router.post('/register', register.register_post);
 
 //verify-email routes
 router.get('/verify-email', verifyEmail.verifyEmail)
-
+router.get('/wait', verifyEmail.index);
 // logout router
 router.get('/logout', logout.logout);
 
@@ -54,5 +54,6 @@ router.get('/blog', blog.index);
 
 //contact router
 router.get('/contact', contact.index);
+router.post('/contact', authMiddleware.authUser, contact.contact);
 
 module.exports = router;

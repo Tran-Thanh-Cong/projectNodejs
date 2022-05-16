@@ -57,11 +57,12 @@ router.delete('/users/delete/:id', authMiddleware.authAdmin, user.delete);
 router.get('/orders', authMiddleware.authAdmin, order.index);
 router.get('/order/detail/:id', authMiddleware.authAdmin, order.detail);
 
-//admins
+//admins router
 router.get('/employees', authMiddleware.authAdmin, admin.index);
 router.get('/employees/create', authMiddleware.authAdmin, admin.create);
 router.post('/employees/create', authMiddleware.authAdmin, admin.store);
 router.get('/employees/detail/:id', authMiddleware.authAdmin, admin.detail);
 router.delete('/employees/delete/:id', authMiddleware.authAdmin, admin.delete);
+
 
 module.exports = router;

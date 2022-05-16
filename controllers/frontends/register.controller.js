@@ -42,11 +42,12 @@ class RegisterController {
         password: passwordHash
       });
       const token = await createToken(user[0]._id);
+      const subject = 'verify your email';
       const content = `<h2>${user[0].email}! thank your register on our website</h2>
                       <h4>Please your verify email to continue....</h4>,
                       <a href="http://localhost:5000/verify-email?token=${token}">Verify email</a>`
-      sendMail(user[0].email, content);
-      return res.redirect('/login');
+      sendMail(user[0].email, subject, content);
+      return res.redirect('/wait');
 
     } catch (error) {
       console.log(error.message);

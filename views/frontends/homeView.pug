@@ -118,15 +118,19 @@ block content
 									span.hot-deal__sale-title SALES
 									span.hot-deal__sale-title-text=data.discount
 									span.hot-deal__sale-title-text % OFF
-								.hot-deal__product-detail__action
-									a(href="/add-to-cart/" + data._id).hot-deal__product-detail__btn.btn ADD TO CART
-									.hot-deal__product-detail__link.product-action
-										a.quick-view
-											i.far.fa-eye
-										a.add-to-wish-list
-											i.far.fa-heart
-										a.to-compare(href='', title='Add to Compare')
-											i.fas.fa-exchange-alt
+								if data.amount > 0
+									.hot-deal__product-detail__action
+										a(href="/add-to-cart/" + data._id).hot-deal__product-detail__btn.btn ADD TO CART
+										.hot-deal__product-detail__link.product-action
+											a.quick-view
+												i.far.fa-eye
+											a.add-to-wish-list
+												i.far.fa-heart
+											a.to-compare(href='', title='Add to Compare')
+												i.fas.fa-exchange-alt
+								else
+									.hot-deal__product-detail__action.disabled
+										a(href="").hot-deal__product-detail__btn.btn Hết hàng
 			//- Hot categories
 			.content-hot-categories.container.tabs-container
 				.hot-categories__heading

@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const sendMail = (user, content) => {
+const sendMail = (user, subject, content) => {
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     service: 'gmail',
@@ -13,7 +13,7 @@ const sendMail = (user, content) => {
   const mailOptions = {
     from: process.env.EMAIL_AUTH,
     to: user,
-    subject: 'verify your email',
+    subject: subject,
     html: content
   };
 

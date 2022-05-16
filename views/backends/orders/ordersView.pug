@@ -149,7 +149,7 @@ block content
                                 a(href='/admin/order/detail/' + order._id) Detail
                               td(scope ='row')
                                 form(method ='POST', action='/admin/order/delete/' + order._id + '?_method=DELETE')
-                                  button.btn.btn-danger(type="submit") Delete
+                                  button.btn.btn-danger(type="submit" onclick="return confirm('Bạn có muốn xóa đơn hàng?')") Delete
                   ul.pagination(style="margin-left: 82.4%;")
                     if pages > 0
                       -var i = current > 3 ? current - 2 : 1

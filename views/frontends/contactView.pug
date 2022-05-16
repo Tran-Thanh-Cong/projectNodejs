@@ -131,27 +131,29 @@ block content
 				.col.l-6.m-12.c-12.contact-us
 					p Information About us
 					h2 Contact us for any questions
-					form.form(action='')
+					form.form(action='', method='POST')
 						.fieldset
 							.row
 								.col.l-6.m-12.c-12
 									.field.col-left
 										label.label(for='')
 										.control
-											input.input-text(type='text', placeholder='Your name')
+											input.input-text(type='text', placeholder='Your name', name='name' value=name ? name: '')
 								.col.l-6.m-12.c-12
 									.field.col-right
 										label.label(for='')
 										.control
-											input.input-text(type='text', placeholder='Your mail')
+											input.input-text(type='text', placeholder='Your mail', name='email' value = email ? email: '')
+										if errEmail
+											p.errMessage=errEmail
 							.field
 								label.label(for='')
 								.control
-									input.input-text(type='text', placeholder='Phone number')
+									input.input-text(type='text', placeholder='Phone number', name='phone_number')
 							.field
 								label.label(for='')
 								.control
-									textarea(name='', id='', cols='3', rows='4', placeholder="What's on your mind?")
+									textarea(name='question', id='', cols='3', rows='4', placeholder="What's on your mind?")
 							button.btn-primary(type='submit')
 								span Ask a Question
 	//- Main content - end
