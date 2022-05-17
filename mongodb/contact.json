@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "6281c27013f050f34cd16263"
+  },
+  "user_id": {
+    "$oid": "6281c22413f050f34cd16244"
+  },
+  "name": "Nguyen Van Hao",
+  "email": "nguyenvanhao.ktpm002@gmail.com",
+  "phone": "12345678",
+  "question": "Tôi rất hài lòng với dịch vụ của trang web",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652671088645"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652671088645"
+    }
+  }
+}]

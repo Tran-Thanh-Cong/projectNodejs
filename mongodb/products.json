@@ -28,7 +28,7 @@
   "name": "Macbook Pro",
   "price": 54000000,
   "discount": 40,
-  "amount": 10,
+  "amount": 6,
   "images": "1650163382075macbook_pro_14_inch_mac24h.png",
   "detailCategory": {
     "$oid": "625af11781d91b9f06916ebe"
@@ -41,7 +41,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650163382084"
+      "$numberLong": "1651895495027"
     }
   }
 },{
@@ -97,7 +97,7 @@
   "name": "Samsung Galaxy Note",
   "price": 18999000,
   "discount": 36,
-  "amount": 10,
+  "amount": 8,
   "images": "1650164706192hot-deal_01.jpg",
   "detailCategory": {
     "$oid": "625a30020e0e13f196ee6fa9"
@@ -110,7 +110,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650175634015"
+      "$numberLong": "1651895495034"
     }
   }
 },{
@@ -120,7 +120,7 @@
   "name": "Apple Watch Series 6",
   "price": 10990000,
   "discount": 36,
-  "amount": 11,
+  "amount": 10,
   "images": "1650176929300beu_b2_hong.jpg",
   "detailCategory": {
     "$oid": "625af21981d91b9f06916f2a"
@@ -133,7 +133,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650176929308"
+      "$numberLong": "1651852587166"
     }
   }
 },{
@@ -258,7 +258,7 @@
   "name": "Xiaomi Redmi 10 Back",
   "price": 6700000,
   "discount": 2,
-  "amount": 12,
+  "amount": 10,
   "images": "1650176217496xiaomi_redmi_10c_đen.jpg",
   "detailCategory": {
     "$oid": "625a30020e0e13f196ee6faa"
@@ -271,7 +271,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650176217507"
+      "$numberLong": "1652616925865"
     }
   }
 },{
@@ -304,7 +304,7 @@
   "name": "Samsung Galaxy Watch 40mm",
   "price": 21000000,
   "discount": 2,
-  "amount": 21,
+  "amount": 20,
   "images": "1650176488999samsung_galaxy_watch_4_40mm.jpg",
   "detailCategory": {
     "$oid": "625af25b1f87f4311f6fbf18"
@@ -317,7 +317,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650176489012"
+      "$numberLong": "1652616925852"
     }
   }
 },{
@@ -327,7 +327,7 @@
   "name": "Apple Watch S3 GPS",
   "price": 21000999,
   "discount": 0,
-  "amount": 5,
+  "amount": 4,
   "images": "1650176590447apple_watch_s3_gps_42mm.jpg",
   "detailCategory": {
     "$oid": "625af21981d91b9f06916f2a"
@@ -340,7 +340,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650176590457"
+      "$numberLong": "1651895495032"
     }
   }
 },{
@@ -994,7 +994,7 @@
   "name": "Macbook Air 2018",
   "price": 30999000,
   "discount": 5,
-  "amount": 5,
+  "amount": 3,
   "images": "1650215721497macbook-pro-14-m1-max-2021.png",
   "detailCategory": {
     "$oid": "625af11781d91b9f06916ebe"
@@ -1007,7 +1007,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1650215721507"
+      "$numberLong": "1652770686955"
     }
   }
 },{

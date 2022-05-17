@@ -19,21 +19,116 @@
   }
 },{
   "_id": {
-    "$oid": "624dc85476aae233556ac642"
+    "$oid": "62752a58da7e37cb98c29d99"
   },
-  "username": "Cong060500",
+  "username": "congdz",
   "email": "tranthanhcongktpm2@gmail.com",
-  "password": "$2b$10$yCMUS4tvx2aa8LtOBcfoB.gFddnVKuAJ8//QSTyxSyu3uJLumQ7Ii",
+  "password": "$2b$10$5YWxYRakWEYMVwOA.HU.Duzj4/zDqDVOItztvyrXAktKS2C50rvS6",
   "isVerified": true,
   "__v": 0,
   "createdAt": {
     "$date": {
-      "$numberLong": "1649264724213"
+      "$numberLong": "1651845720664"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1649264732926"
+      "$numberLong": "1651845746534"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "62752a92da7e37cb98c29da2"
+  },
+  "username": "Dat",
+  "email": "taquocdat260400@gmail.com",
+  "password": "$2b$10$jrPQ6Hbcllni5Orc2/GNY.6YovW9CcYyzztSUa4./5Y/EEwTX40c2",
+  "isVerified": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651845778898"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651845778898"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "62752ad3da7e37cb98c29db0"
+  },
+  "username": "hao",
+  "email": "nguyenvanhao@gmail.com",
+  "password": "$2b$10$I3rl5uuDg5Sy2QIoJVDSie/ryLg4A4O59Jv4keqTiHqjDaXNbC0Se",
+  "isVerified": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651845843781"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651845843781"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "62812763088ac3484c5ad19f"
+  },
+  "username": "Cong060500",
+  "email": "nobitacrush@gmail.com",
+  "password": "$2b$10$RCLXCfX5WrCxwW2Q8eC7QeWJDa0kYnpAL.sIoSb.IaESJIPCgQ7CK",
+  "isVerified": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652631395265"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652631395265"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6281c22413f050f34cd16244"
+  },
+  "username": "nguyenvanhao",
+  "email": "nguyenvanhao.ktpm002@gmail.com",
+  "password": "$2b$10$kScG2JmgfA1IHUJbPUU07u6fKVPnnDXCAYNmp1Of.JhmtDWZqIUSO",
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652671012133"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652671012133"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6281c479d310506cb84231f5"
+  },
+  "username": "Cong060500",
+  "email": "nguyenvanhao.ktpm2@gmail.com",
+  "password": "$2b$10$gIVO1yS8AAalIMfmNU.sAOASOQcyjky78QPO4Qt0rL0rXGCag5PcK",
+  "isVerified": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652671609489"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652671609489"
     }
   }
 }]

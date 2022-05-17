@@ -1,0 +1,261 @@
+[{
+  "_id": {
+    "$oid": "62750271c0e679008217fb4d"
+  },
+  "user_id": {
+    "$oid": "62402a4d33fda12aea509d04"
+  },
+  "email": "tranthanhcongktpm2@gmail.com",
+  "address": "Ha Nam",
+  "phonenumber": "0398171495",
+  "comments": "Van chuyen nhanh cho toi nha",
+  "products": [
+    {
+      "productID": {
+        "$oid": "625a87adc80874feaa4c69fe"
+      },
+      "quantity": 1,
+      "name": "Macbook Pro",
+      "images": "1650163382075macbook_pro_14_inch_mac24h.png",
+      "price": 32400000,
+      "discount": 40,
+      "_id": {
+        "$oid": "6274ff97d6694f8d7829d2aa"
+      }
+    }
+  ],
+  "totalItems": 1,
+  "totalPrice": 32400000,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651835506001"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651835506001"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6275452b49e8cbc653830535"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "email": "tranthanhcongktpm2@gmail.com",
+  "address": "Ha Nam",
+  "phonenumber": "0398171495",
+  "comments": "Giao hang nhanh giup em",
+  "products": [
+    {
+      "productID": {
+        "$oid": "625a87adc80874feaa4c69fe"
+      },
+      "quantity": 1,
+      "name": "Macbook Pro",
+      "images": "1650163382075macbook_pro_14_inch_mac24h.png",
+      "price": 32400000,
+      "discount": 40,
+      "_id": {
+        "$oid": "6275447c49e8cbc6538304f3"
+      }
+    },
+    {
+      "productID": {
+        "$oid": "625b84baf1f35289ca6cc524"
+      },
+      "quantity": 1,
+      "name": "Apple Watch Series 6",
+      "images": "1650176929300beu_b2_hong.jpg",
+      "price": 7033600,
+      "discount": 36,
+      "_id": {
+        "$oid": "6275448149e8cbc653830507"
+      }
+    },
+    {
+      "productID": {
+        "$oid": "625c4b29e47ba43ec59d2f63"
+      },
+      "quantity": 1,
+      "name": "Macbook Air 2018",
+      "images": "1650215721497macbook-pro-14-m1-max-2021.png",
+      "price": 29449050,
+      "discount": 5,
+      "_id": {
+        "$oid": "6275448949e8cbc65383051f"
+      }
+    }
+  ],
+  "totalItems": 3,
+  "totalPrice": 68882650,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651852587154"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651852587154"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6275ecc767ad502f5323878b"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "email": "tranthanhcongktpm2@gmail.com",
+  "address": "Ha Nam",
+  "phonenumber": "0398171495",
+  "comments": "van chuyen nhanh len",
+  "products": [
+    {
+      "productID": {
+        "$oid": "625a87adc80874feaa4c69fe"
+      },
+      "quantity": 2,
+      "name": "Macbook Pro",
+      "images": "1650163382075macbook_pro_14_inch_mac24h.png",
+      "price": 32400000,
+      "discount": 40,
+      "_id": {
+        "$oid": "6275d8498fab20e15212227e"
+      }
+    },
+    {
+      "productID": {
+        "$oid": "625bb24e8e36ce70cded2bf3"
+      },
+      "quantity": 1,
+      "name": "Apple Watch S3 GPS",
+      "images": "1650176590447apple_watch_s3_gps_42mm.jpg",
+      "price": 21000999,
+      "discount": 0,
+      "_id": {
+        "$oid": "6275d8688fab20e1521222b9"
+      }
+    },
+    {
+      "productID": {
+        "$oid": "625b83e2f1f35289ca6cc509"
+      },
+      "quantity": 2,
+      "name": "Samsung Galaxy Note",
+      "images": "1650164706192hot-deal_01.jpg",
+      "price": 12159360,
+      "discount": 36,
+      "_id": {
+        "$oid": "6275e4ceefbab06329a37285"
+      }
+    }
+  ],
+  "totalItems": 5,
+  "totalPrice": 110119719,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651895495023"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651895495023"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6280eedde89ffa13da107ebd"
+  },
+  "user_id": {
+    "$oid": "62402a4d33fda12aea509d04"
+  },
+  "email": "tranthanhcong06052000@gmail.com",
+  "address": "Ha Nam",
+  "phonenumber": "111111",
+  "comments": "ship nhanh len cmm\r\n",
+  "products": [
+    {
+      "productID": {
+        "$oid": "625bb1e98e36ce70cded2bdc"
+      },
+      "quantity": 1,
+      "name": "Samsung Galaxy Watch 40mm",
+      "images": "1650176488999samsung_galaxy_watch_4_40mm.jpg",
+      "price": 20580000,
+      "discount": 2,
+      "_id": {
+        "$oid": "6275d9908fab20e1521223f1"
+      }
+    },
+    {
+      "productID": {
+        "$oid": "625bb0d98e36ce70cded2ba2"
+      },
+      "quantity": 2,
+      "name": "Xiaomi Redmi 10 Back",
+      "images": "1650176217496xiaomi_redmi_10c_đen.jpg",
+      "price": 6566000,
+      "discount": 2,
+      "_id": {
+        "$oid": "6275da64eb35c9dddf05aec4"
+      }
+    }
+  ],
+  "totalItems": 3,
+  "totalPrice": 33712000,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652616925839"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652616925839"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6283477e6480a4ec95326b9a"
+  },
+  "user_id": {
+    "$oid": "62402a4d33fda12aea509d04"
+  },
+  "email": "",
+  "address": "",
+  "phonenumber": "",
+  "comments": "",
+  "products": [
+    {
+      "productID": {
+        "$oid": "625c4b29e47ba43ec59d2f63"
+      },
+      "quantity": 1,
+      "name": "Macbook Air 2018",
+      "images": "1650215721497macbook-pro-14-m1-max-2021.png",
+      "price": 29449050,
+      "discount": 5,
+      "_id": {
+        "$oid": "628347756480a4ec95326b8b"
+      }
+    }
+  ],
+  "totalItems": 1,
+  "totalPrice": 29449050,
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652770686943"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652770686943"
+    }
+  }
+}]

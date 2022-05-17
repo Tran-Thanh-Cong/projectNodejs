@@ -1,0 +1,116 @@
+[{
+  "_id": {
+    "$oid": "62756550ded7e91dc46cc31f"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "product_id": {
+    "$oid": "625b83e2f1f35289ca6cc509"
+  },
+  "summary": "san pham dung rat tot",
+  "review": "toi rat thich san pham nay va mong cua hang se ve them nhieu mau dien thoai moi",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651860816253"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651860816253"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "627571714918cfe401c74e1a"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "product_id": {
+    "$oid": "625a87adc80874feaa4c69fe"
+  },
+  "summary": "san pham tot",
+  "review": "Toi rat hai long voi san pham nay",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651863921045"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651863921045"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6275ebf676e8f534f09deff7"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "product_id": {
+    "$oid": "625a87adc80874feaa4c69fe"
+  },
+  "summary": "san pham tot",
+  "review": "fdfdfdfdfdfdfdfdfdfdfdfdfdfd",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651895286459"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651895286459"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6275ec6d67ad502f5323870f"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "product_id": {
+    "$oid": "625b83e2f1f35289ca6cc509"
+  },
+  "summary": "vccvcvcvcv",
+  "review": "vcvcvcv",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651895405787"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651895405787"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6275ec9a67ad502f53238772"
+  },
+  "user_id": {
+    "$oid": "62752a58da7e37cb98c29d99"
+  },
+  "product_id": {
+    "$oid": "625a87adc80874feaa4c69fe"
+  },
+  "summary": "san pham tot",
+  "review": "fdfdfdfdfdfdfdf",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651895450550"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651895450550"
+    }
+  }
+}]
