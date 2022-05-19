@@ -48,6 +48,7 @@ router.get('/add-to-cart/:id', authMiddleware.authUser, cart.addProduct);
 
 //order router
 router.post('/express-checkout', authMiddleware.authUser, order.index);
+router.post('/payment', authMiddleware.authUser, order.payment);
 
 // blog router
 router.get('/blog', blog.index);

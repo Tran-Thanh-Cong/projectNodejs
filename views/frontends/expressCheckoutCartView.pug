@@ -20,17 +20,17 @@ block content
 											.field.required.shipping-address-firstname
 												label.label(for='') Email
 												.control
-													input(type='text', name='email', id='')
+													input(type='text', name='email', id='' required)
 											.fieldset.field.shipping-street-address
 												.control
 													.field.required
 														label.label(for='') Street Address 
 														.control
-															input(type='text', name='address', id='')
+															input(type='text', name='address', id='' required)
 											.field.phone-number
 												label.label(for='') Phone Number
 												.control
-													input(type='text', name='phonenumber', id='')
+													input(type='text', name='phonenumber', id='' required)
 													i.far.fa-question-circle
 								.col.l-6.m-12.c-12.checkout-methods-wrapper
 									.checkout-methods
@@ -43,7 +43,7 @@ block content
 												.field.delivery-comment
 													label.label(for='') Shipping Delivery Comment
 													.control
-														textarea(name='comment', id='', cols='3', rows='3')
+														textarea(name='comment', id='', cols='3', rows='3' required)
 					.col.l-4.m-12.c-12.checkout-sidebar-wrapper
 						.checkout-sidebar
 							.block-summary
@@ -86,4 +86,6 @@ block content
 												.cart-total__amount.total
 													span=new Intl.NumberFormat('vn-IN', { maximumSignificantDig: 3}).format((cart.totalPrice).toFixed())
 						.place-order-btn
-							button.btn-primary.items__action__view-card Place Order
+							button(style="width: 119px; margin-left: 180px; line-height: 28px; border-radius: 5px; font-size: 14px; font-weight: bold;margin-top: 25px;background-color:#FCB800;color: #ffff;border : 0px;") Place Order
+			form(action='payment', method='POST', style="margin-left: 1135px; margin-top: -50px;")
+				script.stripe-button(src='//checkout.stripe.com/v2/checkout.js', data-key=key, data-amount='', data-currency='vnd', data-name='Thanh Cong store', data-description='Buy Product in ThanhCong store', data-locale='auto')

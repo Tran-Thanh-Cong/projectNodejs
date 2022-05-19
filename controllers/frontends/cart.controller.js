@@ -130,7 +130,9 @@ class CartController {
         res.locals.cart = null;
         res.locals.cartProduct = null;
       }
-      return res.render('./frontends/expressCheckoutCartView');
+      return res.render('./frontends/expressCheckoutCartView', {
+        key: 'pk_test_51L0d6gAUryGVlVIUDEPQlxnr1u5ajYDsSV5yHJbV35Rry9GnqtwNLWWh7c6JTOCSKNkuCG8Cxsf7Iu78wkYUZfbA00ZDUBSBpd'
+      });
     } catch (error) {
       console.log(error.message)
     }

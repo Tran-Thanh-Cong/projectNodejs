@@ -6,7 +6,7 @@ const { connect } = require('./config/connect');
 const Router = require('./routers/app.router');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 //middleware
 app.use(express.static(path.join(__dirname, './public')));

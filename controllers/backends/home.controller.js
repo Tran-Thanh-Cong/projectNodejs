@@ -11,13 +11,15 @@ class HomeController {
       const sau4ngay = moment(date).subtract(4, 'days').format('YYYY-MM-DD');
       const sau5ngay = moment(date).subtract(5, 'days').format('YYYY-MM-DD');
       const sau6ngay = moment(date).subtract(6, 'days').format('YYYY-MM-DD');
-      const sl_today = await OrderByDate(today, moment(date).add(1, 'days').format('YYYY-MM-DD'));
-      const sl_sau1ngay = await OrderByDate(sau1ngay, today);
-      const sl_sau2ngay = await OrderByDate(sau1ngay, sau2ngay);
-      const sl_sau3ngay = await OrderByDate(sau2ngay, sau3ngay);
-      const sl_sau4ngay = await OrderByDate(sau3ngay, sau4ngay);
-      const sl_sau5ngay = await OrderByDate(sau4ngay, sau5ngay);
-      const sl_sau6ngay = await OrderByDate(sau6ngay, moment(date).subtract(7, 'days').format('YYYY-MM-DD'));
+      const [sl_today, sl_sau1ngay, sl_sau2ngay, sl_sau3ngay, sl_sau4ngay, sl_sau5ngay, sl_sau6ngay] = await Promise.all([
+        OrderByDate(today, moment(date).add(1, 'days').format('YYYY-MM-DD')),
+        OrderByDate(sau1ngay, today),
+        OrderByDate(sau2ngay, sau1ngay),
+        OrderByDate(sau3ngay, sau2ngay),
+        OrderByDate(sau4ngay, sau3ngay),
+        OrderByDate(sau5ngay, sau4ngay),
+        OrderByDate(sau6ngay, sau5ngay)
+      ]);
       return res.render('./backends/homeView', {
         today: today,
         sau1ngay: sau1ngay,
