@@ -63,6 +63,16 @@ class OrderController {
         })
       });
       if (cart && cart.products.length > 0) {
+        await Order_Model.insertMany({
+          user_id: cart.user_id,
+          email: req.body.stripeEmail,
+          address: 'Ngoc Lu - Binh Luc - Han Nam',
+          phonenumber: '1111111',
+          comments: 'Mua hang tai cua hang Thanh Cong',
+          products: cart.products,
+          totalItems: cart.totalItems,
+          totalPrice: cart.totalPrice
+        });
         for (let i = 0; i < cart.products.length; i++) {
           const amountProduct = await Product_Model.findById(cart.products[i].productID)
           await Product_Model.updateOne({ _id: amountProduct._id }, { amount: amountProduct.amount - cart.products[i].quantity })
